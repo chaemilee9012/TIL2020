@@ -6,10 +6,9 @@
     
     <style>
         
-        .link a{color: #000; font-size: 20px; font-weight: bold}
-        a:link{color: pink}
-        a:visited{color: #999; font-weight: bold}
-        a:hover{color: deeppink}
+        .link a:link{color: pink}
+        .link a:visited{color: #999; font-weight: bold}
+        .link a:hover{color: deeppink}
     
     </style>
 </head>
