@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>font property</title>
+    <style>
+        html{font-family: gulim; font-size: 20px; #b00}
+        .box{font-style: italic; font-weight: bold;}
+        .en_box{font-family: sans-serif; font-variant: small-caps}
+/*
+???폰트사이즈/행간 변환값 0.5/2 vs 1/2
+*/
+        .en_list{font: bold italic 0.5em/2em gulim}
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>제목입니다.</h2>
+        <p>단락 요소입니다.</p>
+        <ul>
+            <li>리스트 1</li>
+            <li>리스트 2</li>
+        </ul>
+    </div>
+    <div class="en_box">
+        <h2> this is title.</h2>
+        <p> this is paragraph.</p>
+        <ul>
+            <li>list 1</li>
+            <li>list 2</li>
+        </ul>
+    </div>
+    <div>
+        <h2> THIS IS TITLE</h2>
+        <p> this is paragraph.</p>
+        <ul class="en_list">
+            <li>list 1</li>
+            <li>list 2</li>
+        </ul>
+    </div>
+</body>
+</html>
