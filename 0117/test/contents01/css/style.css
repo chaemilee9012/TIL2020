@@ -1,0 +1,65 @@
+@import url('common.css');
+
+#wrap{
+    width: 1140px; margin: 0 auto
+}
+h2{
+    width: 100%;
+    font-size: 1.5em; font-weight: bold;
+    color: #242732; text-align: center;
+    margin: 50px 0
+}
+h2:after{
+    content:'';
+    display: block;
+    width: 80px; border-top: 1px solid #ccc;
+    margin: 20px 0 0 530px; 
+}
+ul{
+    width: 100%;
+}
+ul li{
+    float: left;
+    width: 32%; margin: 10px 0;
+	position: relative
+}
+ul li:nth-of-type(2n){
+	margin: 10px 2%
+}
+ul li:hover{}
+ul li div{
+	width: 100%;
+	position: relative
+}
+ul li div img{
+    width: 100%;
+}
+ul li div .date{
+    position: absolute; left: -10px; top: -10px;
+	border-radius: 20%;
+    width: 50px; height: 40px; background: #e45914;
+    color: #fff; text-align: center; padding-top: 10px;
+}
+ul li div .icon{
+	width: 80px; height: 100%;
+	position: absolute; left: 50%; top: 50%;
+	margin-left: -20px; margin-top: -15px;
+	opacity: 0; transition: .5s
+}
+ul li:hover div .icon{
+	opacity: 50%
+}
+ul li div .icon a{
+    width: 30px; height: 30px; 
+    background: #000 url(../img/icon.png) no-repeat;
+}
+ul li div .icon a:nth-of-type(1){
+    background-position: 5px center
+}
+ul li div .icon a:nth-of-type(2){
+    background-position: -26px center
+}
+ul li div{}
+ul li div strong{}
+ul li div p{}
+ul li div em{}
