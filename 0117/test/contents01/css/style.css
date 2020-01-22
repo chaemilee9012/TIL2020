@@ -1,0 +1,103 @@
+@import url('common.css');
+
+#wrap{
+    width: 1140px; margin: 0 auto;
+    overflow: hidden
+}
+.header{}
+.header h2{
+    width: 100%;
+    font-size: 2em; font-weight: bold;
+    color: #333; text-align: center;
+    margin: 50px 0
+}
+.header h2:after{
+    content:'';
+    display: block;
+    width: 80px; border-top: 1px solid #ccc;
+    margin: 20px 0 0 530px; 
+}
+.contents{}
+.contents ul{
+    width: 100%;
+}
+.contents ul li{
+    float: left;
+    width: 32%; margin: 10px 0;
+	position: relative
+}
+.contents ul li:nth-of-type(2n){
+	margin: 10px 2%
+}
+.contents ul li:hover{}
+.contents ul li div{
+	width: 100%;
+	position: relative
+}
+.contents ul li:hover div .image{
+    margin: 0; padding: 0;
+    background: #000; border-radius: 5%;
+    overflow: hidden
+}
+.contents ul li div img{
+    width: 100%; border-radius: 5%;
+}
+.contents ul li:hover div img{
+    width: 100%; height: 100%;
+    opacity: 50%
+}
+.contents ul li div .date{
+    position: absolute; left: 0; top: 0;
+	border-radius: 20%;
+    width: 50px; height: 40px; background: #e45914;
+    color: #fff; text-align: center; font-weight: bold; padding-top: 10px;
+}
+.contents ul li div .icon{
+	width: 80px; height: 100%;
+	position: absolute; left: 50%; top: 50%;
+	margin-left: -20px; margin-top: -15px;
+	opacity: 0; transition: .5s
+}
+.contents ul li:hover div .icon{
+	opacity: 50%
+}
+.contents ul li div .icon a{
+    width: 30px; height: 30px; 
+    background: #000 url(../img/icon.png) no-repeat;
+}
+.contents ul li div .icon a:nth-of-type(1){
+    background-position: 5px center
+}
+.contents ul li div .icon a:nth-of-type(2){
+    background-position: -26px center
+}
+.contents ul li div{}
+.contents ul li div strong{
+    color: #333; font-size: 1.2em; margin: 20px 0
+}
+.contents ul li div p{
+    line-height: 2em
+}
+.contents ul li div em{
+    font-weight: bold}
+.more{
+    width: 250px; height: 50px; margin: 50px auto;
+    border: 2px solid #333; border-radius: 30px;
+    position: absolute; left: 50%; bottom: 10%;
+    margin-left: -125px; 
+    overflow: hidden
+}
+.more p{
+    color: #333; font-size: 0.9em; font-weight: bold;
+    text-transform: uppercase; text-align: center; line-height: 50px;
+}
+.more span{
+    width: 100%; height: 50px;
+    position: relative; left: -100%; top: 0;
+}
+.more:hover span{
+    background: #e45914;
+    position: absolute; left: 0; top: 0;
+    transition: .5s;
+    z-index: -10
+}
