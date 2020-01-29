@@ -1,0 +1,38 @@
+@import url('common.css');
+
+.select{
+    position: relative;
+    display: inline-block
+}
+.select > a{
+    text-transform: uppercase;
+    border: 1px solid #333;
+    padding: 5px 100px 5px 15px
+}
+.select > a:after{
+    content: "";
+    border: 5px solid transparent;
+    border-top: 5px solid #333;
+    position: absolute; right: 15px; top: calc(50% - 2px);
+}
+.select ul{
+    width: 100%;
+    border: 1px solid #333;
+    position: absolute;
+    display: none
+}
+.select ul li{
+    background: #eee;
+    border-bottom: 1px solid #ccc
+}
+.select ul li:last-of-type{
+    border: none
+}
+.select ul li a{
+    width: 100%;
+    padding: 5px 15px
+}
+.select:hover ul{
+    display: block;
+    position: absolute; top: calc(100% - 1px)
+}
