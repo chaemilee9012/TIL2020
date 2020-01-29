@@ -1,0 +1,104 @@
+@import url('common.css');
+
+/*------------------------index.html----------------------*/
+.con_s1{
+    width: 1140px; margin: 0 auto
+}
+.con_s1 h2{
+    font-size: 3em; /*rem: 최상위 폰트 크기를 기준으로*/
+    text-align: center
+}
+.con_s1 ul{
+    overflow: hidden
+}
+.con_s1 ul li{
+    font-size: 0; /*li-img 사이에 엔터치면서 생기는 공백=0*/
+    float: left;
+    width: 32%; /*calc(32% - 10px); 계산 함수*/
+    margin: 0 2% 30px 0;
+    position: relative;
+    overflow: hidden;
+    padding: 5px;
+    /*box-sizing: border-box; border, padding을 앞에 지정된 범위 안에서 처리(width, height 값에 영향x) > calc로 일일히 계산할 필요x > common에서 전체 태그에 지정하면 편리*/
+}
+.con_s1 ul li:nth-of-type(3n){
+    margin-right: 0
+}
+.con_s1 ul li img{
+    width: 100%
+}
+.con_s1 ul li:hover{}
+.con_s1 ul li span{
+    position: absolute; left: 0; bottom: -50px;
+    width: 100%;
+    background: rgba(0,0,0,0.6);
+    text-align: center; line-height: 3;
+    opacity: 0; transition: .5s
+}
+.con_s1 ul li:hover span{
+    opacity: 1; bottom: 0
+}
+/*con_s2*/
+.con_s2{width: 1140px; margin: 100px auto}
+.con_s2 ul{ 
+/*-------------------------------------------------------
+    flex: 1촌 자손한테만 적용(2촌 x),
+        float 쓰지 않고 좌우 정렬,
+        width 값 무시하는 문제 o
+---------------------------------------------------------*/
+    display: flex; 
+    flex-wrap: wrap; /*width 100% 넘으면 아이템 밑으로 내림*/
+    justify-content: space-between; /*콘텐츠 사이 "여백", 첫 콘텐츠, 끝 콘텐츠 양 끝으로 붙이고 사이 여백 같게(space-around: 모든 콘텐츠 좌우 여백 같게*/
+    align-content: space-around; height: 1000px; /*상하 "여백" 같게(잘 쓰이지는 않음)*/
+}
+.con_s2 ul li{
+    width: 32%; 
+    position: relative;
+    overflow: hidden
+}
+.con_s2 ul li img{
+    width: 100%
+}
+.con_s2 ul li span{
+    position: absolute; left: 0; top: -50px;
+    width: 100%;
+    background: rgba(0,0,0,0.6);
+/*--------------------------------------------------------
+    flex 응용
+---------------------------------------------------------*/
+    display: flex;
+    justify-content: center; /*좌우 "정렬"*/
+    align-items: center; /*세로 "정렬"*/
+    opacity: 0; transition: .5s
+}
+.con_s2 ul li:hover span{
+    opacity: 1; top: 0
+}
+
+/*------------------------board.html---------------------*/
+.con_s3{
+    width: 1000px; margin: 100px auto
+}
+.con_s3 ul{
+    border: 1px solid red
+    /*list-style-image: url(../img/icon_2.png);
+    list-style-position: inside*/
+}
+.con_s3 ul li{
+    border-bottom: 1px dotted #000;
+    line-height: 3;
+    padding-left: 30px;
+    background: #000 url(../img/icon_2.png) left center no-repeat;
+/*---------------------------------------------------------
+background: 색상 url() 위치 반복패턴 attachment / 'size(익스 적용 안 됨)'
+
+background-position: left top;
+background-image: url();
+background-color: #000;
+background-attachment: fixed;
+background-size: width, height
+----------------------------------------------------------*/
+}
+.con_s3 ul li:nth-of-type(even){
+    background-color: #eee
+}
