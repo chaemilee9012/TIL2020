@@ -1,0 +1,21 @@
+@import url('common.css');
+
+.header{
+    width: 1920px;
+    position: relative
+}
+.header h1{}
+.header h1 a{}
+.header h1 a img{
+}
+.header ul{
+    position: absolute; right: 0; top: 0
+}
+.header ul li{
+    display: inline-block;
+}
+.header ul li > a{}
+
+.header .menu{
+}
+.header .menu span{}
