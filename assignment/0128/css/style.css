@@ -8,16 +8,17 @@ header{
 header .menu{
     border: 1px solid red;
     width: 1000px;
-    display: flex; align-items: center; justify-content: space-between
 }
 header .menu h1{
-    border: 1px solid blue
+    border: 1px solid blue;
+    float: left;
 }
 header .menu h1 a{}
 header .menu h1 a img{}
 
 header .menu nav{
-    border: 1px solid orange
+    border: 1px solid orange;
+    float: right;
 }
 header .menu nav ul{
 }
@@ -31,14 +32,14 @@ header .menu nav ul li:last-of-type{
 header .menu nav ul li a{
     font-size: 1.2em; font-weight: 600
 }
-header .menu:after{
-    content: '';
-    width: 1px; height: 1.5em; background: #ccc;
-    margin: 0 20px
-}
+ header .menu nav ul li:last-of-type a:after{
+    content: '|';
+    display: inline-block;
+    padding: 20px;
+} 
 header .burger{
     width: 20px; height: 10px; font-size: 0;
-    position: relative
+    position: relative;left: 20%;
 }
 header .burger span{
     width: 20px; height: 2px; background: #333;
