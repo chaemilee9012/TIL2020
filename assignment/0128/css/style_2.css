@@ -1,54 +1,48 @@
 @import url('common.css');
 
 header{
-    border: 1px solid green;
-    width: 1200px; display: flex; align-items: center;
-    padding: 10px 0
+    width: 90%;
+    padding: 10px 0;
+    display: flex; align-items: center
 }
-header .menu{
-    border: 1px solid red;
-    width: 1000px;
-}
-header .menu h1{
-    border: 1px solid blue;
-    float: left;
-}
-header .menu h1 a{}
-header .menu h1 a img{}
+header h1{}
+header h1 a{}
+header h1 a img{}
 
-header .menu nav{
-    border: 1px solid orange;
-    float: right;
+header .menu{
+    width: 100%;
+    display: flex; align-items: center; justify-content: flex-end;
+    position: relative
 }
-header .menu nav ul{
-}
+header .menu nav{}
+header .menu nav ul{}
 header .menu nav ul li{
     display: inline-block;
-    padding: 0 10px
+    padding: 0 20px
 }
 header .menu nav ul li:last-of-type{
-    padding: 0
+    padding-right: 0
 }
 header .menu nav ul li a{
     font-size: 1.2em; font-weight: 600
 }
- header .menu nav ul li:last-of-type a:after{
+header .menu nav ul li:last-of-type:after{
     content: '|';
-    display: inline-block;
-    padding: 20px;
+    color: #ccc; font-size: 1.2em; font-weight: normal;
+    margin: 0 30px
 } 
-header .burger{
-    width: 20px; height: 10px; font-size: 0;
-    position: relative;left: 20%;
+header .menu .burger{
+    width: 20px; height: 10px;
+    position: relative; right: 0
 }
-header .burger span{
-    width: 20px; height: 2px; background: #333;
+header .menu .burger span{
+    width: 20px; height: 1px; background: #333;
     position: absolute
 }
-header .burger span:nth-of-type(1){}
-header .burger span:nth-of-type(2){
+header .menu .burger span:nth-of-type(1){}
+header .menu .burger span:nth-of-type(2){
     top: 5px
 }
-header .burger span:nth-of-type(3){
+header .menu .burger span:nth-of-type(3){
     top: 10px
 }
