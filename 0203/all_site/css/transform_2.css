@@ -12,6 +12,7 @@ h1{
     font-size: 2em;
     padding-bottom: 50px
 }
+
 .scale figure{
     overflow: hidden
 }
@@ -21,4 +22,31 @@ h1{
 .scale figure:hover img{
     transform: scale(1.6) rotate(180deg)
     /* scale: 가운데 기준 크기 변경 */
+}
+
+.scaleEx{}
+.scaleEx figure{
+    position: relative
+}
+.scaleEx figure img{}
+.scaleEx figure img:nth-of-type(1){
+    position: absolute; left: 50%; top: 0;
+    transform: translateX(-50%)
+}
+.scaleEx figure img:nth-of-type(2){
+    position: absolute; left: 50%; top: 0;
+    transform: scale(.8) translate(-50%);
+    transition: 0s .2s; opacity: 0;
+}
+.scaleEx figure img:nth-of-type(3){
+    position: absolute; left: 50%; top: 0;
+    transform: scale(.6) translateX(-50%);
+    transition: 0s .4s; opacity: 0;
+}
+.scaleEx figure:hover img:nth-of-type(1){}
+.scaleEx figure:hover img:nth-of-type(2){
+    opacity: 1
+}
+.scaleEx figure:hover img:nth-of-type(3){
+    opacity: 1
 }

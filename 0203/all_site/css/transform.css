@@ -24,31 +24,31 @@ h1{
     /* scale: 가운데 기준 크기 변경 */
 }
 
-.scaleEx{
-    position: relative;
-}
+.scaleEx{}
 .scaleEx figure{
-    width: 100%;
-    position: relative; left: 35%; top: 0;
+    position: relative
 }
-.scaleEx figure img{
-    position: absolute;
-    font-size: 0
+.scaleEx figure img{}
+.scaleEx figure img:nth-of-type(1){
+    position: absolute; left: 50%; top: 0;
+    transform: translateX(-50%)
 }
-.scaleEx figure img:nth-of-type(1){}
 .scaleEx figure img:nth-of-type(2){
-    transition-delay: .2s; opacity: 0
+    position: absolute; left: 50%; top: 0;
+    transform-origin: 0;
+    transform: scale(.8) translateX(-50%);
+    transition: 0s .2s; opacity: 0;
 }
 .scaleEx figure img:nth-of-type(3){
-    transition-delay: .4s; opacity: 0
+    position: absolute; left: 50%; top: 0;
+    transform-origin: 0;
+    transform: scale(.6) rotate(-45deg) translateX(-50%);
+    transition: 0s .4s; opacity: 0;
 }
-
 .scaleEx figure:hover img:nth-of-type(1){}
 .scaleEx figure:hover img:nth-of-type(2){
-    transform: scale(.8);
     opacity: 1
 }
 .scaleEx figure:hover img:nth-of-type(3){
-    transform: scale(.6) rotate(45deg);
     opacity: 1
 }
