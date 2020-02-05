@@ -1,0 +1,13 @@
+@import url('common.css');
+
+section{}
+section figure{}
+section figure img{}
+/* --------------- figcaption -------------------------------------------------- */
+section figcaption{}
+section figcaption h2{}
+section figcaption p{}
+/* --------------- nav --------------------------------------------------------- */
+nav{}
+nav a{}
+nav a code{}
