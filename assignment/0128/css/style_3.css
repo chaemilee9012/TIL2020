@@ -27,7 +27,7 @@ header div .menu nav ul li:last-of-type{
     padding-right: 0
 }
 header div .menu nav ul li a{
-    font-size: 1.2em; font-weight: 600
+    font-size: 1.2em; font-weight: 600; color: #333
 }
 header div .menu nav ul li:last-of-type:after{
     content: '|';
