@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond&display=swap');
 
 .container{
-    border: 1px solid red;
     width: 100%; background: #ede0df
 }
 .container section{
@@ -12,7 +11,6 @@
 }
 /* ---------------- figure ------------------------------------------ */
 .container section figure{
-    border: 1px solid blue;
     width: 100%;
     position: relative
 }
@@ -36,9 +34,8 @@
 }
 /* --------------- nav --------------------------------------------------------- */
 .container section nav{
-    border: 1px solid green;
     position: absolute; right: 0; top: 0;
-    transform: translate(15px, 300px)
+    transform: translate(-30px, 300px)
 }
 .container section nav ul{}
 .container section nav ul li{
@@ -53,24 +50,29 @@
     margin: 0
 }
 .container section nav ul li a{}
-/* ------------------ hover ------------------------------- */
-.container section nav ul li a:hover{
-    font-size: 3em;
-    padding-bottom: 70px
-}
-.container section nav ul li a:hover:after{
+.container section nav ul li a:after{
     content: '';
-    width: 1px; height: 70px; background: #333;
-    position: absolute; right: 0; top:0;
-    transform: translateY(60px)
+    width: 1px; height: 0; background: #333;
+    position: absolute;
+    transform: translateY(70px);
+    transition: .5s
 }
-.container section nav ul li:last-of-type a:hover{
+.container section nav ul li:last-of-type a:after{
+    height: 0; 
+    transform: translateY(-60px)
+}
+/* ------------------ hover ------------------------------------------- */
+.container section nav ul li:hover a{
+    font-size: 3em;
+    padding-bottom: 80px
+}
+.container section nav ul li:hover a:after{
+    height: 60px
+}
+.container section nav ul li:last-of-type:hover a{
     padding-bottom: 0;
     padding-top: 70px
 }
-.container section nav ul li:last-of-type a:hover:after{
-    content: '';
-    width: 1px; height: 70px; background: #333;
-    position: absolute; right: 0; bottom:0;
-    transform: translateY(5px)
+.container section nav ul li:last-of-type:hover a:after{
+    height: 60px
 }
