@@ -1,0 +1,72 @@
+@import url('common.css');
+
+html, body{
+    height:100%
+}
+article{
+    height:100%;
+    display:flex; align-items: center;
+    flex-direction: column
+}
+h1{
+    font-size:2em; color:rgb(121, 58, 58);padding-bottom:50px
+}
+/* ---------------- zero ----------------------------
+.ani_03{}
+.ani_03 h1{}
+.ani_03 div{}
+.ani_03 div figure{}
+.ani_03 div figure img{}
+.ani_03 div figure img:nth-of-type(1){}
+.ani_03 div figure img:nth-of-type(2){}
+.ani_03 div figure img:nth-of-type(3){}
+.ani_03 div figure img:nth-of-type(4){}
+.ani_03 div span{}
+*/
+
+.ani_03{
+    perspective: 400px
+}
+.ani_03 h1{}
+.ani_03 div{
+    border: 1px solid red;
+    width: 160px; height: 200px
+}
+.ani_03 div figure{
+    width: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    /* animation: spin 25s linear */
+}
+.ani_03 div figure img{
+    border: 1px solid #eee;
+    width: 100%;
+    position: absolute; top: 50px
+}
+
+.ani_03 div figure img:nth-of-type(1){
+    transform: rotateY(-45deg) translateZ(80px)
+}
+.ani_03 div figure img:nth-of-type(2){
+    transform: rotateY(45deg) translateZ(80px)
+}
+.ani_03 div figure img:nth-of-type(3){
+    transform: rotateY(135deg) translateZ(80px)
+}
+.ani_03 div figure img:nth-of-type(4){
+    transform: rotateY(225deg) translateZ(80px)
+}
+
+.ani_03 div span{}
+
+@keyframes spin{
+    0%{
+        transform: rotateY(0)
+    }
+    50%{
+        transform: rotateY(-360deg)
+    }
+    100%{
+        transform: rotateY(0)
+    }
+}
