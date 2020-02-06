@@ -55,7 +55,6 @@ h1{
 .ani_01 div p img{
     width: 100%
 }
-
 @keyframes ani01{
     /* 50%{
         transform: rotateY(180deg)
@@ -104,7 +103,6 @@ h1{
     background: #8a1f61;
     transform: translateZ(30px)
 }
-
 @keyframes ani02{
     0%{
         transform: rotateX(-25deg) rotateY(0deg)
