@@ -1,0 +1,112 @@
+@import url('common.css');
+
+html, body{
+    height:100%
+}
+article{
+    height:100%;
+    display:flex; justify-content: center; align-items: center;
+    flex-direction: column
+}
+h1{
+    font-size:2em; color:rgb(121, 58, 58);padding-bottom:50px
+}
+/* ----------------.ani_01 --------------------------------------------- */
+.ani_01{
+    perspective: 900px/* 부모 요소에 값 넣으면 자식 요소에 적용 */;
+    /* perspective(900px): 자식 요소에 직접 적용 */
+}
+.ani_01 div{
+    width: 500px; height: 250px;
+    transform: rotateY(0deg);
+    transform-style: preserve-3d;
+    /* 직계 자식 요소에 z-축 적용 > 겹쳐져 있는 앞, 뒤 요소 따로 핸들링 가능해짐 */
+    /* transition: .5s; */
+    animation: ani01 3s linear infinite;
+    /*
+    ease: 끝에서 서서히 멈춤
+    ease-in: 끝에서 빨라짐
+    ease-out: 끝에서 느려짐
+    ease-in-out: 빨라졌다가 느리게
+    linear: 속도 일정하게 */
+}
+.ani_01 div p{
+    width: 100%;
+    position: absolute;
+    backface-visibility: hidden; /* 뒤 이미지 감추기 */
+}
+.ani_01 div p:nth-of-type(1){
+    z-index: 20
+}
+.ani_01 div p:nth-of-type(2){
+    z-index: 10;
+    transform: /* translateZ(-100px) */ rotateY(180deg)/* 원본 이미지대로 보이게 한 번 더 반전 */;
+    width: 100%; height: 100%; background: #eee;
+    color: #9660dd;
+    font-size: 2em;
+    display: flex; justify-content: center; align-items: center;
+    text-shadow: 2px 2px #8a1f61
+}
+/* 
+.ani_01:hover div{
+    transform: rotateY(180deg)
+}
+ */
+.ani_01 div p img{
+    width: 100%
+}
+
+@keyframes ani01{
+    /* 50%{
+        transform: rotateY(180deg)
+    } */
+    100%{
+        transform: rotateY(360deg)
+    }
+}
+/* ----------------------- ani_02 ------------------------------------- */
+.ani_02{
+    perspective: 900px;
+}
+
+.ani_02 .box{
+    transform-style: preserve-3d;
+    position: relative;
+    width: 300px; height: 300px;
+    animation: ani02 4s linear infinite
+}
+.ani_02 .box div{
+    width: 100%; height: 100%;
+    position: absolute; top: 50px;
+    transform-style: preserve-3d;
+}
+.ani_02 .box div p{
+    margin-bottom: 5px; height: 33%;
+}
+.ani_02 .box div p span{
+    width: 23%; height: 100%;
+    background: #ddd;
+    display: inline-block
+}
+.ani_02 .box div:nth-of-type(1){
+    transform: rotateY(-45deg) translateZ(150px)
+}
+.ani_02 .box div:nth-of-type(2){
+    transform: rotateY(45deg) translateZ(150px)
+}
+.ani_02 .box div:nth-of-type(3){
+    transform: rotateY(135deg) translateZ(150px)
+}
+.ani_02 .box div:nth-of-type(4){
+    transform: rotateY(225deg) translateZ(150px)
+}
+.ani_02 .box div p span:hover{
+    background: #8a1f61;
+    transform: translateZ(30px)
+}
+
+@keyframes ani02{
+    100%{
+        transform: rotateY(-360deg)
+    }
+}
