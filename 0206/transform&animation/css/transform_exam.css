@@ -58,7 +58,7 @@ article{
     flex-direction: column;
     transform-style: preserve-3d;
     position: relative;
-    animation: spin 5s linear infinite
+    animation: spin2 5s linear infinite
 }
 .ani_02 div p{
     border: 1px solid red;
@@ -86,9 +86,9 @@ article{
 
 @keyframes spin2{
     0%{
-        transform: rotateX(-40deg) rotateY(0)
+        transform: rotateX(0deg) rotateY(0deg)
     }
     100%{
-        transform: rotateX(-40deg) rotateY(360deg)
+        transform: rotateX(40deg) rotateY(360deg)
     }
 }
