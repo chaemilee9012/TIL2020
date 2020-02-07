@@ -22,7 +22,7 @@
 /* --------------- figcaption -------------------------------------------------- */
 .container section figure figcaption{
     white-space: pre-line;
-    position: absolute; left: 0; bottom: 0;
+    position: absolute; left: 100px; bottom: 0;
     padding-bottom: 50px
 }
 .container section figure figcaption h2{
@@ -34,8 +34,7 @@
 }
 /* --------------- nav --------------------------------------------------------- */
 .container section nav{
-    position: absolute; right: 0; top: 0;
-    transform: translate(-30px, 300px)
+    position: absolute; right: 150px; top: 300px;
 }
 .container section nav ul{}
 .container section nav ul li{
