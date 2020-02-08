@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <title>텍스트 전달하기</title>
+
+</head>
+<body>
+
+<div class="container">
+    <div class="row max-height align-items-center">
+        <div class="col-10 mx-auto col-md-8 message-container text-center p-3">
+            <h4>메시지를 입력해 주세요.</h4>
+
+            <form id="message-form">
+                <input type="text" name="msg" id="message" class="w-100 my-3 p-2">
+                <input type="submit" id="submitBtn" class="btn btn-lg">
+            </form>
+
+            <h5 class="p-2 alert alert-danger my-3 feedback">Input 값을 입력해 주세요.</h5>
+            <h4 class="my-3">마지막으로 전달된 메시지</h4>
+            <h4 class="message-content">입력된 텍스트가 출력되는 영역</h4>
+
+        </div>
+    </div>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>

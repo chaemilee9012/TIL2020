@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    
+    <form id="form-container" class="form-container">
+        <div class="form-control">
+            <label for="city">City: </label><input type="text" id="city" placeholder="city">
+        </div>
+        <div class="form-control">
+            <button type="submit">검색</button>
+        </div>
+    </form>
+    
+    
+    <div class="nytimes-container">
+        <header>
+            <h3 id="nytimes-header">New York Times</h3>
+        </header>
+        <ul id="nytimes-articles" class="article-list">
+        </ul>
+    </div>
+
+</div>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="main.js"></script>
+
+</body>
+</html>

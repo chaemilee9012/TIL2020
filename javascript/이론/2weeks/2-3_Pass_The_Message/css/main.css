@@ -1,0 +1,13 @@
+:root {
+  --lightBlue: #999999;
+  --mainwhite: #f5f5f5;
+  --mainBlack: #333333;
+}
+body { background: var(--lightBlue); }
+
+.max-height { min-height: 100vh; }
+.message-container { background: var(--mainwhite); border-radius: 25px; }
+.message-content { color: var(--lightBlue); }
+#submitBtn { background: var(--lightBlue); color: var(--mainwhite); }
+.feedback { display: none; }
+.show { display: block; }

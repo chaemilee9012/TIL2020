@@ -1,0 +1,26 @@
+.container > div {
+    min-height: 100vh;
+}
+
+body {
+    background: #999999;
+}
+
+.quote-container {
+    border: solid 2px #eeeeee;
+    border-radius: 25px;
+    background: white;
+}
+
+#generate-btn {
+    color: white !important;
+    background: #5782ff !important;
+    border-color: #5782ff !important;
+    cursor: pointer;
+    font-size: 25px;
+    padding: 10px 15px;
+}
+
+.author {
+    color: #64b6ac;
+}
