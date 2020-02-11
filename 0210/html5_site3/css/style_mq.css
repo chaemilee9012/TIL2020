@@ -1,0 +1,191 @@
+@import url('common.css');
+
+/* --------------------- header ------------------------------------------------- */
+.wrap header{
+    padding: 0;
+    width: 16%; height: 100%; background: #242b2e;
+    text-align: right;
+    position: fixed; left: 0; top: 0; z-index: 10;
+    box-shadow: 5px 10px 20px #333
+}
+.wrap header h1{
+    margin: 0;
+    width: 100%; height: 125px;
+    background: #fff url('../img/logo.gif') no-repeat center
+}
+/* --------------------- nav ------------------------------------------------- */
+.wrap header nav{}
+.wrap header nav ul{
+    margin: 0
+}
+.wrap header nav ul li{}
+.wrap header nav ul li a{
+    width: 100%; background: linear-gradient(to bottom, #333b3f, #333);
+    font-size: 1.5rem; text-transform: uppercase;
+    color: #fff;
+    padding: 15px 25px;
+}
+.wrap header nav ul li:hover > a{
+    background: #2cb7b6
+}
+/* --------------------- filter ------------------------------------------------- */
+.wrap header dl{
+    width: 100%;
+    padding-right: 25px;
+    margin-bottom: 60px
+}
+.wrap header dl dt{
+    font-size: 1.5rem; font-weight: normal; text-transform: capitalize;
+    background: url('../img/icon2.png') no-repeat 100%;
+    color: #2cb7b6;
+    padding: 25px 25px
+}
+.wrap header dl dd{}
+.wrap header dl dd a{
+    color: #676c6e;
+    padding-bottom: 10px
+}
+.wrap header dl dd:last-of-type a{
+    padding-bottom: 0
+}
+.wrap header dl dd:hover a{
+    color: #fff; text-transform: capitalize
+}
+/* --------------------- social media ------------------------------------------------- */
+.wrap header .social_media{
+    padding-right: 25px;
+    margin-bottom: 25px
+}
+.wrap header .social_media li{
+    display: inline-block;
+    margin-left: 5px
+}
+.wrap header .social_media li a{
+    border-radius: 3px;
+    width: 24px; height: 24px;
+    background: url('../img/icon1.png') no-repeat center
+}
+.wrap header .social_media li:nth-of-type(1) a{
+    background-position: -12px
+}
+.wrap header .social_media li:nth-of-type(2) a{
+    background-position: -44px
+}
+.wrap header .social_media li:nth-of-type(3) a{
+    background-position: -78px
+}
+.wrap header .social_media li:nth-of-type(5) a{
+    background-position: -145px
+}
+.wrap header .social_media li:nth-of-type(6) a{
+    background-position: -178px
+}
+.wrap header .social_media li:nth-of-type(7) a{
+    background-position: -212px
+}
+/* ---------------------- p ---------------------------------------------------- */
+.wrap header p{
+    color: #676c6e;
+    padding-right: 25px;
+    margin: 0
+}
+/* --------------------- section ------------------------------------------------- */
+.wrap section{
+    width: 84%;
+    position: relative; left: 16%;
+    padding: 0; margin: 0
+}
+.wrap section div figure{
+    position: relative;
+    padding:0
+}
+.wrap section div figure img{
+    width: 100%
+}
+.wrap section div figure figcaption{
+    width: 100%; height: 100%;
+    background: rgba(46, 181, 173, 0.6);
+    text-align: center; line-height: 1.5em;
+    white-space: pre-line;
+    position: absolute; left: 0; top: 0;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    opacity: 0
+}
+.wrap section div figure:hover figcaption{
+    opacity: 1
+}
+.wrap section div figure figcaption strong{
+    font-size: 2rem; font-weight: normal;
+    color: #fff
+}
+.wrap section div figure figcaption small{
+    color: #fff
+}
+.wrap section div figure figcaption small:after{
+    content: '';
+    width: 60px; height: 1px; background: #fff;
+    position: absolute; left: 50%; top: 45%;
+    transform: translateX(-50%)
+}
+.wrap section div figure figcaption i{
+    width: 65px; height: 65px;
+    background: url('../img/icon5.png') no-repeat center;
+    margin-top: 40px
+}
+/* --------------------- aside ------------------------------------------------- */
+.wrap aside{
+    width: 280px;
+    position: absolute; right: 0
+}
+.wrap aside span{
+    width: 80px; height: 80px;
+    background: #2cb7b6 url('../img/icon6.png') no-repeat center;
+    position: absolute; right: 0; top: 0
+}
+.wrap aside ul{
+    margin: 0;
+    width: 100%;
+    position: absolute; right: -100%; top: 80px;
+    transition: .5s
+}
+.wrap aside ul li{
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+}
+.wrap aside ul li a{
+    width: 100%; padding: 15px 40px;
+    background: url('../img/icon4.png') no-repeat left top;
+    font-size: 1.3em; color: #fff
+}
+.wrap aside ul li:nth-of-type(2) a{
+    background-position: 10px 15px
+}
+.wrap aside ul li:nth-of-type(3) a{
+    background-position: 10px -20px
+}
+.wrap aside ul li:nth-of-type(4) a{
+    background-position: 10px -57px
+}
+.wrap aside:hover ul{
+    right:0
+}
+/* --------------------- media ------------------------------------------------- */
+@media (max-width: 992px) {
+    .wrap header{
+        height: auto; width: 100%
+    }
+    .wrap header nav ul{
+        display: flex;
+        justify-content: center;
+        background: linear-gradient(to bottom, #333b3f, #333);
+        margin: 0 !important;
+    }
+    .wrap header nav ul li{}
+    .wrap header dl, header span{
+        display: none
+    }
+    .wrap section{
+        width: 100%; left: 0
+    }
+}

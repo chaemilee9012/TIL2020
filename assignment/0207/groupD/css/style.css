@@ -58,11 +58,33 @@ header div .top_menu a img{
 }
 /* ---------------------- 비주얼 -------------------------------------------------------------- */
 .visual{
-    width: 1920px;
-    position: relative
+    width: 1920px; height: 760px;
+    position: relative;
+    /* overflow: hidden; */
+    /* animation: carousel 5s linear infinite; */
 }
 .visual figure img{
     width: 100%;
+    position: absolute; left: 0; top: 0;
+    animation: carousel 10s linear infinite
+}
+.visual figure img:nth-of-type(1){
+    z-index: 40;
+    /* animation: carousel 5s linear infinite */
+}
+.visual figure img:nth-of-type(2){
+    z-index: 30;
+    left: 100%
+    /* animation: carousel 5s 5s linear infinite */
+}
+.visual figure img:nth-of-type(3){
+    z-index: 20;
+    left: 200%
+    /* animation: carousel 5s 10s linear infinite */
+}
+.visual figure img:nth-of-type(4){
+    z-index: 10;
+    left: 300%
 }
 .visual figcaption{
     font-size: 3em; font-weight: 600;
@@ -85,9 +107,8 @@ section .best{
 }
 section .best h2:before{
     content: '';
-    width: 910px; height: 1px; background:#96d5c1;
+    width: 910px; height: 1px; background:#ccc;
     position: absolute; left: -240px; top: 15px
-    
 }
 section .best h2{}
 section .best h2 a{
@@ -96,14 +117,15 @@ section .best h2 a{
 }
 section .best h2:after{
     content: '';
-    width: 910px; height: 1px; background:#96d5c1;
+    width: 910px; height: 1px; background:#ccc;
     position: absolute; right: -240px; top: 15px
 }
 section .best .container{
     display: flex; flex-wrap: wrap
 }
 section .best .container figure{
-    width: 340px; margin: 0 30px 35px 0
+    width: 340px; margin: 0 30px 35px 0;
+    position: relative
 }
 section .best .container figure:nth-of-type(4n){
     margin-right: 0
@@ -113,7 +135,10 @@ section .best .container figure a{
 }
 section .best .container figure a img{
     width: 100%;
-    border: 1px solid #ccc;
+    border: 1px solid #ccc
+}
+section .best .container figure a:hover img{
+    transform: scale(1.1)
 }
 section .best .container figure figcaption{
     width: 100%;
