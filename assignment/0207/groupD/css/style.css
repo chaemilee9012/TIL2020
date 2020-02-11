@@ -11,10 +11,19 @@ header > div{
 }
 header div h1{}
 header div h1 a{
-    font-family: 'Baloo', cursive; font-size: 2.5em;
-    margin-right: 80px
+    font-family: 'Baloo', cursive; font-size: 2.5rem;
+    margin-right: 90px
 }
-/* ----------------------- 네비게이션 ---------------------------- */
+header div h1 strong{
+    font-family: 'Baloo', cursive; font-size: 2.5rem;
+}
+header div h1 strong:nth-of-type(1){
+    color: #f29a82
+}
+header div h1 strong:nth-of-type(2){
+    color: #96d5c1
+}
+/* ----------------------- 네비게이션 --------------------------------------------------------- */
 header div nav{}
 header div nav ul{}
 header div nav ul li{}
@@ -28,7 +37,7 @@ header div nav ul li:first-of-type a{
 header div nav ul li:last-of-type a{
     margin-right: 0
 }
-/* ---------------------- 아이콘 메뉴 ---------------------------- */
+/* ---------------------- 아이콘 메뉴 --------------------------------------------------------- */
 header div .top_menu{
     position: absolute; right: 0; top: 0
 }
@@ -47,17 +56,27 @@ header div .top_menu a:last-of-type{
 header div .top_menu a img{
     width: 30px
 }
-/* ---------------------- 비주얼 ---------------------------- */
+/* ---------------------- 비주얼 -------------------------------------------------------------- */
 .visual{
-    width: 1920px
+    width: 1920px;
+    position: relative
 }
-.visual img{
+.visual figure img{
     width: 100%;
-    padding-bottom: 150px
 }
-/* ---------------------- 베스트 ---------------------------- */
+.visual figcaption{
+    font-size: 3em; font-weight: 600;
+    white-space: pre-line;
+    text-align: right; line-height: 1.5em;
+    position: absolute; right: 235px; top: 50%;
+    transform: translateY(-50%)
+}
+.visual figcaption span{
+    font-size: 1.6rem; font-weight: normal
+}
+/* ---------------------- 베스트 -------------------------------------------------------------- */
 section{
-    width: 1920px
+    width: 1920px; padding-top: 150px
 }
 section .best{
     width: 1450px; margin: 0 auto;
@@ -66,7 +85,7 @@ section .best{
 }
 section .best h2:before{
     content: '';
-    width: 910px; height: 1px; background: #ccc;
+    width: 910px; height: 1px; background:#96d5c1;
     position: absolute; left: -240px; top: 15px
     
 }
@@ -77,7 +96,7 @@ section .best h2 a{
 }
 section .best h2:after{
     content: '';
-    width: 910px; height: 1px; background: #ccc;
+    width: 910px; height: 1px; background:#96d5c1;
     position: absolute; right: -240px; top: 15px
 }
 section .best .container{
@@ -109,7 +128,7 @@ section .best > a{
     font-size: 1.25em; text-decoration: underline;
     margin-bottom: 150px
 }
-/* ---------------------- 추천 상품 ---------------------------- */
+/* ---------------------- 추천 상품 ----------------------------------------------------------- */
 section .recommend{
     width: 1450px; margin: 0 auto;
     position: relative;
@@ -117,13 +136,13 @@ section .recommend{
 }
 section .recommend h2:before{
     content: '';
-    width: 910px; height: 1px; background: #ccc;
+    width: 910px; height: 1px; background:#96d5c1;
     position: absolute; left: -250px; top: 15px
 }
 section .recommend h2{}
 section .recommend h2:after{
     content: '';
-    width: 910px; height: 1px; background: #ccc;
+    width: 910px; height: 1px; background:#96d5c1;
     position: absolute; right: -250px; top: 15px
 }
 section .recommend h2 a{
@@ -147,7 +166,7 @@ section .recommend .container figure img{
     width: 100%;
     border: 1px solid #ccc
 }
-/* ---------------------- hover ------------------------------------- */
+/* ---------------------- hover -------------------------------------------------------------- */
 section .recommend .container figure figcaption{
     width: 100%; height: 100%;
     position: absolute; left: 0; top: 0
@@ -166,7 +185,7 @@ section .recommend .container figure:hover figcaption a{
 section .recommend .container figure figcaption a span{
     font-size: 1.25rem; color:#fff;
 }
-/* ----------------------- indigator ------------------------------------- */
+/* ----------------------- indigator --------------------------------------------------------- */
 section .recommend .container > a{
     width: 38px; height: 38px;
     background: url('../img/ic_arrow.png') no-repeat center;
@@ -185,14 +204,14 @@ section .recommend .container > a:last-of-type{
     right: 10px;
     background-position: -39px
 }
-/* ---------------------- 푸터 ---------------------------- */
+/* ---------------------- 푸터 --------------------------------------------------------------- */
 footer{
     width: 1920px; padding-top: 100px;
     text-align: center
 }
 footer nav{
     width: 100%;
-    border-top: 1px solid #ccc; border-bottom: 1px solid #ccc
+    border-top: 1px solid #f29a82; border-bottom: 1px solid #f29a82
 }
 footer nav ul{
     padding: 10px 0;
@@ -206,7 +225,7 @@ footer p{
     width: 100%; padding: 35px 0;
     white-space: pre-line; line-height: 1.5em;
 }
-/* ---------------------- ps ---------------------------- */
+/* ---------------------- ps ----------------------------------------------------------------- */
 footer .postscript{
     width: 100%;
     margin-bottom: 35px
