@@ -370,6 +370,17 @@ footer .postscript ul li img{
 footer .postscript ul li span{
     padding-left: 5px
 }
+
+.feedback{
+    width: 50px; height: 50px; border-radius: 50%;
+    border: 1px solid #f00;
+    position: fixed; z-index: 100;
+    right: 100px; bottom: 60px
+}
+.feedback img{
+    width: 100%
+}
+
 /* ---------------------- animation ----------------------------------------------------------- */
 @keyframes carousel {
     0%, 20%{

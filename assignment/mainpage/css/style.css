@@ -1,5 +1,5 @@
 @import url('common.css');
-@import url('https://fonts.googleapis.com/css?family=Baloo&display=swap');
+
 header{
     width: 1920px; padding: 25px 0
 }
@@ -261,6 +261,13 @@ footer .postscript ul li img{
 }
 footer .postscript ul li span{
     padding-left: 5px
+}
+
+span > a{
+    display: inline-block; 
+    width: 100px; height: 100px;
+    background: url('../img/ic_chat.png') no-repeat center;
+    position: fixed; left: 0; bottom: 0 z-index: 200
 }
 /* ---------------------- animation ----------------------------------------------------------- */
 @keyframes carousel {
