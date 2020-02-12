@@ -175,6 +175,12 @@
     .wrap header{
         height: auto; width: 100%
     }
+    /* -------- 분기점 없이 작은 화면에 맞도록 조정 
+    .wrap header ul li a{
+        font-size: 2vw
+    }
+    */
+
     .wrap header nav ul{
         display: flex;
         justify-content: center;
@@ -185,6 +191,16 @@
     .wrap header dl, header span{
         display: none
     }
+    .wrap section{
+        width: 100%; left: 0
+    }
+}
+
+@media (max-width: 480px) {
+    .wrap header{
+        height: auto; width: 100%
+    }
+    
     .wrap section{
         width: 100%; left: 0
     }
