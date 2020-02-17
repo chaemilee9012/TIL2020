@@ -4,6 +4,13 @@ var docHeight = 0;
 var scrollPos = document.documentElement.scrollTop;
 var topButton = document.getElementById('back-to-top');
 
+
+var a = document.document
+
+
+
+
+
 compare();
 
 function compare() {

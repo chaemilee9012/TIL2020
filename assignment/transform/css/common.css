@@ -1,6 +1,6 @@
 *{
     margin: 0; padding: 0;
-    font-family: '나눔고딕'; font-size: 14px; text-transform: uppercase; 
+    font-family: '나눔고딕'; font-size: 14px;
     color: #333;
     box-sizing: border-box;
     /*
@@ -10,14 +10,4 @@
         box-sizing:border-box는 이러한 문제점을
         해결해줌 (width,height 값이 변경 안됨)
     */
-}
-ul, li{
-    list-style-type: none;
-}
-a{
-    color:#333;
-    text-decoration: none;
-}
-strong, a{
-    display: inline-block;
 }

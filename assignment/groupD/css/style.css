@@ -1,0 +1,269 @@
+@import url('common.css');
+@import url('https://fonts.googleapis.com/css?family=Baloo&display=swap');
+
+header{
+    width: 1920px; padding: 25px 0
+}
+header > div{
+    width: 80%; margin: 0 auto;
+    display: flex; align-items: center;
+    position: relative
+}
+header div h1{}
+header div h1 a{
+    font-family: 'Baloo', cursive; font-size: 2.5rem;
+    margin-right: 90px
+}
+header div h1 strong{
+    font-family: 'Baloo', cursive; font-size: 2.5rem;
+}
+header div h1 strong:nth-of-type(1){
+    color: #f29a82
+}
+header div h1 strong:nth-of-type(2){
+    color: #96d5c1
+}
+/* ----------------------- 네비게이션 --------------------------------------------------------- */
+header div nav{}
+header div nav ul{}
+header div nav ul li{}
+header div nav ul li a{
+    font-size: 1.25em;
+    margin: 0 20px;
+}
+header div nav ul li:first-of-type a{
+    margin-left: 0
+}
+header div nav ul li:last-of-type a{
+    margin-right: 0
+}
+/* ---------------------- 아이콘 메뉴 --------------------------------------------------------- */
+header div .top_menu{
+    position: absolute; right: 0; top: 0
+}
+header div .top_menu input{
+    border-bottom: 1px solid #333;
+}
+header div .top_menu a{
+    padding: 0 25px
+}
+header div .top_menu a:first-of-type{
+    padding-left: 10px
+}
+header div .top_menu a:last-of-type{
+    padding-right: 0
+}
+header div .top_menu a img{
+    width: 30px
+}
+/* ---------------------- 비주얼 -------------------------------------------------------------- */
+.visual{
+    width: 1920px; height: 760px;
+    position: relative;
+    /* overflow: hidden; */
+    /* animation: carousel 5s linear infinite; */
+}
+.visual figure img{
+    width: 100%;
+    position: absolute; left: 0; top: 0;
+    animation: carousel 10s linear infinite
+}
+.visual figure img:nth-of-type(1){
+    z-index: 40;
+    /* animation: carousel 5s linear infinite */
+}
+.visual figure img:nth-of-type(2){
+    z-index: 30;
+    left: 100%
+    /* animation: carousel 5s 5s linear infinite */
+}
+.visual figure img:nth-of-type(3){
+    z-index: 20;
+    left: 200%
+    /* animation: carousel 5s 10s linear infinite */
+}
+.visual figure img:nth-of-type(4){
+    z-index: 10;
+    left: 300%
+}
+.visual figcaption{
+    font-size: 3em; font-weight: 600;
+    white-space: pre-line;
+    text-align: right; line-height: 1.5em;
+    position: absolute; right: 235px; top: 50%;
+    transform: translateY(-50%)
+}
+.visual figcaption span{
+    font-size: 1.6rem; font-weight: normal
+}
+/* ---------------------- 베스트 -------------------------------------------------------------- */
+section{
+    width: 1920px; padding-top: 150px
+}
+section .best{
+    width: 1450px; margin: 0 auto;
+    position: relative;
+    text-align: center
+}
+section .best h2:before{
+    content: '';
+    width: 910px; height: 1px; background:#ccc;
+    position: absolute; left: -240px; top: 15px
+}
+section .best h2{}
+section .best h2 a{
+    font-size: 2.08em; font-weight: 600;
+    padding: 0 40px; margin-bottom: 85px
+}
+section .best h2:after{
+    content: '';
+    width: 910px; height: 1px; background:#ccc;
+    position: absolute; right: -240px; top: 15px
+}
+section .best .container{
+    display: flex; flex-wrap: wrap
+}
+section .best .container figure{
+    width: 340px; margin: 0 30px 35px 0;
+    position: relative
+}
+section .best .container figure:nth-of-type(4n){
+    margin-right: 0
+}
+section .best .container figure a{
+    width: 100%
+}
+section .best .container figure a img{
+    width: 100%;
+    border: 1px solid #ccc
+}
+section .best .container figure a:hover img{
+    transform: scale(1.1)
+}
+section .best .container figure figcaption{
+    width: 100%;
+    text-align: center; line-height: 2em;
+}
+section .best .container figure figcaption a{
+    padding-top: 15px;
+    white-space: pre-line;
+}
+section .best .container figure figcaption a strong{}
+section .best > a{
+    font-size: 1.25em; text-decoration: underline;
+    margin-bottom: 150px
+}
+/* ---------------------- 추천 상품 ----------------------------------------------------------- */
+section .recommend{
+    width: 1450px; margin: 0 auto;
+    position: relative;
+    text-align: center
+}
+section .recommend h2:before{
+    content: '';
+    width: 910px; height: 1px; background:#96d5c1;
+    position: absolute; left: -250px; top: 15px
+}
+section .recommend h2{}
+section .recommend h2:after{
+    content: '';
+    width: 910px; height: 1px; background:#96d5c1;
+    position: absolute; right: -250px; top: 15px
+}
+section .recommend h2 a{
+    font-size: 2.08em; font-weight: 600;
+    padding: 0 40px; margin-bottom: 85px
+}
+section .recommend .container{
+    width: 1450px; margin: 0 auto;
+    display: flex; flex-wrap: wrap;
+    position: relative
+}
+section .recommend .container figure{
+    width: 340px; height: 340px;
+    margin-right: 30px;
+    position: relative
+}
+section .recommend .container figure:last-of-type{
+    margin-right: 0
+}
+section .recommend .container figure img{
+    width: 100%;
+    border: 1px solid #ccc
+}
+/* ---------------------- hover -------------------------------------------------------------- */
+section .recommend .container figure figcaption{
+    width: 100%; height: 100%;
+    position: absolute; left: 0; top: 0
+}
+section .recommend .container figure figcaption a{
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+    font-size: 2.08em; color:#fff; line-height: 1.5em;
+    white-space: pre-line;
+    display: flex; flex-direction: column; justify-content: center;
+    opacity: 0; transition: .3s
+}
+section .recommend .container figure:hover figcaption a{
+    opacity: 1
+}
+section .recommend .container figure figcaption a span{
+    font-size: 1.25rem; color:#fff;
+}
+/* ----------------------- indigator --------------------------------------------------------- */
+section .recommend .container > a{
+    width: 38px; height: 38px;
+    background: url('../img/ic_arrow.png') no-repeat center;
+    position: absolute; top: 50%;
+    transform: translateY(-50%);
+    opacity: 0; transition: .3s .2s
+}
+section .recommend .container:hover > a{
+    opacity: 60%
+}
+section .recommend .container > a:first-of-type{
+    left: 10px;
+    background-position: 0
+}
+section .recommend .container > a:last-of-type{
+    right: 10px;
+    background-position: -39px
+}
+/* ---------------------- 푸터 --------------------------------------------------------------- */
+footer{
+    width: 1920px; padding-top: 100px;
+    text-align: center
+}
+footer nav{
+    width: 100%;
+    border-top: 1px solid #f29a82; border-bottom: 1px solid #f29a82
+}
+footer nav ul{
+    padding: 10px 0;
+    display: flex; justify-content: center
+}
+footer nav ul li{}
+footer nav ul li a{
+    padding: 5px 0; margin: 0 30px;
+}
+footer p{
+    width: 100%; padding: 35px 0;
+    white-space: pre-line; line-height: 1.5em;
+}
+/* ---------------------- ps ----------------------------------------------------------------- */
+footer .postscript{
+    width: 100%;
+    margin-bottom: 35px
+}
+footer .postscript ul{}
+footer .postscript ul li{
+    margin: 0 30px;
+    display: inline-flex; align-items: center
+}
+footer .postscript ul li a{}
+footer .postscript ul li img{
+    height: 30px
+}
+footer .postscript ul li span{
+    padding-left: 5px
+}
