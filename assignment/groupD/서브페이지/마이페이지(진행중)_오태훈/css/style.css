@@ -1,0 +1,195 @@
+@import url('common.css');
+
+
+.total{margin:0 235px;}
+
+header{width:100%;
+height: 100px;
+background: black;
+color: white;
+text-align: center;}
+/*header*/
+
+header {
+    width: 100%;
+    height: 100px;
+    background: #121212;
+    padding: 36px 0;
+    position: fixed;
+    z-index: 30;
+    top:0;
+    }
+
+header .allheader {
+    display: flex;
+    background: #121212;
+    justify-content: space-between;
+   
+    width: 100%;
+    padding: 0 235px;
+    
+    
+}
+
+header .leftmenu {
+    display: flex;
+    justify-content: center;
+     align-items: center;
+
+}
+
+header .leftmenu h1 {
+    font-size: 30px;
+    color: white;
+    margin-right: 70px;
+
+}
+
+
+header .leftmenu h1 p{text-align: center;
+color: white;
+font-size: 12px}
+header .leftmenu nav {}
+
+header .leftmenu nav ul {
+    display: flex;
+}
+
+header .leftmenu nav ul li {}
+header .leftmenu nav ul li a{}
+header .leftmenu nav ul li div{position: relative;
+}
+header .leftmenu nav ul li div a{display: none;}
+header .leftmenu nav ul li div a{
+    display: none;
+    top:0; left:0;
+    width:100%;
+    margin-top: 15px;
+}
+header .leftmenu nav ul li a:hover{
+    text-decoration: underline;
+}
+header .leftmenu nav ul li:hover div a{
+   display: block;
+    margin-bottom: 10px;
+    
+}
+
+header .leftmenu nav ul li a {
+    margin-right: 50px;
+    color: white;
+}
+
+header .submenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .submenu .search {}
+
+header .submenu .search input {
+    outline: inherit;
+    border-right: none;
+    border-top: none;
+    border-left: none;
+    border-bottom: 2px solid white;
+    background: none;
+    color: white;
+    text-align: left;
+    
+}
+header .submenu .search button{
+    background: none;
+    border: none;
+}
+header .submenu .search button img{
+    margin-top: 5px;
+        width:20px;
+    height: 20px;
+}
+
+header .submenu .member {}
+
+header .submenu .member a {}
+
+header .submenu .member a img {
+    width: 20px;
+    height: 20px;
+    margin-left: 40px;
+}
+
+
+/*룸박스*/
+.roombox h2{
+    font-size: 30px;
+    color: black;
+    margin-top: 35px;
+    margin-bottom: 25px;
+}
+
+.roombox p a{color: black;
+margin-bottom: 70px;}
+
+
+/*section*/
+section{overflow: hidden;}
+section .userall{
+    margin-left: 235px;
+    float: left;
+}
+section .user{border: 1px solid #ccc;
+width:200px;}
+section .user p{
+    margin-top: 12px;
+}
+section .user figure{}
+
+section .user2{border: 1px solid #ccc;
+width:200px;
+margin-top: 200px;}
+section .user2 p{
+    margin-top: 12px;
+}
+
+
+section .order{
+    float: right;
+    margin-right: 235px;
+}
+section .order1{border: 1px solid #ccc;
+width:700px;
+}
+section .order1 p{
+    margin-top: 12px;
+}
+
+section .order2{border: 1px solid #ccc;
+width:700px;
+margin: 100px 0;}
+section .order2 p{
+    margin-top: 12px;
+}
+
+
+section .order3{border: 1px solid #ccc;
+width:700px;}
+
+section .order3 p{
+    margin-top: 12px;
+}
+
+
+
+/*하단*/
+
+.next{margin-top: 70px;}
+.next p{text-align: center;
+color: black;
+}
+
+footer{background:black;
+height: 200px;
+color: white;
+text-align: center;}
+
