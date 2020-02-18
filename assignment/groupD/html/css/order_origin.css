@@ -2,11 +2,12 @@
 @import url('https://fonts.googleapis.com/css?family=Baloo&display=swap');
 
 header{
-    width: 100%; padding: 0 235px;
+    width: 1920px;
     background: #fff;
     position: fixed; z-index: 100; top: 0
 }
 header > div{
+    margin: 0 235px;
     display: flex; align-items: center
 }
 /* --------------------- 로고 ------------------------------------------------------------------ */
@@ -106,16 +107,22 @@ header div .top_menu a:first-of-type{
 header div .top_menu a img{
     width: 2em
 }
-/* ---------------------- 타이틀 --------------------------------------------------------- */
+
+
+
+
+
+
+
+
+/* ---------------------- 장바구니_1단계 --------------------------------------------------------- */
 section{
-    border: 1px solid #333;
-    width: 100%; padding: 80px 235px 0 235px
+    width: 1920px; padding: 80px 235px 0 235px;
 }
 section .title{
-    border: 1px solid orange;
-    width:100%; padding: 35px 0; margin-bottom: 85px;
+    top: 80px;
+    width:100%; padding-top: 35px;
     text-align:left;
-    position: relative
 }
 section .title h2{
     font-size:30px;
@@ -124,8 +131,11 @@ section .title h2{
 }
 section .title:after{
     content:'';
-    width:100%; height:2px; background:#ccc;
-    position: absolute; left: 0; bottom: 0; 
+    background:#ccc;
+    display:block;
+    width:calc(1920px - 470px);
+    height:2px;
+    margin-top:35px;
 }
 section .title a{
     padding: 0 1em;
@@ -134,44 +144,7 @@ section .title a:first-of-type{
     padding-left: 0
 }
 section .title a span{}
-/* ---------------------- 상품 목록 --------------------------------------------------------- */
-section .product_list{
-    border: 1px solid #f00;
-    width: 100%; margin-bottom: 40px
-}
-section .product_list caption{}
-section .product_list thead{}
-section .product_list thead tr{}
-section .product_list thead tr th{}
-section .product_list tbody{}
-section .product_list tbody tr{}
-section .product_list tbody tr td{}
-section .product_list tbody tr td input{}
-section .product_list tbody tr td img{}
-/* ---------------------- 주문 금액 --------------------------------------------------------- */
-section .price{
-    border: 1px solid #00f;
-    width: 100%; margin-bottom: 30px    
-}
-section .price caption{}
-section .price tbody{}
-section .price tbody tr{}
-section .price tbody tr td{}
-/* ---------------------- 버튼 --------------------------------------------------------- */
-section .button{
-    border: 1px solid #090;
-    width: 100%; margin-bottom: 45px
-}
-section .button li{}
-section .button li a{}
-/* ---------------------- 이용 안내 --------------------------------------------------------- */
-section .notice{
-    border: 1px solid orange;
-    width: 100%
-}
-section .notice h2{}
-section .notice ul{}
-section .notice ul li{}
+
 
 
 
@@ -193,7 +166,7 @@ aside .feedback img{
 }
 /* ---------------------- 푸터 ----------------------------------------------------------------- */
 footer{
-    width: 100%; padding-top: 100px;
+    width: 1920px; padding-top: 100px;
     text-align: center
 }
 footer nav{
