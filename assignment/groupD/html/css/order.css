@@ -1,0 +1,204 @@
+@import url('common.css');
+@import url('https://fonts.googleapis.com/css?family=Baloo&display=swap');
+
+header{
+    width: 1920px;
+    background: #fff;
+    position: fixed; z-index: 100; top: 0
+}
+header > div{
+    margin: 0 235px;
+    display: flex; align-items: center
+}
+/* --------------------- 로고 ------------------------------------------------------------------ */
+header div h1{}
+header div h1 a{
+    font-family: 'Baloo', cursive; font-size: 2.5rem;
+    margin-right: 90px
+}
+header div h1 strong{
+    font-family: 'Baloo', cursive; font-size: 2.5rem;
+}
+header div h1 strong:nth-of-type(1){
+    color: #f29a82  
+}
+header div h1 strong:nth-of-type(2){
+    color: #96d5c1
+}
+/* ----------------------- 네비게이션 --------------------------------------------------------- */
+header div nav{
+    display: flex
+}
+header div:hover nav{
+    margin-bottom: 30px
+}
+header div nav dl{
+    text-align: center;
+    margin: 0 3px
+}
+header div nav dl:first-of-type{
+    margin-left: 0
+}
+header div nav dl:last-of-type{
+    margin-right: 0
+}
+header div nav dl dt{
+    position: relative
+}
+header div nav dl dt a{
+    width: 100px; padding: 30px 0;
+    font-size: 1.25em
+}
+header div nav dl dt a:after{
+    content: '';
+    width: 0; height: 2px; background: #ccc;
+    border-radius: 2px;
+    position: absolute; left: 50%; bottom: 0;
+    transform: translateX(-50%);
+    transition: .5s
+}
+header div nav dl:hover dt a:after{
+    width: 100%
+}
+header div nav dl dd{
+    margin-top: 10px;
+    position: relative;
+    display: none
+}
+header div:hover nav dl dd{
+    display: block
+}
+header div nav dl dd a{
+    width: 100px;
+    padding: 5px 0
+}
+header div nav dl:nth-of-type(odd) dd a:after{
+    content: '';
+    width: 90px; height: 30px; background: rgba(242, 154, 130, 0.3);
+    position: absolute; left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden
+}
+header div nav dl:nth-of-type(even) dd a:after{
+    content: '';
+    width: 90px; height: 30px; background: rgba(150, 213, 193, 0.3);
+    position: absolute; left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden
+}
+header div nav dl dd:hover a:after{
+    visibility: visible
+}
+/* ---------------------- 아이콘 메뉴 --------------------------------------------------------- */
+header div .top_menu{
+    position: absolute; right: 235px; top: 20px
+}
+header div .top_menu input{
+    border-bottom: 1px solid #333;
+    outline-style: none
+}
+header div .top_menu a{
+    padding: 10px 5px;
+    margin-left: 25px
+}
+header div .top_menu a:first-of-type{
+    margin-left: 0
+}
+header div .top_menu a img{
+    width: 2em
+}
+
+
+
+
+
+
+
+
+/* ---------------------- 장바구니_1단계 --------------------------------------------------------- */
+section{
+    width: 1920px; padding: 80px 235px 0 235px;
+}
+section .title{
+    top: 80px;
+    width:100%; padding-top: 35px;
+    text-align:left;
+}
+section .title h2{
+    font-size:30px;
+    color:#333;
+    margin-bottom:35px;
+}
+section .title:after{
+    content:'';
+    background:#ccc;
+    display:block;
+    width:calc(1920px - 470px);
+    height:2px;
+    margin-top:35px;
+}
+section .title a{
+    padding: 0 1em;
+}
+section .title a:first-of-type{
+    padding-left: 0
+}
+section .title a span{}
+
+
+
+
+
+
+
+
+
+/* ---------------------- 1:1 채팅 ----------------------------------------------------------------- */
+aside .feedback{
+    width: 50px; height: 50px; border-radius: 50%;
+    background: #fff url('../img/ic_chat.png') no-repeat center;
+    border: 2px solid #333;
+    position: fixed; z-index: 100;
+    right: 100px; bottom: 60px
+}
+aside .feedback img{
+    width: 100%;
+}
+/* ---------------------- 푸터 ----------------------------------------------------------------- */
+footer{
+    width: 1920px; padding-top: 100px;
+    text-align: center
+}
+footer nav{
+    width: 100%;
+    border-top: 1px solid #ccc; border-bottom: 1px solid #ccc
+}
+footer nav ul{}
+footer nav ul li{}
+footer nav ul li a{
+    padding: 15px 0; margin: 0 30px
+}
+footer nav ul li:last-of-type a{
+    margin-right: 0
+}
+footer p{
+    width: 100%; padding: 35px 0;
+    white-space: pre-line; line-height: 1.5em
+}
+/* ---------------------- ps ------------------------------------------------------------------ */
+footer .postscript{
+    width: 100%;
+    margin-bottom: 35px
+}
+footer .postscript{}
+footer .postscript li{
+    margin: 0 30px;
+    display: inline-flex; align-items: center
+}
+footer .postscript li a{}
+footer .postscript li img{
+    height: 30px
+}
+footer .postscript li span{
+    padding-left: 5px
+}
