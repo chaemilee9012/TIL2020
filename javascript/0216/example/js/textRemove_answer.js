@@ -14,7 +14,7 @@ function type(){
         console.log(textArray[j].charAt(i));
         target.innerHTML += textArray[j].charAt(i);
         i++;
-        setTimeout(type, 800);
+        setTimeout(type, 100);
     }
     else {
         remove();
@@ -34,7 +34,7 @@ function remove(){
         i--;
         console.log(textArray[j].slice(0,i));
         target.innerHTML = textArray[j].slice(0,i);
-        setTimeout(remove, 800);
+        setTimeout(remove, 100);
     }
 }
 //다음 문자열로 넘어감

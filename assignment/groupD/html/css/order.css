@@ -1,10 +1,14 @@
 @import url('common.css');
 @import url('https://fonts.googleapis.com/css?family=Baloo&display=swap');
 
+.wrap{
+    width: 100%
+}
 /* ---------------------- header --------------------------------------------------------- */
 header{
     border: 1px solid #00f;
-    width: 100%;
+    width: 70%; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center
 }
 header h1{
     border: 1px solid #f00;
@@ -28,11 +32,31 @@ header nav{}
 header nav dl{}
 header nav dl dt{}
 header nav dl dd{}
+/* ---------------------- 검색 --------------------------------------------------------- */
+header .search{
+    border: 1px solid #333;
+    width: 10%;
+    /* display: flex; justify-content: flex-end */
+}
+header .search input{
+    background: orange
+}
+header .search a{}
+header .search a img{
+    width: 100%; 
+}
 /* ---------------------- 아이콘 --------------------------------------------------------- */
-header .icon{}
-header .icon input{}
-header .icon a{}
-header .icon a img{}
+header .icon{
+    border: 1px solid #0a0;
+    width: 10%;
+    display: flex; justify-content: space-between; align-items: center
+}
+header .icon a{
+    display: flex; justify-content: space-between; align-items: center
+}
+header .icon a img{
+    width: 100%
+}
 /* ---------------------- 타이틀 --------------------------------------------------------- */
 section{
     width: 100%; padding: 80px 235px 0 235px
