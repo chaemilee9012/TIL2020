@@ -2,12 +2,11 @@
 @import url('https://fonts.googleapis.com/css?family=Baloo&display=swap');
 
 header{
-    width: 1920px;
+    width: 100%; padding: 0 235px;
     background: #fff;
     position: fixed; z-index: 100; top: 0
 }
 header > div{
-    margin: 0 235px;
     display: flex; align-items: center
 }
 /* --------------------- 로고 ------------------------------------------------------------------ */
@@ -107,35 +106,18 @@ header div .top_menu a:first-of-type{
 header div .top_menu a img{
     width: 2em
 }
-
-
-
-
-
-
-
-
-/* ---------------------- 장바구니_1단계 --------------------------------------------------------- */
+/* ---------------------- 타이틀 --------------------------------------------------------- */
 section{
-    width: 1920px; padding: 80px 235px 0 235px;
+    width: 100%; padding: 80px 235px 0 235px
 }
 section .title{
-    top: 80px;
-    width:100%; padding-top: 35px;
+    width:100%; padding: 35px 0; margin-bottom: 85px;
     text-align:left;
+    position: relative
 }
 section .title h2{
-    font-size:30px;
-    color:#333;
+    font-size:2.5em;
     margin-bottom:35px;
-}
-section .title:after{
-    content:'';
-    background:#ccc;
-    display:block;
-    width:calc(1920px - 470px);
-    height:2px;
-    margin-top:35px;
 }
 section .title a{
     padding: 0 1em;
@@ -143,15 +125,145 @@ section .title a{
 section .title a:first-of-type{
     padding-left: 0
 }
-section .title a span{}
+section .title:after{
+    content:'';
+    width:100%; height:2px; background:#ccc;
+    position: absolute; left: 0; bottom: 0; 
+}
+/* ---------------------- 상품 목록 --------------------------------------------------------- */
+section .product_list{
+    width: 100%; margin-bottom: 35px;
+    text-align: center;
+    border-collapse: collapse;
+    border-top: 2px solid #f29a82; border-bottom: 2px solid #f29a82
+}
+section .product_list caption{
+    font-size: 1.5em; font-weight: 600;
+    text-align: left;
+    padding-bottom: 15px
+}
+section .product_list thead{
+    border-bottom: 1px solid #ccc
+}
+section .product_list thead tr{}
+section .product_list thead tr th{
+    font-size: 1.25em; font-weight: 600; color: #666;
+    padding: 15px 0;
+    
+}
+section .product_list thead tr th:nth-of-type(1){
+    width: 3%
+}
+section .product_list thead tr th:nth-of-type(2){
+    width: 10%
+}
+section .product_list thead tr th:nth-of-type(4){
+    width: 10%
+}
+section .product_list thead tr th:nth-of-type(5){
+    width: 10%
+}
+section .product_list thead tr th:nth-of-type(6){
+    width: 10%
+}
+section .product_list thead tr th:nth-of-type(7){
+    width: 10%
+}
+section .product_list tbody{}
+section .product_list tbody tr{}
+section .product_list tbody tr td{
+    padding: 20px
+}
+section .product_list tbody tr td input{}
+section .product_list tbody tr td img{}
+/* ---------------------- 주문 금액 --------------------------------------------------------- */
+section .price{
+    width: 100%; margin-bottom: 35px;
+    text-align: center;
+    border-collapse: collapse;
+    border: 2px solid #96d5c1
+}
+section .price tbody{}
+section .price tbody tr{}
+section .price tbody tr th{
+    font-size: 1.5em; font-weight: 600;
+    text-align: left; vertical-align: top;
+    padding: 15px
+}
+section .price tbody tr td{
+    padding: 15px 0; width: 15%;
+    font-size: 1.25rem
+}
+section .price tbody tr:nth-of-type(1){}
+section .price tbody tr:nth-of-type(2){
+    border-top: 1px dotted #ccc
+}
+section .price tbody tr:nth-of-type(3){
+    border-top: 1px solid #ccc
+}
+section .price tbody tr td:nth-of-type(2){
+    font-weight: 600
+}
+section .price tbody tr:nth-of-type(3) td:nth-of-type(1){
+    padding-right: 30px;
+    text-align: right;
+}
+section .price tbody tr:nth-of-type(3) td:nth-of-type(2){
+    color: #f29a82; font-size: 1.5rem
 
+}
+/* ---------------------- 버튼 --------------------------------------------------------- */
+section .button{
+    /* border: 1px solid #090; */
+    width: 100%; margin-bottom: 45px;
+    display: flex;
+    justify-content: space-between; align-items: center
+}
+section .button .bttn_manage{}
+section .button .bttn_manage li{}
+section .button .bttn_manage li a{
+    border: 1px solid #ccc;
+    padding: 5px 5px;
+    margin-right: 5px
+}
 
-
-
-
-
-
-
+section .button .bttn_order{}
+section .button .bttn_order li{
+    margin-left: 5px;
+    position: relative
+}
+section .button .bttn_order li a{
+    font-size: 1.2rem; font-weight: 600;
+    padding: 15px 60px
+}
+section .button .bttn_order li a:after{
+    content:'';
+    width: 95%; height: 85%;
+    border: 1px solid #fff;
+    position: absolute; left: 50%; top: 50%;
+    transform: translate(-50%, -50%)
+}
+section .button .bttn_order li:nth-of-type(1) a{
+    background: rgba(242, 154, 130, 0.6)
+}
+section .button .bttn_order li:nth-of-type(2) a{
+    background: rgba(150, 213, 193, 0.6)
+}
+/* ---------------------- 이용 안내 --------------------------------------------------------- */
+section .notice{
+    width: 100%;
+    text-align: justify;
+    word-break: keep-all;
+    word-wrap: break-word
+}
+section .notice h2{
+    font-size: 1.25em; font-weight: 600;
+    padding-bottom: 15px
+}
+section .notice p{
+    font-size: .9em;
+    line-height: 2em; white-space: pre-line;
+}
 
 /* ---------------------- 1:1 채팅 ----------------------------------------------------------------- */
 aside .feedback{
@@ -166,7 +278,7 @@ aside .feedback img{
 }
 /* ---------------------- 푸터 ----------------------------------------------------------------- */
 footer{
-    width: 1920px; padding-top: 100px;
+    width: 100%; padding-top: 100px;
     text-align: center
 }
 footer nav{
