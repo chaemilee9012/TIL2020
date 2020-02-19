@@ -133,18 +133,19 @@
         // 국어: 60점/ 영어: 80점
         // 총점: 140점/ 평균: 70점
 
-        // var a = prompt('국어점수?');
-        //     a = parseInt(a);
-        // var b = prompt('영어점수?');
-        //     b = parseInt(b);
-        // var sum = (a+b), avg = (a+b)/2;
-        // var c = prompt('이름?');
+        var a = prompt('국어점수?');
+            a = parseInt(a);
+        var b = prompt('영어점수?');
+            b = parseInt(b);
+        var sum = (a+b), avg = (a+b)/2;
+        var name = prompt('이름?');
 
-        if(c === '홍길동'){
+        if(name == '홍길동'){
             document.write("<br>국어: " + a + "점/ 영어: " + b + "점");
             document.write("<br>총점: " + sum + "점/ 평균: " + avg + "점");
         } else{
             alert('정보가 일치하지 않습니다.');
+            break;
         }
     </script>
 </body>

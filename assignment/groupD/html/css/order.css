@@ -28,7 +28,10 @@ header h1 strong:nth-of-type(2){
     color: #96d5c1
 }
 /* ---------------------- 네비게이션 --------------------------------------------------------- */
-header nav{}
+header nav{
+    border: 1px solid #ccc;
+    width: 100%
+}
 header nav dl{}
 header nav dl dt{}
 header nav dl dd{}
