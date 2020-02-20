@@ -1,73 +1,125 @@
 @import url('common.css');
 @import url('https://fonts.googleapis.com/css?family=Baloo&display=swap');
 
-.wrap{
-    width: 100%
-}
-/* ---------------------- header --------------------------------------------------------- */
 header{
-    border: 1px solid #00f;
-    width: 70%; margin: 0 auto;
-    display: flex; justify-content: space-between; align-items: center
+    width: 100%;
+     /* padding: 0 235px; */
+    background: #fff;
+    position: fixed; z-index: 100; top: 0
 }
-header h1{
-    border: 1px solid #f00;
-    margin-right: 90px
+header > div{
+    width: 80%; margin: 0 auto;
+    display: flex; align-items: center
 }
-header h1 a{
-    border: 1px solid green;
-    font-family: 'Baloo', cursive; font-size: 2.5rem
+/* --------------------- 로고 ------------------------------------------------------------------ */
+header div h1{}
+header div h1 a{
+    font-family: 'Baloo', cursive; font-size: 2.5rem;
+    margin-right: 50px
 }
-header h1 a strong{
-    font-family: 'Baloo', cursive; font-size: 2.5rem
+header div h1 strong{
+    font-family: 'Baloo', cursive; font-size: 2.5rem;
 }
-header h1 strong:nth-of-type(1){
+header div h1 strong:nth-of-type(1){
     color: #f29a82  
 }
-header h1 strong:nth-of-type(2){
+header div h1 strong:nth-of-type(2){
     color: #96d5c1
 }
-/* ---------------------- 네비게이션 --------------------------------------------------------- */
-header nav{
-    border: 1px solid #ccc;
+/* ----------------------- 네비게이션 --------------------------------------------------------- */
+header div nav{
+    display: flex
+}
+header div:hover nav{
+    margin-bottom: 30px
+}
+header div nav dl{
+    text-align: center;
+    margin: 0 3px
+}
+header div nav dl:first-of-type{
+    margin-left: 0
+}
+header div nav dl:last-of-type{
+    margin-right: 0
+}
+header div nav dl dt{
+    position: relative
+}
+header div nav dl dt a{
+    width: 100px; padding: 30px 0;
+    font-size: 1.25em
+}
+header div nav dl dt a:after{
+    content: '';
+    width: 0; height: 2px; background: #ccc;
+    border-radius: 2px;
+    position: absolute; left: 50%; bottom: 0;
+    transform: translateX(-50%);
+    transition: .5s
+}
+header div nav dl:hover dt a:after{
     width: 100%
 }
-header nav dl{}
-header nav dl dt{}
-header nav dl dd{}
-/* ---------------------- 검색 --------------------------------------------------------- */
-header .search{
-    border: 1px solid #333;
-    width: 10%;
-    /* display: flex; justify-content: flex-end */
+header div nav dl dd{
+    margin-top: 10px;
+    position: relative;
+    display: none
 }
-header .search input{
-    background: orange
+header div:hover nav dl dd{
+    display: block
 }
-header .search a{}
-header .search a img{
-    width: 100%; 
+header div nav dl dd a{
+    width: 100px;
+    padding: 5px 0
 }
-/* ---------------------- 아이콘 --------------------------------------------------------- */
-header .icon{
-    border: 1px solid #0a0;
-    width: 10%;
-    display: flex; justify-content: space-between; align-items: center
+header div nav dl:nth-of-type(odd) dd a:after{
+    content: '';
+    width: 90px; height: 30px; background: rgba(242, 154, 130, 0.3);
+    position: absolute; left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden
 }
-header .icon a{
-    display: flex; justify-content: space-between; align-items: center
+header div nav dl:nth-of-type(even) dd a:after{
+    content: '';
+    width: 90px; height: 30px; background: rgba(150, 213, 193, 0.3);
+    position: absolute; left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden
 }
-header .icon a img{
-    width: 100%
+header div nav dl dd:hover a:after{
+    visibility: visible
+}
+/* ---------------------- 아이콘 메뉴 --------------------------------------------------------- */
+header div .top_menu{
+    width: 80%; margin: 0 auto;
+    display: flex; justify-content: flex-end;
+    position: fixed; top: 2vh
+
+}
+header div .top_menu input{
+    border-bottom: 1px solid #333;
+    outline-style: none;
+}
+header div .top_menu a{
+    padding: 10px 5px;
+    margin-left: 25px
+}
+header div .top_menu a:first-of-type{
+    margin-left: 0
+}
+header div .top_menu a img{
+    width: 2em
 }
 /* ---------------------- 타이틀 --------------------------------------------------------- */
 section{
-    width: 100%; padding: 80px 235px 0 235px
+    width: 80%; margin: 0 auto
+    /* padding: 80px 235px 0 235px */
 }
 section .title{
     width:100%; padding: 35px 0; margin-bottom: 85px;
     text-align:left;
-    position: relative
+    position: relative; top: 80px
 }
 section .title h2{
     font-size:2.5em;

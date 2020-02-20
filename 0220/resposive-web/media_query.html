@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title></title>
+</head>
+<body>
+    <div class="res">
+        <div>font size</div>
+        <div>box size</div>
+    </div>
+    <style>
+        .res{
+            width: 1200px;
+            border: 5px solid #000
+        }
+        .res:after{
+            clear: left;
+            display: block;
+            content: '';
+        }
+        .res div{
+            width: 50%; height: 60vh;
+            border: 3px solid #f00;
+            box-sizing: border-box;
+            float: left;
+            font-size: 5vw
+            /* font-size: 95px */
+            /* 1vw: 디바이스 가로/100 */
+        }
+
+
+        /* @media "all screen and" → 기본값으로 처리(){} */
+        /* 큰 사이즈 → 작은 사이즈 순서로 작업 */
+        /* 대부분의 모든 안드로이드 모바일 해상도 360~410px: 480px에 맞추면 됨 */
+        
+        @media (max-width: 1024px){
+            .res{
+            width: 100%; /* → 사용자마다 화면 해상도 다르므로 정확한 크기 사용하면 안 됨 */
+            border: 5px solid #000
+            }
+            .res div{
+            /* width: 50%; height: 60vh; */
+            width: 50vw; height: 50vw; /* 콘텐츠 비율 유지하고 싶을 때: vw, vh 단위 사용하기 */
+            border: 3px solid #f00;
+            box-sizing: border-box;
+            float: left;
+            font-size: 5vw
+            }
+        }
+        /* @media (min-width: 481px) and (max-width: 768px){} → 애매할 것 같으면 최소&최대 범위 잡아도 OK */
+        @media (max-width: 768px){
+            .res{
+            width: 100%;
+            border: 5px solid #000
+            }
+            .res div{
+            width: 80%; height: 60vh;
+            margin: 0 auto;
+            border: 3px solid #f00;
+            box-sizing: border-box;
+            float: none; /*해당 분기점에서 float 값 지워도 상위 분기에 있는 float 값 적용 → none으로 처리하기 */
+            font-size: 5vw
+            }
+        }
+        /* 큰 사이즈 분기 작업 후 작은 사이즈도 잘 맞을 경우 분기점 나눌 필요 X */
+        /* @media (max-width: 480px){} */
+
+
+
+    </style>
+</body>
+</html>
