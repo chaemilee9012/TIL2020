@@ -1,7 +1,4 @@
-@import url('common.css');
-@import url('https://fonts.googleapis.com/css?family=Baloo&display=swap');
-
-header{
+﻿header{
     width: 1920px;
     background: #fff;
     position: fixed; z-index: 100; top: 0
