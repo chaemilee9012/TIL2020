@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>LED</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="led.css">
+</head>
+
+<body>
+    <marquee id="led" scrollamount="30">전광판으로 바꾸시오</marquee>
+
+
+    <div id="div-input">
+        <span class="label">글자: </span>
+        <input type="text" id="inputText" value="전광판"> 
+        <!-- oninput="txtContents();" -->
+        <!-- onkeyup도 사용가능 -->
+        
+        <span class="label">색상: </span>
+        <input type="text" id="inputColor" value="yellow">
+        <!-- oninput="txtColor();" -->
+    </div>
+
+<script src="led.js"></script>
+</body>
+
+</html>

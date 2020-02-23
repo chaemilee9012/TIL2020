@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="total">
+        <header>
+            <h1>무빙</h1>
+            <input type="text" placeholder="검색어를 입력하세요.">
+        </header>
+        
+        <content>
+            <h2>좌석예매</h2>
+            <p>간편하고 신속한 영화관 티켓 예매</p>
+            <div class="box clearfix">
+            <img src="img/thumb_%EB%A1%9C%EA%B7%B8%EC%9B%90.jpg" alt="로그 원:스타워즈 스토리">
+            <h3>해리포터와 아즈카반의 죄수(4DX)</h3>
+            <p class="date">2020년 2월26일(수) 오후 7:00</p>
+            <p class="date">영등포CGV 타임스퀘어점(잔여좌석 6석)</p>
+           <h4 id="number" type="number" >0</h4>
+           <span>장</span>
+           <button id="bt1">+</button>
+           <button id="bt2">-</button>
+          <span id="money">0</span><em>원 (수수료포함)</em><br>
+            <span class="org">전화번호, 이메일을 입력하면 에매정보 sms가 발송됩니다.</span>
+            
+        
+            <form>
+            <label for="tel">전화번호</label>
+            <div>
+            <input type="tel" value="010" class="tel">
+            <span>-</span>
+            <input type="tel" maxlength="4" class="tel">
+            <span>-</span>
+            <input type="tel" maxlength="4" class="tel">
+            </div>
+            
+            <label for="email">이메일 주소</label>
+            <div>
+            <input type="email" class="email">
+            <span>@</span>
+            <input type="email" class="email">
+            <select>
+                <option selected>직접입력</option>
+                <option>네이버</option>
+                <option>구글</option>
+            </select>
+            </div>
+            </form>
+            <span>입력하신 개인정보는</span>
+            
+            <div>
+            <ul>
+                <li>예매하신 극장에 제공되며, 티켓 발권에 이용됩니다.</li>
+                <li>입력된 날짜로부터 180일동안 보관되며,이후에 소멸합니다.</li>
+                <li>상영정보가 변경될 경우 입력하신 전화 및 이메일로 알려드립니다.</li>
+            </ul>
+            
+            </div>
+        </content>
+        
+        
+        
+        <footer>
+           <p id ="open"class="aa"><a href="#">클릭하여 모달 열기</a></p>
+           <div class="modal-wrapper"> 
+            <div class="modal">
+              <div class="moda-title">안녕하세요</div>
+              <p>모달 창을 열어봤습니다</p>
+              <p>document.getElementById</p>
+              <p>document.querySelector</p>
+              <p>.onclick = () =>{}</p>
+              <div class="close-wrapper">
+                <button id="close">닫기</button>
+              </div>
+            </div>
+          </div>
+            <div>
+                <p>Moving Inc., all rights reserved.</p>
+            </div>
+            <div class="footnav">
+            <p><a href="#">사이트맵</a></p>
+            <p>정책</p>
+            <p>저작권</p>
+            <p>이용안내</p>
+            <p>문의하기</p>
+            <p>데스크탑 버전</p>
+            </div>
+
+            <div class="footimg">
+            <p><img src="" alt=""></p>
+            <p><img src="" alt=""></p>
+            <p><img src="" alt=""></p>
+        </div>
+        </footer>
+    </div>
+    <script src="counter.js"></script>
+    <script src="modal.js"></script>
+</body>
+</html>

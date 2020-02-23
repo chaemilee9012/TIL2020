@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+    background-color: black;
+}
+#led {
+    color: yellow;
+    font-weight: bold;
+    font-size: 150px;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+}
+#inputText, #inputColor {
+    all: unset;
+    margin: 5px;
+    background-color: darkgray;
+    border-radius: 5px;
+    padding: 2px;
+    color: yellow;
+}
+.label {
+    color: white;
+}
+
+marquee{
+    /* scrollamount: 100; */
+}

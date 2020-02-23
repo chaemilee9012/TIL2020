@@ -1,0 +1,220 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+a{text-decoration: none;
+color:white}
+
+/*-----------------------------------*/
+/*css*/
+
+
+
+
+h4{
+	font-size: 30px;
+	color: white;
+}
+
+
+.total{
+ width:1100px;
+    height:950px;
+    border: 1px solid;
+    background: #1f2124;
+    margin:0 auto;
+}
+
+/*--------------header*/
+header{width:100%;
+padding: 10px;
+color: white;
+}
+
+header h1{font-size: 18px;display: inline;
+margin:10px;}
+
+header input{width:1000px;
+	height:37px;
+background: #2c2f34;
+border:none;}
+
+header input::placeholder{color:white;}
+
+/*------------------content*/
+content h2{font-size:20px;
+color: white;
+margin-bottom: 10px;
+padding-left: 10px;}
+
+content .box{margin:10px;
+
+}
+content .box img{float: left;
+width:140px;
+height:201px}
+
+content .clearfix{overflow: hidden;}
+
+content p{font-size: 16px;
+color: white;
+padding-left: 10px;
+}
+
+content em{color: white;}
+content .date{margin: 10px;}
+content .number{width:50px;
+color: white;
+background: #2c2f34;
+border:none;
+height:37px;
+font-size: 18px;
+text-align: center;}
+
+content .org{color:orangered;
+	padding-left: 10px;
+}
+
+content .qqq{font-size: 18px;
+color: white;
+margin-top:10px;}
+
+content h3{font-size:20px;
+color: white;
+margin:30px 0 20px 20px;}
+
+
+content form{margin:10px;}
+content form label{color: white;}
+content form input{background: #2c2f34;
+border: none;
+color: white;
+font-size: 18px;}
+
+content form .tel{width:270px;
+height:35px;}
+
+content form .email{width:336px;
+height:35px;}
+
+content ul{margin-left: 10px;
+color: white;}
+
+
+
+
+
+
+/* 모달창을 열어봅시다 */
+.modal-wrapper{
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background:rgba(0,0,0,0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+  }
+  
+  .modal{
+	background: tomato;
+	padding: 24px 16px;
+	border-radius: 4px;
+	width:320px;
+  }
+  
+  .modal-title{
+	font-size:24px;
+	font-weight: bold;
+  }
+  
+  .close-wrapper{
+	text-align: right;
+  }
+  
+  .modal-wrapper{display: none;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*-------------footer*/
+
+
+footer{text-align: center;
+margin-top:50px;
+color:white;}
+
+footer .aa{border: 1px solid white;
+border-radius: 30px;
+padding:10px;
+width:300px;
+text-align: center;
+display: inline-block;
+margin-bottom: 100px;
+}
+
+
+footer p{
+	display: inline-block;
+	padding-left: 21px;
+}
+
+footer .footnav{
+margin-top: 10px;
+}
+
+
+span{color: white;}
+
