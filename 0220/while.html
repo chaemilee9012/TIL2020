@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        table{
+            border: 1px solid #333;
+            /* border-collapse: collapse; */
+        }
+        td{
+            border: 1px solid #090
+        }
+    </style>
 </head>
 <body>
     <script>
@@ -12,59 +21,59 @@
         document.write("예제_1");
         document.write("<br>");
 
-        var num = 1;
-        var sum = null;
+        // var num = 1;
+        // var sum = null;
 
-        while(num < 5){
-            num++;
-            document.write(num + "<br>");
-        }
+        // while(num < 5){
+        //     num++;
+        //     document.write(num + "<br>");
+        // }
         
 
 
         //예제 2) ----------------------------------------------------------------------------------------------
-        document.write("<br><br><br>");
+        document.write("<br><br>");
         document.write("예제_2: 100 이하 짝수 총합 구하기");
 
-        var num = 1;
-        var sum = null;
+        // var num = 1;
+        // var sum = null;
 
-        while(num < 100){
-            num++;
-            if(num%2 == 0){
-                console.log(num);
-                //sum = sum + num; // sum 값 누적하면서 계산
-                sum += num; // +=: 기존 값에 +연산 후 변수에 대입
-            }
-            // else 조건없을 경우 안 적어도 됨
-            console.log(sum);
-        }
+        // while(num < 100){
+        //     num++;
+        //     if(num%2 == 0){
+        //         console.log(num);
+        //         //sum = sum + num; // sum 값 누적하면서 계산
+        //         sum += num; // +=: 기존 값에 +연산 후 변수에 대입
+        //     }
+        //     // else 조건없을 경우 안 적어도 됨
+        //     console.log(sum);
+        // }
 
-        document.write("<br>" + sum);
+        // document.write("<br>" + sum);
 
 
         //예제 3) ----------------------------------------------------------------------------------------------
-        document.write("<br><br>");
+        document.write("<br><br><br>");
         document.write("예제_3: 5 이하 짝수 모두 곱하기");
 
-        var num = 1;
-        var sum = 1;
+        // var num = 1;
+        // var sum = 1;
 
-        while(num < 5){
-            num++;
-            if(num%2 == 0){
-                console.log(num);
-                //sum = sum + num; // sum 값 누적하면서 계산
-                sum *= num; // +=: 기존 값에 +연산 후 변수에 대입
-            }
-            // else 조건없을 경우 안 적어도 됨
-            console.log(sum);
-        }
-        document.write("<br>" + sum);
+        // while(num < 5){
+        //     num++;
+        //     if(num%2 == 0){
+        //         console.log(num);
+        //         //sum = sum + num; // sum 값 누적하면서 계산
+        //         sum *= num; // +=: 기존 값에 +연산 후 변수에 대입
+        //     }
+        //     // else 조건없을 경우 안 적어도 됨
+        //     console.log(sum);
+        // }
+        // document.write("<br>" + sum);
 
 
         //예제 4) ----------------------------------------------------------------------------------------------
-        document.write("<br><br>");
+        document.write("<br><br><br>");
         document.write("예제_4: 100 이하 홀수 갯수 구하기");
 
         // var num = 1;
@@ -79,22 +88,22 @@
         //     // console.log(odd);
         // }
 
-        var num = 1;
-        var hole = 0;
+        // var num = 1;
+        // var hole = 0;
 
-        while(num <= 100){
-            num++;
-            if(num%2 == 1){
-                hole++;
-            }
-            // console.log(odd);
-        }
+        // while(num <= 100){
+        //     num++;
+        //     if(num%2 == 1){
+        //         hole++;
+        //     }
+        //     // console.log(odd);
+        // }
 
-        document.write("<br>" + hole);
+        // document.write("<br>" + hole);
 
 
         //예제 5) ----------------------------------------------------------------------------------------------
-        document.write("<br><br>");
+        document.write("<br><br><br>");
         document.write("예제_5: 3, 6, 9 구하기");
 
         // var num = 1;
@@ -111,37 +120,18 @@
 
         // document.write("<br>" + total);
 
-        document.write("<br>");
-        var num = 1;
-
-        while(num <= 100){
-            num++;
-            if(num%10 == 3 || num%10 == 6 || num%10 == 9){
-                // console.log(num);
-                document.write(num + " ");
-            }
-        }
-
-
-        //예제 5-1) ----------------------------------------------------------------------------------------------
-        document.write("<br><br>");
-        document.write("예제_5-1: 3, 6, 9 구하기 *조건 2개만 사용*");
-
+        // document.write("<br>");
         // var num = 1;
-        // var total = [];
 
         // while(num <= 100){
         //     num++;
         //     if(num%10 == 3 || num%10 == 6 || num%10 == 9){
-        //         console.log(num);
-        //         total.push(num);
+        //         // console.log(num);
+        //         document.write(num + " ");
         //     }
-        //     // console.log(total);
         // }
 
-        // document.write("<br>" + total);
-
-
+        //예제 5-1) ----------------------------------------------------------------------------------------------
         // 1/10 → 1
         // 2/10 → 2
         // 3/10 → 3
@@ -175,43 +165,177 @@
         // 27/10 → 7
         // 28/10 → 8
 
-
+        //예제 5-1) ----------------------------------------------------------------------------------------------
+        document.write("<br><br>");
+        document.write("예제_5-1: 3, 6, 9 구하기 *조건 1개만 사용*");
         document.write("<br>");
-        var num = 1;
 
-        while(num <= 100){
-            num++;
+        // var num = 1;
+
+        // while(num <= 100){
+        //     num++;
+
+        //     if(num%10 == 3){
+        //         document.write(num + " " + (num+3) + " " + (num+6) + " ");
+        //     }
+        // }
+
+
+        //예제 5-2) ----------------------------------------------------------------------------------------------
+        document.write("<br>");
+        document.write("예제_5-2: 3, 6, 9 구하기 *조건 2개만 사용*");
+        document.write("<br>");
+
+        // var num = 1;
+
+        // while(num <= 100){
+        //     num++;
             
-            if(num%3 == 0){
-                // console.log(num);
-                // console.log(num+3);
-                // console.log(num+6);
-                document.write(num );
-
-                // document.write((num + 3) + " ");
-                
-            }
-        }
-
+        //     if((num % 10) % 3 == 0 && (num % 10) != 0){
+        //         document.write(num + " ");                
+        //     }
+        // }
 
         //예제 6) ----------------------------------------------------------------------------------------------
         document.write("<br><br>");
         document.write("예제_6: 1~100 출력하기");
-
-        var num = 1;
-
         document.write("<br>");
-        while(num <= 100){
-            document.write(num + "/");
-            num++;
-        }
+
+        // var num = 1;
+
+        // while(num <= 100){
+        //     document.write(num + "/ ");
+        //     // if((num % 2) == 0){
+        //     //     continue; //조건문 제일 처음으로 돌아감
+        //     // }
+        //     if((num % 10) == 0){
+        //         document.write("<br>");
+        //     }
+        //     num++;
+        // }
+
+        // var num = 1;
+
+        // while(num <= 100){
+        //     // if((num % 2) == 0){
+        //     //     continue; //조건문 제일 처음으로 돌아감
+        //     // }
+        //     document.write(num + "/ ");
+        //     if((num % 10) == 0){
+        //         document.write("<br>");
+        //     }
+        //     num++;
+        // }
 
 
         //예제 7) ----------------------------------------------------------------------------------------------
-        document.write("<br><br>");
+        document.write("<br><br><br>");
         document.write("예제_7: 1/*/3/*/5/.../ 출력하기");
+        // document.write("<br>");
 
+
+        //예제 8) ----------------------------------------------------------------------------------------------
+        document.write("<br><br><br>");
+        document.write("예제_8: 10+20+30+40+50+60+70+80+90+100");
+        // document.write("<br>");
+
+        // var sum = 0;
         
+        // for(var i = 1; i <= 100; i++){
+        //     if(i % 10 == 0){
+        //         // console.log("i: " + i)
+        //         document.write(i + " ")
+        //         sum += i;
+        //     }
+        // }
+        // document.write("→ " + sum);
+
+
+        //예제 9) ----------------------------------------------------------------------------------------------
+        document.write("<br><br><br>");
+        document.write("예제_9: 구구단 출력");
+        document.write("<br>");
+
+        // var a = prompt("1. 숫자를 입력해주세요.");
+        //     a = parseInt(a);
+        // var i = 0;
+
+        // while(i < 9){
+        //     i++;
+        //     console.log(i);
+        //     document.write(a + " * " + i + " = " + (a * i) + "<br>"); 
+        // }
+
+
+        // 세로
+        document.write("<table><tr>");
+        for(num = 1; num <= 9; num++){
+            document.write("<td>");
+            for(var i = 1; i <= 9; i++){
+                console.log("i: " + i)
+                document.write(num + " x " + i + " = " + (num * i) + "<br>");
+            }
+            document.write("</td>")
+        }
+        document.write("</tr></table>");
+
+
+        document.write("<br>");
+
+        // //가로
+        // document.write("<table>");
+        // for(num = 1; num <= 9; num++){
+        //     document.write("<tr>");
+        //     for(var i = 1; i <= 9; i++){
+        //         console.log("i: " + i)
+        //         document.write("<td>" + num + " x " + i + " = " + (num * i) + "<br>" + "</td>");
+        //     }
+        //     document.write("</tr>")
+        // }
+        // document.write("</table>");
+
+
+
+        //예제 10) ----------------------------------------------------------------------------------------------
+        document.write("<br><br>");
+        document.write("예제_10: 홀수 합 구하기");
+        document.write("<br>");
+
+        // var sum = 0;
+
+        // for(var i = 0; i <= 100; i++){
+        //     if((i % 2) == 1){
+        //         sum += i;
+        //         // console.log("i: " + i);
+        //         document.write(i + " ");
+        //     }
+        //     if((i % 10) == 0){
+        //         document.write("<br>");
+        //     }
+        // }
+        //     document.write("<br>");
+
+        // document.write("sum → " + sum);
+
+
+        //예제 11) ----------------------------------------------------------------------------------------------
+        document.write("<br><br><br>");
+        document.write("예제_11: 1~100 출력");
+        document.write("<br>");
+        
+        // var num = 0;
+
+        // while(num < 100){
+        //     num++;
+        //     if(num % 2 == 0){
+        //         continue; //조건문 제일 처음으로 돌아감
+        //     }
+        //     document.write(num + "/ ");
+            
+        //     if((num % 10) == 0){
+        //         document.write("<br>");
+        //     }
+        // }
     </script>
 </body>
 </html>
