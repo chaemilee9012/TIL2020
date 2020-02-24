@@ -1,20 +1,21 @@
-@import url('common.css');
+﻿@import url('common.css');
 @import url('https://fonts.googleapis.com/css?family=Baloo&display=swap');
 
 header{
-    width: 1920px;
+    width: 100%;
+     /* padding: 0 235px; */
     background: #fff;
     position: fixed; z-index: 100; top: 0
 }
 header > div{
-    margin: 0 235px;
+    width: 80%; margin: 0 auto;
     display: flex; align-items: center
 }
 /* --------------------- 로고 ------------------------------------------------------------------ */
 header div h1{}
 header div h1 a{
     font-family: 'Baloo', cursive; font-size: 2.5rem;
-    margin-right: 90px
+    margin-right: 50px
 }
 header div h1 strong{
     font-family: 'Baloo', cursive; font-size: 2.5rem;
@@ -91,11 +92,14 @@ header div nav dl dd:hover a:after{
 }
 /* ---------------------- 아이콘 메뉴 --------------------------------------------------------- */
 header div .top_menu{
-    position: absolute; right: 235px; top: 20px
+    width: 80%; margin: 0 auto;
+    display: flex; justify-content: flex-end;
+    position: fixed; top: 2vh
+
 }
 header div .top_menu input{
     border-bottom: 1px solid #333;
-    outline-style: none
+    outline-style: none;
 }
 header div .top_menu a{
     padding: 10px 5px;

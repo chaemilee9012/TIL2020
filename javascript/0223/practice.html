@@ -50,21 +50,18 @@
 
         var a = prompt("3. 숫자를 입력해주세요.");
             a = parseInt(a);
-        var i = 0
+        var b = 1;
+        var i = 1;
 
         // (팩토리얼이란 1부터 n까지의 정수를 모두 곱한 것을 말합니다.)
         // ex) 3!(3팩토리얼) = 1*2*3 = 6,  4! = 1*2*3*4 = 24입니다.
         // 단, 예외로 0!은 1입니다.(1!은 1 그대로고요.)
 
         while(i <= a){
-            if(a == 0){
-                a = 1;
-            } else{
-                a = i * a;
-                console.log("a: " + a);
-            }
+            b = b * i;
             i++;
         }
+        document.write(a + "! = " + b);
     </script>
 </body>
 </html>
