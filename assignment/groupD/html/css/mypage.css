@@ -229,7 +229,7 @@ aside .feedback{
     background: #fff url('../img/ic_chat.png') no-repeat center;
     border: 2px solid #333;
     position: fixed; z-index: 100;
-    right: 100px; bottom: 60px
+    right: 5%; bottom: 60px
 }
 aside .feedback img{
     width: 100%;
