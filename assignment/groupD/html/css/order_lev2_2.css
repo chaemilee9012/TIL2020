@@ -47,7 +47,7 @@ header div nav .nav_title li{
 header div nav .nav_title li a{
     width: 100%;
     padding: 2vw 0;
-    font-size: 1.25rem;
+    font-size: 1.25em;
     position: relative
 }
 header div nav .nav_title li a:after{
@@ -134,9 +134,25 @@ header .ic_menu a img{
     width: 90%
 }
 /* ---------------------- 타이틀 --------------------------------------------------------- */
+main{}
+main header{}
+main header h2{}
+main header a{}
+
+.prod_list{}
+.prod_list table
+
+
+
+
+
+
+
+
+
+
 section{
     width: 80%; margin: 0 auto
-    /* padding: 80px 235px 0 235px */
 }
 section .title{
     width:100%; padding: 35px 0; margin-bottom: 85px;
@@ -176,13 +192,12 @@ section .product_list thead{
 section .product_list thead tr{}
 section .product_list thead tr th{
     font-size: 1.25em; font-weight: 600; color: #666;
-    padding: 15px 0;
-    
+    padding: 15px 0
 }
 section .product_list thead tr th:nth-of-type(1){
-    width: 3%
+    width: 10%
 }
-section .product_list thead tr th:nth-of-type(2){
+section .product_list thead tr th:nth-of-type(3){
     width: 10%
 }
 section .product_list thead tr th:nth-of-type(4){
@@ -197,9 +212,6 @@ section .product_list thead tr th:nth-of-type(6){
 section .product_list thead tr th:nth-of-type(7){
     width: 10%
 }
-section .product_list thead tr th:nth-of-type(8){
-    width: 10%
-}
 section .product_list tbody{}
 section .product_list tbody tr{
     border-bottom: 1px dotted #ccc
@@ -207,11 +219,11 @@ section .product_list tbody tr{
 section .product_list tbody tr:last-of-type{
     border-bottom: none
 }
-section .product_list tbody tr td{
-    padding: 10px
-}
+section .product_list tbody tr td{}
 section .product_list tbody tr td input{}
-section .product_list tbody tr td img{}
+section .product_list tbody tr td img{
+    width: 50px
+}
 /* ---------------------- 주문 금액 --------------------------------------------------------- */
 section .price{
     width: 100%; margin-bottom: 35px;
@@ -247,6 +259,32 @@ section .price tbody tr:nth-of-type(3) td:nth-of-type(1){
 section .price tbody tr:nth-of-type(3) td:nth-of-type(2){
     color: #f29a82; font-size: 1.5rem
 
+}
+/* ---------------------- 주문고객 정보 --------------------------------------------------------- */
+.info_custmr{
+    border: 1px solid #333
+}
+.info_custmr caption{}
+.info_custmr tbody{}
+.info_custmr tbody tr{}
+.info_custmr tbody tr th{
+    border: 1px solid #f00
+}
+.info_custmr tbody tr td{
+    border: 1px solid #00f
+}
+/* ---------------------- 배송지 정보 --------------------------------------------------------- */
+.info_delivery{
+    border: 1px solid #333
+}
+.info_delivery caption{}
+.info_delivery tbody{}
+.info_delivery tbody tr{}
+.info_delivery tbody tr th{
+    border: 1px solid #f00
+}
+.info_delivery tbody tr td{
+    border: 1px solid #00f
 }
 /* ---------------------- 버튼 --------------------------------------------------------- */
 section .button{
