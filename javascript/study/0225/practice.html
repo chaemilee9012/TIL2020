@@ -7,8 +7,61 @@
 </head>
 <body>
     <script>
+        // 예제 1 ----------------------------------------------------------------------------------------------
+        document.write("1. 별표 출력 5개 → 1개");
+        document.write("<br><br>");
+
+        // var a = 5;
+        // var b = ["\*", "\*", "\*", "\*", "\*"]
+
+        // for(var i = 0; i <= a; i++){
+        //     for(var j = 4; j >= i; j--){
+        //         console.log("j: " + j);
+        //         document.write(b[j]);
+        //     }
+        //     document.write("<br>");
+        // }
+
+        // 예제 2 ----------------------------------------------------------------------------------------------
+        document.write("2. 숫자 입력받은 후 -1씩 0까지 출력");
+        document.write("<br><br>");
+
+        var a = prompt("숫자?");
+            a = parseInt(a);
         
+        // for(var i = 1; i <= a; i++){
+        //     console.log("i: " + i);
+        //     for(var j = i; j > 0; j--){
+        //         document.write(j);
+        //     }
+        //     document.write("<br>");
+        // }
+
+        // for(var j = a; j > 0; j--){ //a=i 번
+        //     document.write(j);
+
+        //     for(var i = 1; i <= a; i++){ // a줄
+        //     console.log("i: " + i);
+        //     a--;
+        //     }
+            
+        //     document.write("<br>");
+        // }
+        
+        
+
+        for(var i = 1; i < a; i++){ // a줄
+            console.log("i: " + i);
+            for(var j = a; j > i; j--){ //a=i 번
+                console.log("j: " + j);
+                a--;
+                console.log("a: " + a);
+                document.write(j);
+            }
+            document.write("<br>");
+        }
+        
+
     </script>
-    
 </body>
 </html>
