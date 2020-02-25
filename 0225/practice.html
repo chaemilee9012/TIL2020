@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // document.write("<br><br><br>");
+        document.write("예제_1: 1/2/3/4/5/6/7/8/9/10 → while");
+        document.write("<br>");
+
+        var i = 1;
+
+        document.write("답: ");
+        while(i <= 10){
+            document.write(i);
+            i++;
+            if(i > 10){
+                break
+            }
+            document.write("/");
+        }
+
+
+        //예제 2) ----------------------------------------------------------------------------------------------
+        document.write("<br><br><br>");
+        document.write("예제_2: 1~100 총합 구하기 → for");
+        document.write("<br>");
+
+        var sum = 0;
+
+        for(var i = 1; i <= 100; i++){
+            sum += i;
+        }
+
+        document.write("답: " + sum);
+
+
+        //예제 3-1) ----------------------------------------------------------------------------------------------
+        document.write("<br><br><br>");
+        document.write("예제_3-1: 배열[10, 50, 60, 80, 70, 60] 선언하기<br>");
+
+        // var arr = [10, 50, 60, 80, 70, 60];
+        
+        // document.write("답: arr[");
+        // for(var i = 0; i < arr.length; i++){
+        //     document.write(arr[i] + " ");
+        // }
+        // document.write("]" + "<br>");
+
+
+        //예제 3-2) ----------------------------------------------------------------------------------------------
+        document.write("<br>");
+        document.write("예제_3-2: 배열값의 총합 구하기<br>");
+        // var sum = 0;
+
+        // for(var i = 0; i < arr.length; i++){
+        //     sum += arr[i];
+        // }
+        // document.write("답: " + sum + "<br>");
+
+
+        //for-in문: 배열 또는 객체 키 값 불러올 때 사용
+        // for(var i in arr){ 
+        //     sum += arr[i];
+        // }
+        // document.write("답: " + sum + "<br>");
+        
+
+        //예제 3-3) ----------------------------------------------------------------------------------------------
+        // document.write("<br>");
+        document.write("예제_3-3: 60보다 큰 수 갯수");
+        // var a = 0;
+
+        // for(var i = 0; i < arr.length; i++){
+        //     if(arr[i] > arr[2]){
+        //         a++;
+        //     }
+        // }
+
+        // document.write("답: " + a + "개" + "<br>");
+        
+
+
+        //예제 3-4) ----------------------------------------------------------------------------------------------
+        document.write("<br>");
+        document.write("예제_3-4: 70보다 작은 수 갯수");
+        document.write("<br>");
+        // var a = 0;
+        // for(var i = 0; i < arr.length; i++){
+        //     if(arr[i] < arr[4]){
+        //         a++;
+        //     }
+        // }
+        // document.write("답: " + a + "개");
+
+
+        //예제 3_* for-in문) ----------------------------------------------------------------------------------------------
+        document.write("<br>");
+        document.write("예제_3: 배열 총합 & 60보다 큰 수 갯수 & 70보다 큰 수 갯수(for-in문)<br>");
+
+        // var sum = 0;
+        // // var a = 0;
+        // // var b = 0;
+
+        // // var min = 0;
+        // var max = [];
+        // // var aa = 0;
+
+        // // for(var i in arr){
+        // //     sum+= arr[i];
+        // //     if(arr[i] > 60){
+        // //         a++;
+        // //     } else if(arr[i] < 70){
+        // //         b++;
+        // //     }
+        // // }
+
+        // var min = [];
+
+        // for(var i = 0; i < arr.length; i++){
+        //     sum+= arr[i];
+        //     if(arr[i] > 60){
+        //         // max[a] = arr[i];
+        //         // a++;
+        //         max.push(arr[i]);
+        //     }
+        //     // console.log("max[]: " + max);
+        //     // if(arr[i] < 70){
+        //     //     if(aa == arr[i]){
+        //     //         continue; //아래 구문 건너뛰어라
+        //     //     }
+        //     //     aa=arr[i];
+        //     //     min++; //10, 50, 60, 60
+        //     //     // console.log("min: " + min)
+        //     // }
+        //     if(arr[i] < 70){
+        //         min.push(arr[i]);
+        //         console.log(min);
+        //         if(arr[i] == min[i]){
+        //             break;
+        //         }
+        //     }
+        //     console.log("min: " + min);
+        // }
+            
+        // //10, 50, 60, 80, 70, 60
+        
+
+        // document.write("총합: " + sum + "<br>" + "60보다 큰 수 갯수: " + max.length + "<br>" + "70보다 작은 수 갯수: " + min);
+        // document.write("<br><br>");
+
+
+
+        // document.write("총합: " + sum + "<br>" + "60보다 큰 수 갯수: " + a + "<br>" + "70보다 작은 수 갯수: " + b);
+        // document.write("<br>");
+
+        
+        //예제 4-1) ----------------------------------------------------------------------------------------------
+        document.write("<br><br><br>");
+        document.write("예제_4-1: 배열 [a, b, c, d] 값의 길이");
+        document.write("<br>");
+
+        var arr = ['a', 'b', 'c', 'd'];
+        document.write("답: " + arr.length + "<br>");
+
+
+        //예제 4-2) ----------------------------------------------------------------------------------------------
+        document.write("<br>");
+        document.write("예제_4-2: 'c' 출력 → for문");
+        document.write("<br>");
+
+        for(var i = 0; i < arr.length; i++){
+            if(arr[i] == 'c'){
+                document.write("답: " + arr[i]);
+                break;
+            }
+        }
+    </script>
+</body>
+</html>

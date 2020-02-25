@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.write("<h1>switch (다중 케이스)</h1>");
+        //예제 1) ----------------------------------------------------------------------------------------------
+        document.write("예제_1");
+        
+        var num = prompt("1~5 숫자를 입력하시오.");
+        var a = null;
+
+        switch(num){
+            // +: string + number 나열할 때도 사용되므로 형변환 X
+            case '1': a = num + 10; break; //break 없을 경우 변수 대입만 하고 다음 case 실행 & 출력
+            case '2': a = num - 10; break;
+            // -, *, / 연산: string → number로 자동으로 형변환 (string → number)
+            case '3': a = num * 10; break;
+            case '4': a = num / 10; break;
+            default: a = num * 100; //case에 해당되지 않을 경우 default 실행
+        }
+        
+        document.write("<br>" + a);
+    </script>
+</body>
+</html>

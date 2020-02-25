@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Text property</title>
+    <style>
+        html{font-family: '돋움'; font-size: 20px}
+        .box{border: 1px solid #b00; line-height: 2em;
+             text-align: justify; letter-spacing: -0.2em; word-spacing: 1.5em; text-indent: 5em}
+        .p1{text-transform: uppercase; text-align: right; text-decoration: underline; text-indent: -5em}
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>제목입니다.</h2>
+        <p>이 속성은 텍스트를 감싸고 있는 박스를 기준으로 텍스트가 시작하는 부분의 포지션을 설정하는 속성입니다.
+           일반적으로 텍스트 박스의 좌측 끝과 우측 끝은 하나의 같은 문장입니다.
+        </p>
+    </div>
+    <div>
+        <p class="p1">
+        the power of the web is in its universality, access by everyone regardless of disability.
+        </p>
+    </div>
+</body>
+</html>

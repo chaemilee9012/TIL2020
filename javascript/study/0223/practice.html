@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 예제 1 ----------------------------------------------------------------------------------------------
+        document.write("1. 숫자 입력받고 해당되는 단의 구구단 출력");
+        document.write("<br><br>");
+
+        // var a = prompt("1. 숫자를 입력해주세요.");
+        //     a = parseInt(a);
+        // var i = 0;
+
+        // while(i < 9){
+        //     i++;
+        //     console.log(i);
+        //     document.write(a + " * " + i + " = " + (a * i) + "<br>"); 
+        // }
+
+
+
+        // 예제 2 ----------------------------------------------------------------------------------------------
+        document.write("<br><br><br>");
+        document.write("2. 숫자 입력받고 1부터 해당 숫자 사이에 존재하는 홀수 구하기");
+        document.write("<br><br>");
+
+        // var a = prompt("2. 숫자를 입력해주세요.");
+        //     a = parseInt(a);
+        // var i = 0;
+
+        // while(i < a){
+        //     i++;
+        //     console.log("i" + i);
+        //     if((i % 2) == 1){
+        //         document.write(i + " "); 
+        //         console.log("홀수" + i);
+        //     }
+        // }
+
+
+
+        // 예제 3 ----------------------------------------------------------------------------------------------
+        document.write("<br><br><br>");
+        document.write("3. 숫자 입력받고 해당 숫자의 팩토리얼(factorial) 구하기");
+        document.write("<br><br>");
+
+        var a = prompt("3. 숫자를 입력해주세요.");
+            a = parseInt(a);
+        var b = 1;
+        var i = 1;
+
+        // (팩토리얼이란 1부터 n까지의 정수를 모두 곱한 것을 말합니다.)
+        // ex) 3!(3팩토리얼) = 1*2*3 = 6,  4! = 1*2*3*4 = 24입니다.
+        // 단, 예외로 0!은 1입니다.(1!은 1 그대로고요.)
+
+        while(i <= a){
+            b = b * i;
+            i++;
+        }
+        document.write(a + "! = " + b);
+    </script>
+</body>
+</html>

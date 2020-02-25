@@ -1,0 +1,109 @@
+@import url('common.css');
+
+body, html{
+    height: 100%
+}
+.vdo{
+    position: relative; width: 100%; height: 100%;
+    overflow: hidden
+}
+.vdo video{
+    position: absolute; left: 0; top: 0;
+    width: 0; height: 0;
+    min-width: 100%; min-height: 100%;
+    /*w, h 값 없이 min-값만 지정할 경우: 브라우저 사이즈보다 동영상 크기(가로세로)가 작을 때 동영상 크기=브라우저 크기*/
+}
+.vdo div{
+    position: absolute; left: 0; top: 0; z-index: 2;
+    width: 100%; height: 100%;
+    text-align: center; font-size: 6em;
+    
+    display: flex;
+    justify-content: center;/*가로*/ align-items: center;/*세로*/
+    flex-direction: column;/*기본값=row(가로)*/
+    background: rgba(0, 0, 0, 0.6);
+    overflow: hidden
+}
+.vdo div a{
+    background: transparent;/*투명*/ padding: 10px 30px;
+    border: 3px solid #eee; margin-top: 50px;
+    border-radius: 7px; 
+    font-size: .3em; color: #000;
+    position: relative;
+    overflow: hidden
+}
+.vdo div a:after{
+    content: ''; /*가상 태그 만들 때 사용*/
+    background: #0ff; width: 100%; height: 100%;
+    position: absolute; left: -100%; top: 0;
+    z-index: -1; transition: .5s
+}
+.vdo div a:hover:after{
+    position: absolute; left: 0; top: 0
+}
+.vdo .if ul li a{
+    display: flex;
+    justify-content: center; align-content: center
+}
+.if{
+    width: 800px; margin: 100px auto;
+    overflow: hidden
+}
+.if iframe{
+    float: left;
+    margin: 0 20px;
+}
+.if ul{
+    float: right;
+}
+.if ul li{
+    margin: 10px 0
+}
+.if ul li a{
+    font-size: 1.2em;
+}
+.if ul li a:after{
+    content: '';
+    width: 100px; height: 2px;
+    background: #ddd;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative; transition: .5s
+}
+.if ul li:hover a:after{
+    width: 70px;
+}
+/*
+태그의 속성(display)
+
+-block ex)div, h, p, ul&li
+    줄내림(세로형태의 콘텐츠)
+    모든 스타일 명령 사용 가능
+    <h1>제목<h1>: (O)
+        <ul>
+            <h1>제목<h1>: (X)
+            <li></li>
+            <li></li>
+        <ul>
+-inline ex)span, em, strong, a, img
+    .여러 줄 내용에서 텍스트만 꾸미고 싶을 때 사용
+        ex) 공간 분할 태그에는 <strong>div</strong>이 있다.
+    .가로형태 콘텐츠에 적합하지만 style 제약 O
+        (width, height, padding, margin 사용 불가)
+
+    .inline-block 속성으로 대체 시 style 제약이 사라짐
+    .vertical align: 값(top, middle, bottom) - inline 속성 가진 요소 2개를 세로로 정렬, 가장 큰 높이값 기준으로 정렬
+-inline-block: 
+        
+-table: display 이용 table이 아닌 요소를 table로 만들 수 O
+    <h1></h1> (O)
+    <table>
+        <tr>
+            <h2></h2> (X)
+            <td>
+                <h2></h2>
+            </td>
+            <td></td>
+        </tr>
+    </table>
+-flex:

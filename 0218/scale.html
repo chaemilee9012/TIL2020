@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 산술연산자 ---------------------------------------------------------
+        document.write("<h1>산술연산자</h1>");
+
+        var x = 10;
+        var y = 30;
+        document.write("x+y="+(x+y));
+        document.write("<br>(x+y)/2="+(x+y)/2);
+        document.write("<br>(x+y)*2="+(x+y)*2);
+        document.write("<br>(x+y)%2="+(x+y)%2);
+
+
+        document.write("<br><br><h1>증감연산자</h1>");
+        // x=10, y=30
+
+        document.write("x++ →"+(x++)); //x=10
+        //x++: 값을 1씩 증가시키라고 명령만 함, 계산은 다음 번에
+        document.write("<br>x++ →"+(x++)); //x=11
+        document.write("<br>x++ →"+(x)); //x=12
+
+        var x = 10;
+        document.write("<br><br>++x →"+(++x)); //x=11
+        document.write("<br>++x →"+(++x)); //x=12
+        document.write("<br>++x →"+(x)); //x=12\
+
+        var x = 11;
+        document.write("<br><br>++x →"+(x--)); //x=11
+        document.write("<br>++x →"+(x--)); //x=10
+        document.write("<br>++x →"+(x)); //x=9
+
+
+        var a = 50, b = 3, c = 6, d = 10
+        document.write("<br><br>a = 50, b = 3, c = 6, d = 10");
+        document.write("<br>(a + b++ + c++ + ++d) → " + (a + b++ + c++ + ++d)); //70
+                                                      //50 +  3  +  6  + 11 = 70
+                                                      //50 +  4  +  7  + 11 = 72
+        document.write("<br>(a + b+ c + d) → " + (a + b+ c + d)); //72
+
+
+        // 비교연산자 ---------------------------------------------------------
+        document.write("<br><br><h1>비교연산자</h1>");
+        
+        var a = 10, b = 20, c = (a < b);
+        // var c = a < b;
+
+        document.write("a = 10, b = 20, c = a < b");
+        document.write("<br> c → " + c); //true
+        document.write("<br> a < b → " + (a < b)); //true
+        document.write("<br> a > b → " + (a > b)); //false
+        document.write("<br> a != b → " + (a != b)); //true
+        document.write("<br> a == b → " + (a == b)); //false
+
+        var a = true, b = 'true';
+        document.write("<br><br>a = true, b = 'true'");
+        document.write("<br>a(boolen) == b(string) → " + (a == b)); // false
+        // alert(typeof a);
+        // alert(typeof b);
+
+        var a = 1, b = '1';
+        document.write("<br><br>a = 1(int), b = '1'(string)");
+        document.write("<br>a == b → " + (a == b)); //true
+        document.write("<br>a === b → " + (a === b)); //false
+        document.write("<br>a !== b → " + (a !== b)); //true
+
+
+        // 논리연산자 ---------------------------------------------------------
+        document.write("<br><br><h1>논리연산자</h1>");
+        document.write("10 == 10 && 10 < 20 → " + (10 == 10 && 10 < 20)); //true
+        document.write("<br>10 == 11 && 10 < 20 → " + (10 == 11 && 10 < 20)); //false
+        document.write("<br>10 == 11 || 10 < 20 → " + (10 == 11 || 10 < 20)); //true
+        document.write("<br>10 == 10 || 10 < 20 → " + (10 == 10 || 10 < 20)); //true
+
+        
+
+        // 연습문제 -----------------------------------------------------------
+        document.write("<<br><br><br><h1>연습문제</h1>");
+
+        var kor = 80, eng = 70;
+        document.write("kor = 80, eng = 70");
+
+        // 1. "홍길동님의 총점: 80/ 평균 : 70점" 출력하기
+        document.write("<br>1. 홍길동 님의 총점: " + kor + "점/ 평균: " + eng + "점");
+
+
+        // 2. 총점, 평균 구하기
+        document.write("<br>2. 홍길동 님의 총점: " + (kor + eng) + "점/ 평균: " + (kor + eng)/2 + "점");
+        
+
+        // 3. 배열 이용해서 총점, 평균 구하기
+        var hong = [80, 70];
+        document.write("<br><br>hong = [80, 70]");
+        document.write("<br>3. 홍길동 님의 총점: " + (hong[0] + hong[1]) + "점/ 평균: " + (hong[0] + hong[1])/2 + "점");
+
+
+        // 4. 객체&변수 이용해서 총점, 평균 구하기
+        var hong = {kor: 80, eng: 70};
+        document.write("<br><br>hong = {kor: 80, eng: 70}");
+
+        var sum = hong["kor"] + hong["eng"], avg = sum/2;
+        // var sum = hong.kor + hon.eng, avg = sum/2;
+
+        document.write("<br>4. 홍길동 님의 총점: " + sum + "점/ 평균: " + avg + "점");
+    </script>
+</body>
+</html>

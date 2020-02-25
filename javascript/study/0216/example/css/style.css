@@ -1,0 +1,13 @@
+div {
+    text-align: center;
+}
+p {
+    margin: 200px auto;
+    display: inline-block;
+    font-size: 24px;
+    font-weight: bold;
+}
+span {
+    font-size: 24px;
+    font-weight: bold;
+}

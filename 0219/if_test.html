@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       document.write("<h1>ex_01. if 조건문 활용</h1>");
+        
+        // 양자리 3월 21일 ~ 4월 19일
+        // 황소자리 4월 20일 ~ 5월 20일
+        // 쌍둥이자리 5월 21일 ~ 6월 21일
+        // 게자리 6월 22일 ~ 7월 22일
+        // 사자자리 7월 23일 ~ 8월 22일
+        // 처녀자리 8월 23일 ~ 9월 23일
+        // 천칭자리 9월 24일 ~ 10월 22일
+        // 전갈자리 10월 23일 ~ 11월 22일
+        // 사수자리 11월 23일 ~ 12월 24일
+        // 염소자리 12월 25일 ~ 1월 19일
+        // 물병자리 1월 20일 ~ 2월 18일
+        // 물고기자리 2월 19일 ~ 3월 20일
+        
+        var total = ['0321', '0419', '0420', '0520', '0521', '0621', '0622', '0722', '0723', '0822', '0823', '0923', '0924', '1022', '1023', '1122', '1123', '1224', '1225', '0119', '0120', '0218', '0219', '0320'];
+        var date = prompt('생일을 입력해주세요. ex)1월 1일 → 0101');
+        var constellation = null; // var constellation; 선언 방법 차이??
+
+
+        console.log(total);
+
+        if((date >= total[0]) && (date < total[1])){
+            constellation = "양";
+        } else if((date >= total[2]) && (date < total[3])){
+            constellation = "황소";
+        } else if((date >= total[4]) && (date < total[5])){
+            constellation = "쌍둥이";
+        } else if((date >= total[6]) && (date < total[7])){
+            constellation = "게";
+        } else if((date >= total[8]) && (date < total[9])){
+            constellation = "사자";
+        } else if((date >= total[10]) && (date < total[11])){
+            constellation = "처녀";
+        } else if((date >= total[12]) && (date < total[13])){
+            constellation = "천칭";
+        } else if((date >= total[14]) && (date < total[15])){
+            constellation = "전갈";
+        } else if((date >= total[16]) && (date < total[17])){
+            constellation = "사수";
+        } else if((date >= total[18]) && (date < total[19])){
+            constellation = "염소";
+        } else if((date >= total[20]) && (date < total[21])){
+            constellation = "물병";
+        } else if((date >= total[22]) && (date < total[23])){
+            constellation = "물고기";
+        }
+
+        document.write("당신의 별자리는 " + constellation + "자리입니다.");
+    </script>
+</body>
+</html>

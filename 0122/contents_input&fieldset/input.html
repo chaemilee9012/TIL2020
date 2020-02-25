@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>contents_ul</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <fieldset><!--블럭요소-->
+        <legend>Form 기본 태그(inline-block)</legend>
+        <form action="http://naver.com" method="post">
+        <!--form: 블럭요소
+            action: 값(url) 정보를 넘길 장소
+            method: get- 넘어간 주소에서 입력받은 정보 표시
+                    post- 숨김-->
+            <input type="text" name="id" placeholder="아이디 입력" required readonly>
+            <!--input: 한 줄 정보 받을 때
+                required: 필수 입력
+                readonly: 읽기만 가능-->
+            <br>
+            <select name="city" id="">
+                <option value="">서울</option>
+                <option selected value="">경기</option>
+            </select>
+            <br>
+            <button>주소찾기</button>
+            <br>
+            <textarea name="con" id="">약관동의 장문의 글을 받아올 때 사용</textarea>
+            <!--textarea: 여러 줄 정보 받을 때
+                cols, rows: 행렬 수, 보통 지정 X-->
+            <input type="submit" value="send">
+        </form>
+    </fieldset>
+    <fieldset>
+        <legend>input type</legend>
+        <input type="text" name=""><br>
+        <input type="password" name=""><br>
+        <label for="m">남</label>
+        <!--label: 다음 입력창 이름표
+        label for="id값" 같은 아이디 가지고 있는 요소와 연결-->
+        <input type="radio" name="g" id="m" checked>
+        <!--checked: 선택한 게 기본값--><br>
+        <label for="f">여</label><input type="radio" name="g" id="f"><br>
+        
+        <label for="">약관동의</label>
+        <input type="checkbox" name=""><br>
+        
+        <label for="">첨부파일</label>
+        <input type="file" name=""><br>
+        <input type="image" src="img/photo01.jpg" name=""><br>
+    </fieldset>
+</body>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.write("<h1>if 조건문</h1>");
+        //예제 1) ----------------------------------------------------------------------------------------------
+        document.write("예제_1");
+        document.write("<br>조건 1. 평균 60 이상: '합격', 60 미만 '불합격'");
+        
+        //조건 1. 평균 60 이상: '합격', 60 미만 '불합격'
+        var a = 90, b = 30;
+        var avg = (a + b)/2; //평균
+        var grap = null;
+
+        document.write("<br><br>a = 90, b = 30");
+
+        if(avg >= 60){
+            document.write("<br>합격");
+
+        } else{
+            document.write("<br>불합격");
+        };
+
+
+        document.write("<br><br><br>");
+
+
+        //예제 2) ----------------------------------------------------------------------------------------------
+        document.write("예제_2");
+        document.write("<br>조건 1. 평균 60 이상: '합격', 60 미만 '불합격'");
+        document.write("<br>조건 2. a, b >= 40: '합격'");
+
+        //조건 1. 평균 60 이상: 합격, 60 미만 '불합격'
+        //조건 2. a, b >= 40: '합격'
+        var a = 90, b = 30;
+        var avg = (a + b)/2; //평균
+        var grap = null;
+
+        document.write("<br><br>a = 90, b = 30");
+
+        if(avg >= 60 && (a >= 40 && b >= 40)){
+            document.write("<br>합격");
+
+        } else{
+            document.write("<br>불합격");
+        }
+
+
+        document.write("<br><br><br>");
+
+
+        //예제 3) ----------------------------------------------------------------------------------------------
+        document.write("예제_3");
+        document.write("<br>조건 1. 평균 60 이상: '합격', 60 미만 '불합격'");
+        document.write("<br>조건 2. a, b >= 40: '합격'");
+        document.write("<br>조건 3. 90점 이상: A, 80점 이상: B, 70점 이상: C, 60점 이상: D, 60 미만: E ");
+
+        // 90점 이상: A, 80점 이상: B, 70점 이상: C, 60점 이상: D, 60 미만: E
+        var a = 95, b = 50;
+        var avg = (a + b)/2;
+        var grap = null;
+
+        if(avg >= 90){
+            grap = "A";
+        } else if(avg < 90 && avg >= 80){
+            grap = "B";
+        } else if(avg < 80 && avg >= 70){
+            grap = "C";
+        } else if(avg < 70 && avg >= 60){
+            grap = "C";
+        } else{
+            grap = "E";
+        }
+
+        // document.write("<br><br>a = 95, b = 50");
+
+        if(avg >= 60 && (a >= 40 && b >= 40)){
+            document.write("<br><br>합격");
+
+        } else{
+            document.write("<br>불합격");
+        }
+        document.write("<br>평균 " + avg + "점 " + grap + "등급");
+        document.write("<br><br><br>");
+
+
+
+        //prompt ----------------------------------------------------------------------------------------------
+        document.write("<h1>prompt</h1>");
+        
+        // var a = prompt('국어점수?'); // 데이터 입력 함수, number 입력 받아도 string으로 저장
+            // alert(a+50); → '입력받는 값' + '50' 나열
+
+            // a = Number(a); //string → 숫자 변환 함수 
+            // 앞에서 선언된 변수 a 뒤에서 다시 쓸 때 변수 선언하면 안 됨
+            //a = parseInt(a); //숫자 뒤에 문자열 있을 경우 문자열 버림 ex) 600px → 600
+        // alert(a+50);
+
+        // var a = prompt('국어점수?');
+        // var b = prompt('영어점수?');
+        //     a = parseInt(a);
+        //     b = parseInt(b);
+        // var sum = (a+b), avg = (a+b)/2;
+
+        //예제 1) ----------------------------------------------------------------------------------------------
+        document.write("예제_1 아래 내용 출력하기");
+        document.write("<br>국어: 60점/ 영어: 80점");
+        document.write("<br>총점: 140점/ 평균: 70점");
+        // 국어: 60점/ 영어: 80점
+        // 총점: 140점 / 평균: 70점
+
+        // document.write("<br>국어: " + a + "점/ 영어: " + b + "점");
+        // document.write("<br>총점: " + sum + "점/ 평균: " + avg + "점");
+
+
+        document.write("<br><br><br>");
+
+
+        // 예제 2) ----------------------------------------------------------------------------------------------
+        document.write("예제_2");
+        document.write("<br>1. prompt를 이용하여 이름을 받는다.");
+        document.write("<br>2. 받은 이름이 홍길동이라면 아래 내용을 보여준다.");
+        document.write("<br>국어: 60점/ 영어: 80점");
+        document.write("<br>총점: 140점/ 평균: 70점");
+
+        // 1. prompt를 이용하여 이름을 받는다.
+        // 2. 받은 이름이 홍길동이라면 아래 내용을 보여준다.
+        // 국어: 60점/ 영어: 80점
+        // 총점: 140점/ 평균: 70점
+
+        // var a = prompt('국어점수?');
+        //     a = parseInt(a);
+        // var b = prompt('영어점수?');
+        //     b = parseInt(b);
+        // var sum = (a+b), avg = (a+b)/2;
+        // var name = prompt('이름?');
+
+        // if(name == '홍길동'){
+        //     document.write("<br>국어: " + a + "점/ 영어: " + b + "점");
+        //     document.write("<br>총점: " + sum + "점/ 평균: " + avg + "점");
+        // } else{
+        //     alert('정보가 일치하지 않습니다.');
+        // }
+
+
+        // 0220 ---------------------------------------------------------------------------------------------------
+        document.write("<br><br><br>");
+
+
+        document.write("예제_3");
+
+        var a = prompt('좋아하는 숫자는?');
+            a = parseInt(a);
+        
+        if(a%2 == 0){
+            document.write("<br>짝수 " + a);
+        } else{
+            document.write("<br>홀수 " + a);
+        }
+        // 1/10 → 1
+        // 2/10 → 2
+        // 3/10 → 3
+        // 4/10 → 4
+        // 5/10 → 5
+        // 6/10 → 6
+        // 7/10 → 7
+        // 8/10 → 8
+        // 9/10 → 9
+        // 10/10 → 0
+        // 11/10 → 1
+        // 12/10 → 2
+        // 13/10 → 3
+        // 14/10 → 4
+        // 15/10 → 5
+        // 16/10 → 6
+        // 17/10 → 7
+        // 18/10 → 8
+        // 19/10 → 9
+        // 20/10 → 0
+        // 21/10 → 1
+        // 22/10 → 2
+        // 23/10 → 3
+        // 24/10 → 4
+        // 25/10 → 5
+        // 26/10 → 6
+        // 27/10 → 7
+        // 28/10 → 8
+        // 29/10 → 9
+        // 20/10 → 0
+    </script>
+</body>
+</html>

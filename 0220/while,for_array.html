@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border: 1px solid #333;
+            /* border-collapse: collapse; */
+        }
+        td{
+            border: 1px solid #090
+        }
+    </style>
+</head>
+<body>
+    <script>
+        document.write("<h1>while_array</h1>");
+
+        // var arr = [10, 20, 80, 40, 70];
+        // var sum = 0;
+        // var i = 0;
+
+        // console.log(arr.length);
+
+        // while(i < arr.length){
+        //     console.log("i: " + i);
+        //     sum += arr[i];
+        //     document.write(arr[i] + " ");
+
+        //     i++;
+        // }
+        // document.write("<br>" + sum);
+
+
+        // document.write("<br><br>");
+        // var arr = [10, 20, 80, 40, 70];
+        // var sum = 0;
+        // var i = 0;
+
+        // for(var i = 0; i < arr.length; i++){
+        //     console.log("i: " + i);
+        //     sum += arr[i];
+        //     document.write(arr[i] + " ");
+        // }
+        // document.write(sum);
+
+
+        // document.write("<br><br>");
+
+        for(var i = 0; i < 3; i++){
+            document.write(i + " ");
+            /*
+            while문과 동일 (continue; break;)
+            */
+        }
+
+        document.write("<br>");
+        document.write("<h1>for_array</h1>");
+
+
+        //예제 1) ----------------------------------------------------------------------------------------------
+        document.write("예제_1: 총점, 평균 구하기");
+        document.write("<br>");
+        var arr = [10, 20, 80, 40, 70];
+        var sum = 0;
+        var avg = 0;
+
+        for(var i = 0; i < arr.length; i++){
+            sum += arr[i];
+        }
+        console.log("i: " + i);
+        avg = sum / i;
+
+        document.write("총점: " + sum + "<br>" + "평균: " + avg);
+
+        //예제 1) ----------------------------------------------------------------------------------------------
+        // document.write("<br><br><br>");
+        // document.write("예제_1");
+        // document.write("<br>");
+    </script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //interpreter 방식: 코드 위에서 아래로 출력---------------------------
+
+
+        // alert(x); : x에 할당된 값이 없으므로 
+        // (undefined)
+        // var x = 3;
+
+        // alert(x); : x 선언 안 됐으므로
+        // (error)
+        // x = 3;
+
+        // alert(window.x); : var 선언 안 하면 최상위 공간 window에 x값 저장
+        // (undefined)
+        // x = 3;
+        
+        // var x = 3;
+        // document.write(x+3 + "<br>");
+        // document.write("<br>" + x+3);
+        // //문자 + 숫자 = string
+
+        // document.write("<br>" + (x+3));
+        // // 문자 + 숫자 일 때 숫자만 연산하고 싶을 경우 숫자 괄호로 묶어주기
+
+        // '<div>' + 01 + '</div>';
+        // document.write('<div>' + 01 + '</div>');
+
+        // var y = '3';
+        
+        //alert(typeof x); //number
+        //alert(typeof y); //string
+        //alert(typeof x==y); //false
+        //alert(typeof x != y); //true
+        //alert(typeof x !== y); //true
+        //alert(typeof x === y); //false
+
+        //선언된 값을 기록하는 공간: scope
+        // var x = 3;
+
+        // 값 저장하는 방식
+        // var x;
+        //     x = 3; 
+        // alert(x); : 3
+
+        // x = 3;
+        // alert(x);
+
+        var x = null;
+        //document.write(x+"<br>");
+        //alert(x);
+        console.log(x+3);
+
+        var z;
+        // console.log(x+3);
+        console.log(z); // z: undefined
+        console.log(z+3); // NaN: undefined 값 연산 불가
+        // 연산 원하는 경우, 빈 값이라도 선언해야 함
+
+
+
+        //화면에 값 띄우는 방법 --------------------------------------------
+        // 1. document.write();
+        // 2. alert();
+        // 3. console.log();
+
+
+
+        //boolean ---------------------------------------------------------
+        document.write("<h1>boolean</h1>");
+        var x = 50; // x = 50;
+        var y = 30; // y = 30;
+        //위에서 x, y 선언했으므로 var 생략 가능 (js 특징)
+        //단, 생략하지 않는 것이 좋음
+        
+        // var bln = x < y; //false
+        // var bln = x > y; //true
+        // var bln = x >= y; //true
+        // var bln = x != y; //true
+        // var bln = x == y; //false
+        var bln = x >= y;
+
+        // document.write(bln);
+        document.write("x =>" + x);
+        document.write("<br>y =>" + y);
+        document.write("<br>(x >= y) =>" + bln);
+
+
+
+        // array (배열) ----------------------------------------------------
+        document.write("<br><br><br><h1>array(배열)</h1>");
+        
+        // 배열 선언
+        // var x = new Array(); //x에 배열(여러 개의 값)을 넣겠다고 선언 (literal)
+        var x = []; //x에 배열(여러 개의 값)을 넣겠다고 선언
+
+        x[0] = 3;
+        x[1] = 6;
+        x[2] = 9;
+        x[10] = 10;
+        // 배열 키 값(index): [0, 1, 2, 3]
+
+        // 배열에 값 추가
+        x.push(11);
+        
+        console.log(x); // []: 배열
+        console.log(x[1]);
+
+        document.write(
+                        "var x = [];" +
+                        "<br>x[0] = 3;" +
+                        "<br>x[1] = 6;" +
+                        "<br>x[2] = 9;" +
+                        "<br>x[10] = 10;" +
+                        "<br>x.push(11);" +
+                        "<br><br>x → [" +
+                                "3(0), " +
+                                "6(1), " +
+                                "9(2), " +
+                                "-(3), -(4), -(5), -(6), -(7), -(8), -(9), " +
+                                "10(10), " +
+                                "11(11)" +
+                            "]"
+                    );
+
+
+
+        // object (객체) ------------------------------------------------------
+        // → 많은 양의 정보 받아와서 처리할 때 용이
+
+        document.write("<br><br><br><h1>object(객체)</h1>");
+
+        // 객체 선언
+        // var x = new Object();
+        var x = {};
+
+        // 객체 표현 방법(1)
+        x["name"] = "홍길동"
+        x["kor"] = 90;
+        x["eng"] = 100;
+        x["mth"] = 60;
+
+        //객체 추가 방법
+        x.sgn = 80; //키 값이 단순할 때
+        x["s g n"] = 80; //키 값에 특수기호 등 포함돼 있을 때
+
+        // ["키 값"] = value;
+
+        /* 객체 표현 방법(2)
+        x = {
+            name : "홍길동",
+            kor : 90,
+            eng : 100,
+            mth : 60
+            total : function(){
+                return this.kor + this.eng + this.mth
+            }
+        };
+        */
+       
+        console.log(x);
+        console.log(x.eng); //배열의 해당 키가 가지고 있는 value
+        console.log(x.total);
+
+        document.write(
+                        "var x = {};" +
+                        "<br>x[name] = 홍길동;" +
+                        "<br>x[kor] = 90;" +
+                        "<br>x[eng] = 100;" +
+                        "<br>x[mth] = 60;" +
+                        "<br>x.sgn = 80;" +
+                        "<br>x[s g n] = 80;" +
+                        "<br><br>x → {" +
+                                "name : 홍길동," +
+                                " kor : 90," +
+                                " eng : 100," +
+                                " mth : 60," +
+                                " sgn : 80," +
+                                " s g n : 80" +
+                            "}" 
+                    );
+    </script>
+</body>
+</html>
