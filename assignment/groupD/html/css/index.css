@@ -120,9 +120,11 @@ header .ic_menu div input{
 }
 header .ic_menu div a{}
 header .ic_menu div a img{}
-header .ic_menu  a{
-    padding: 1vh 1vh;
-    width: 3vw
+header .ic_menu a{
+    width: 30px;
+}
+header .ic_menu a img{
+    width: 100%;
 }
 header .ic_menu > a:first-of-type{
     margin-left: 0

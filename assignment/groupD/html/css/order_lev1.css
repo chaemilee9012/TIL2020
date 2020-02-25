@@ -47,7 +47,7 @@ header div nav .nav_title li{
 header div nav .nav_title li a{
     width: 100%;
     padding: 2vw 0;
-    font-size: 1.25em;
+    font-size: 1.25rem;
     position: relative
 }
 header div nav .nav_title li a:after{
@@ -121,9 +121,11 @@ header .ic_menu div input{
 }
 header .ic_menu div a{}
 header .ic_menu div a img{}
-header .ic_menu  a{
-    padding: 1vh 1vh;
-    width: 3vw
+header .ic_menu a{
+    width: 30px;
+}
+header .ic_menu a img{
+    width: 100%;
 }
 header .ic_menu > a:first-of-type{
     margin-left: 0
@@ -166,7 +168,7 @@ section .product_list{
 section .product_list caption{
     font-size: 1.5em; font-weight: 600;
     text-align: left;
-    padding-bottom: 15px
+    padding: 15px 0 15px 0
 }
 section .product_list thead{
     border-bottom: 1px solid #ccc
@@ -195,8 +197,16 @@ section .product_list thead tr th:nth-of-type(6){
 section .product_list thead tr th:nth-of-type(7){
     width: 10%
 }
+section .product_list thead tr th:nth-of-type(8){
+    width: 10%
+}
 section .product_list tbody{}
-section .product_list tbody tr{}
+section .product_list tbody tr{
+    border-bottom: 1px dotted #ccc
+}
+section .product_list tbody tr:last-of-type{
+    border-bottom: none
+}
 section .product_list tbody tr td{
     padding: 20px
 }
