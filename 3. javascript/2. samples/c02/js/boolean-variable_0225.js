@@ -39,18 +39,23 @@ elShip.className = shipping;
 // elShip.addEventListener("click", off);
 
 
-// 클릭할 때마다 아이콘 바꾸기 *true가 아닐 때 false로 바꿔라
+// 클릭할 때마다 아이콘 바꾸기 *true가 아닐 때 클릭하면 false로 바꿔라
 
-var yes  = document.getElementsById("stock");
-var no = document.getElementById("shipping");
+var click = document.getElementsByClassName("span");
 
 
 function change(){
-    if 
+    if(click.className == true){
+        click.className = false;
+        console.log("true");
+    } else{
+        click.className = true;
+        console.log("false");
+    }
 }
-if(yes.className == true){
-    // X로 이미지를 바꾼다
-}
+
+click.addEventListener("click", change);
+
 
 // function on(){
 //     elStock.className = shipping;
