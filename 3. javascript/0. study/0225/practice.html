@@ -12,12 +12,11 @@
         document.write("<br><br>");
 
         // var a = 5;
-        // var b = ["\*", "\*", "\*", "\*", "\*"]
 
         // for(var i = 0; i <= a; i++){
         //     for(var j = 4; j >= i; j--){
         //         console.log("j: " + j);
-        //         document.write(b[j]);
+        //         document.write("*");
         //     }
         //     document.write("<br>");
         // }
@@ -50,17 +49,51 @@
         
         
 
-        for(var i = 1; i < a; i++){ // a줄
-            console.log("i: " + i);
+        // for(var i = 0; i < a; ++i){ // a줄
+        //     console.log("i: " + i);
+        //     for(var j = a; j > i; j--){ //a=i 번
+        //         console.log("j: " + j);
+        //         // a--;
+        //         console.log("a: " + a);
+        //         document.write("*");
+        //     }
+        //     document.write("<br>");
+        // }
+
+
+        // for(var i = 0; i < a; ++i){ // a줄
+        //     for(var j = a; j > i; j--){ //a=i 번
+            
+        //         //a--;
+
+        //         document.write("*");
+        //     }
+        //     document.write("<br>");
+        // }
+        
+        //별 -2씩 ----------------------------------------------------------------------------------------------
+        // for(var i = 0; i < a; ++i){ // a줄
+
+        //     for(var j = 0; j < a; j++){ //a=i 번
+        //         document.write("*");
+        //         console.log("j: " + j);
+                
+        //         a -= 1;
+        //         console.log("a: " + a);
+        //     }
+        //     document.write("<br>");
+        //     console.log("i: " + i);
+        // }
+
+
+        for(var i = 0; i < a; ++i){ // a줄
             for(var j = a; j > i; j--){ //a=i 번
-                console.log("j: " + j);
-                a--;
-                console.log("a: " + a);
-                document.write(j);
+
+                document.write("*");
             }
             document.write("<br>");
+            a -= 1;
         }
-        
 
     </script>
 </body>

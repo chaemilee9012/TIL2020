@@ -44,6 +44,10 @@ elShip.className = shipping;
 var yes  = document.getElementsById("stock");
 var no = document.getElementById("shipping");
 
+
+function change(){
+    if 
+}
 if(yes.className == true){
     // X로 이미지를 바꾼다
 }

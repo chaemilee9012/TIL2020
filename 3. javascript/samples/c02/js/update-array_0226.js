@@ -33,13 +33,16 @@ colors2 = colors.slice(-5) // 배열의 일부분 반환 → 선택한 부분의
 // slice: 배열 원소 값에 영향 X → 새로운 변수에 담아야 사용 가능
 var slice = [10, 20, 30, 40, 50];
     slice.slice(0, 2);
+    //slice(start, end)
 console.log("slice: " + slice); //10, 20, 30, 40, 50
 //     slice = slice.slice(0, 2);
 // console.log("slice: " + slice); //10, 20
 
+
 // splice: 배열 원소 값이 splice한 결과값으로 변경
 var splice = [10, 20, 30, 40, 50];
-    splice.splice(0, 2);
+    splice.splice(4);
+    //splice(index, length)
 console.log("splice: " + splice); //30, 40, 50
 
 
