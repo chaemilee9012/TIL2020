@@ -13,7 +13,7 @@ You can use innerHTML on line 7, but note the security issues on p228-231
 el.textContent = colors[0];
 */
 
-// 0226---------------------------------------------------------------------
+
 var colors; 
 colors = ['red', 'green', 'blue'];
 
@@ -26,11 +26,10 @@ for(var i in colors){
     // clr += colors[i] + " ";
     // clr += "</span>";
 
-    clr += "<span>" + colors[i] + " " + "</span>";
+    clr += "<br>" + "<span>" + colors[i] + "</span>";
 }
 
 // el.textContent = clr;
-// console.log(clr);
 
 el.innerHTML = clr;
 // console.log(clr);
@@ -49,6 +48,33 @@ var spanJs = el.getElementsByTagName("span");
 
 //<span>에 각각 클래스명 넣기
 
+for(var i in colors){        
+    // spanJs[i].className = colors[i];
+    // spanJs[i].classList.add('white'); //클래스 추가할 때
 
+    // spanJs[i].classList.add(colors[i], "white");
 
-// console.log(spanJs);
+    spanJs[i].classList.add(colors[i]);
+}
+spanJs[0].classList.add('white');
+
+ 
+for(var i in colors){        
+    if(spanJs[i].classList.contains("white")){
+    // white를 찾아라 → white가 없으면 white클래스 추가
+    //classList.contains(""): ""값 가지고 있으면 true, 없으면 false로 값 반환
+        console.log("true");
+    } else{
+        spanJs[i].classList.add("white");
+        console.log("false")
+    }
+}
+
+// for(var i in colors){
+//     if(!spanJs[i].classList.contains("white")){ // white가 아닌 값을 찾아라
+//         spanJs[i].classList.add("white");
+//         console.log("true");
+//     } else{
+//         console.log("false")
+//     }
+// }
