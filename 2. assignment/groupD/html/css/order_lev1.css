@@ -211,7 +211,9 @@ section .product_list tbody tr td{
     padding: 10px
 }
 section .product_list tbody tr td input{}
-section .product_list tbody tr td img{}
+section .product_list tbody tr td img{
+    width: 100px
+}
 /* ---------------------- 주문 금액 --------------------------------------------------------- */
 section .price{
     width: 100%; margin-bottom: 35px;
