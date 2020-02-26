@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- <input type="button" value="x+y" onclick="func(2, 10)">
+    <p id="result">결과값</p> -->
+
+    <script>
+        document.write('<h1>함수(function)</h1>');
+
+        function func1(x){ //x: 매개변수 → 함수 안에서만 쓰이는 변수, 선언할 필요 X
+            var i = 0; 
+
+            while(++i < x){
+                document.write('hello' + i + " ");
+
+                if((i % 10) == 0){
+                    document.write("<br>");
+                }
+            }
+        }
+        func1(100); //10: 참조값
+
+        // <p> 위치: script 아래
+        function func2(x, y){ //x: 매개변수 → 함수 안에서만 쓰이는 변수, 선언할 필요 X
+            var resultJs = document.getElementById("result");
+            result.textContent = x + y;
+        }
+
+        // <p> 위치: script 위
+        // var resultJs = document.getElementById("result"); 
+        //해당 변수를 찾을 때까지 <p> 읽지 못했으므로 에러 → <p> 위치: script 위
+
+        // function func(x, y){ //x: 매개변수 → 함수 안에서만 쓰이는 변수, 선언할 필요 X
+        //     result.textContent = x + y;
+        // }
+
+        function func3(){
+            console.log(arguments); //arguments: 참조값 많아서 몇 개인지 정확히 모를 때 사용
+            var sum = 0;
+
+            // for(var i = 0; i < arguments.length; i++){
+            //     sum += arguments[i];
+            // }
+            // document.write("<br><br><br>" + sum);
+
+            for(var i in arguments){
+                sum += arguments[i];
+            }
+            document.write("<br><br><br>" + sum);
+        }
+        func3(70, 80, 90, 60, 70, 20, 30, 70);
+        // arguments = [70, 80, 90, 60, 70, 20, 30, 70]
+        //              0   1   2   3   4   5   6   7
+        // arguments[0] = 70
+
+
+        function func4(){
+            // console.log(arguments); //arguments: 참조값 많아서 몇 개인지 정확히 모를 때 사용
+            var sum = 0;
+
+            for(var i in arguments){
+                sum += arguments[i];
+            }
+            document.write("<br><br><br>" + sum);
+        }
+        var arr = [70, 80, 90, 60, 70, 20, 30, 70];
+        var arr2 = [70, 80, 90, 60, 70, 20, 30, 70];
+
+        //배열을 arguments로 한 번 더 묶을 경우 arguments 배열 값에 배열 통으로 저장
+        // arguments = [
+                    //  0: [70, 80, 90, 60, 70, 20, 30, 70],
+                    //      0   1   2   3   4   5   6   7
+                    //  1: [70, 80, 90, 60, 70, 20, 30, 70]
+                    // ]
+                    //      0   1   2   3   4   5   6   7
+        // arguments[0] = [70, 80, 90, 60, 70, 20, 30, 70]
+        // arguments[0][0] = 70
+
+        func4(arr, arr2);
+
+    </script>
+    <br><br>
+    <input type="button" value="x+y" onclick="func2(2, 10)">
+    <p id="result">결과값</p>
+        
+</body>
+</html>
