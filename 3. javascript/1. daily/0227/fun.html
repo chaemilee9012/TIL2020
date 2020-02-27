@@ -1,0 +1,84 @@
+
+
+
+<input type="button" value="x+y" onclick="fun(2,10)">
+<p id="result">결과값</p>
+
+<script>
+    
+document.write("<h1>함수(function)</h1>");
+
+function fun(x,y){
+    var result = document.getElementById('result');
+    result.textContent = x+y;
+}
+    
+function fun2(x){
+    var i=0;
+    while(++i <= x){
+        document.write('hello');
+    }
+}
+fun2(2);
+
+
+function fun3(){
+    console.log(arguments)
+    var sum = 0;
+    //for(var i=0;i<arguments.length;i++){
+    for(var i in arguments){
+        sum += arguments[i];
+    }
+    document.write("<br>"+sum);
+}
+fun3(70,80,90,60,70,20,30,70);
+
+
+    
+    
+function fun4(){
+    
+    //console.log(arguments)
+    var sum = 0;
+    for(var i in arguments){
+        for(var j in arguments[i]){
+            sum += arguments[i][j];
+        }        
+    }
+    document.write("<br>"+sum);
+}
+var arr = [70,80,90,60,70,20,30,70];
+var arr2 = [70,80,90,60,70,20,30,70];
+fun4(arr,arr2);
+    
+    /*
+    arguments = [
+        0 [70,80,90,60,70,20,30,70]  8
+        1 [70,80,90,60,70,20,30,70]  8
+                                    16
+    ]
+    */
+
+var name2 = '홍길순';
+
+function fun5(name,...arr){
+    //console.log(arr);
+    var sum = 0;
+   
+    for(var i in arr){
+       sum += arr[i];
+    }
+    document.write("<br>"+ name2 + sum);
+}
+    
+document.write("<br>" + name2);
+fun5('홍길동',80,70,60,80,90);
+    
+</script>
+
+
+
+
+
+
+
