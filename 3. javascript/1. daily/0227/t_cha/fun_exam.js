@@ -1,3 +1,4 @@
+//ex01 ---------------------------------------------------------------------
 document.write("<h1>function 입력값 연산</h1>");
 
 // var inputJs = document.getElementsByTagName("input");

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        .number{
+            border: 1px solid #333;
+            width: 170px;
+            display: flex; flex-wrap: wrap
+        } 
+        */
+
+        /* article:nth-of-type(2) input{
+            width: 30px; height: 30px;
+            outline-style: none;
+        }
+        .result input:nth-of-type(1){
+            width: 150px
+        }
+        .result input:nth-of-type(2){
+            width: 50px; height: 35px;
+        }
+        .result input:nth-of-type(3){
+            width: 50px; height: 35px;
+        } */
+
+    </style>
+</head>
+<body>
+    <article class="study_check">
+        <h1>출석체크</h1>
+        <div>
+            <input type="text">
+            <input type="button" value="출석확인">
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>번호</th><th>이름</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>01</td><td>홍길동</td>
+                </tr>
+            </tbody>
+        </table>
+    </article>
+    <hr><hr>
+    <article>
+        <h1>계산기</h1>
+        <div class="result">
+            <input type="text" value="0" readonly>
+            <!-- dir: rtl(좌측정렬)/ ltl(우측정렬) -->
+            <input type="button" value="확인">
+            <input type="button" value="지우기">
+        </div>
+        <div class="number">
+            <p>
+                <input type="button" value="+">
+                <input type="button" value="-">
+                <input type="button" value="*">
+                <input type="button" value="/">
+            </p>
+            <input type="button" value="1">
+            <input type="button" value="2">
+            <input type="button" value="3">
+            <input type="button" value="4">
+            <input type="button" value="5">
+            <input type="button" value="6">
+            <input type="button" value="7">
+            <input type="button" value="8">
+            <input type="button" value="9">
+            <input type="button" value="0">
+        </div>
+    </article>
+    <script ript src="fun_exam_0227.js"></script>
+</body>
+</html>
