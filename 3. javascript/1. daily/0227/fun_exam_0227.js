@@ -3,6 +3,11 @@
 // var ran = Math.random()*10;
 // var ran = Math.ceil(Math.random()*10); //Math.ceil: 소수점 버림
 var ran = Math.ceil(Math.random()*100); //1~100 랜덤 출력
+var aa = [];
+
+while(i <= 45){
+    aa.push(ran);
+}
 
 console.log(ran);
 // 출석 --------------------------------------------------------------------
