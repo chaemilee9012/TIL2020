@@ -1,0 +1,23 @@
+*{margin: 0; padding: 0}
+
+.total_div{width: 999px; margin: 0 auto; overflow: hidden}
+
+.total_div .header{width: 100%; overflow: hidden}
+.total_div .header .top1{width: 205px; float: left}
+.total_div .header .top2{width: 794px; float: right}
+
+.total_div .left_div{width: 205px; float: left}
+.total_div .left_div .left1{width: 100%}
+.total_div .left_div .left2{width: 100%}
+
+.total_div .container{width: 794px; float: right}
+.total_div .container .con{width: 100%}
+.total_div .container .contop{width: 100%; overflow: hidden}
+.total_div .container .contop .con1{width: 358px; float: left}
+.total_div .container .contop .con2{width: 436px; float: right}
+
+.total_div .container .conbottom{width: 100%; overflow: hidden}
+.total_div .container .conbottom .con3{width: 358px; float: left}
+.total_div .container .conbottom .con4{width: 436px; float: right}
+
+.total_div .container .footer{width: 100%}

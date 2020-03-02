@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>dl, dt, dd</title>
+    <style>
+        .exc0107{font-size: 20px; line-height: 1.5em}
+        .exc0107_ul{list-style: none; margin: 0; padding: 0}
+        .exc0107_ul li{list-style: none}
+    </style>
+</head>
+<body>
+    <div>
+       <h1>맛있는 우리집 MENU</h1>
+       <dl>
+           <dt>분식류</dt>
+           <dd>김밥: 2,000원</dd>
+           <dd>라면: 2,500원</dd>
+           <dt>식사류</dt>
+           <dd>새우볶음밥: 5,000원</dd>
+           <dd>제육덮밥: 5,000원</dd>
+           <dt>계절메뉴</dt>
+           <dd>열무냉면: 4,000원</dd>
+           <dd>검정콩국수: 5,000원</dd>
+       </dl>
+    </div>
+<!--2dth-->
+    <div class="exc0107">
+        <h1>맛있는 우리집 MENU</h1>
+        <ul class="exc0107_ul">
+            <li>분식류
+                <ul>
+                    <li>김밥: 2,000원</li>
+                    <li>라면: 2,500원</li>
+                </ul>
+            </li>
+            <li>식사류
+                <ul>
+                    <li>새우볶음밥: 5,000원</li>
+                    <li>제육덮밥: 5,000원</li>
+                </ul>
+            </li>
+            <li>계절메뉴
+                <ul>
+                    <li>열무냉면: 4,000원</li>
+                    <li>검정콩국수: 5,000원</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

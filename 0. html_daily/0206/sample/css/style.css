@@ -1,0 +1,171 @@
+@import url('common.css');
+
+header{}
+header article{
+    width:1140px; margin:0 auto;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:90px 0 80px 0;
+}
+header article h1{
+    font-size:2.4em; color:#333;
+}
+header article nav{}
+header article nav a{
+    font-size:1.2em;
+    font-weight:600;
+    color:#333;
+    margin-left:30px;
+}
+header article nav a:after{
+    content:'';
+    width:0%; height:5px;
+    background:#333;
+    display:block;
+    transition:.5s;
+    margin:0 auto;
+}
+header article nav a:hover:after{
+    width:100%;
+}
+
+section{}
+section .spot{
+    width:1140px; margin:0 auto;
+    position:relative;    
+}
+section .spot figure{
+    overflow:hidden;
+}
+section .spot figure img{
+    width:100%;
+    transform: translateY(-50%);
+    opacity:0;
+    animation: spot 1s forwards;
+}
+@keyframes spot{
+    0%{}
+    100%{
+         opacity:1;
+        transform: translateY(0);
+       
+    }
+}
+
+
+
+section .spot figure figcaption{
+    position:absolute;
+    left:0; top:0;
+    width:100%; height:100%; 
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+section .spot figure figcaption span{
+    color:#fff;
+    font-size:5.4em;
+    font-weight:bold;
+    text-shadow: 0 0 10px rgba(0,0,0,0.6);    
+    
+    overflow:hidden;
+    height:100px;    
+    padding-top:100px;
+    /*transition:padding .5s;*/
+    
+}
+section .spot figure figcaption span:nth-of-type(1){animation:txt .7s .5s forwards;}
+
+section .spot figure figcaption span:nth-of-type(2){animation:txt .7s .7s forwards;}
+
+@keyframes txt{
+    0%{}
+    100%{
+        padding-top:0px;
+    }
+}
+/*section .spot figure:hover figcaption span{
+    padding-top:0px;
+}
+section .spot figure figcaption span:nth-of-type(2){
+    transition-delay: .15s;
+}*/
+
+section .spot p{
+    position:absolute;
+    left:0; bottom:0;
+    font-size:1.1em;
+    transform:rotate(-90deg) translateY(-150%);
+    transform-origin: 0% 100%;
+}
+
+.slide{
+    width:1140px; 
+    margin:90px auto;
+}
+.slide ul{}
+.slide ul li{}
+.slide ul li figure{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.slide ul li figure p{
+    order:2; width:40%;
+}
+.slide ul li figure > p img{width:100%;}
+
+.slide ul li figure figcaption{
+    order:1;
+    width:40%;
+    
+}
+.slide ul li figure figcaption strong{
+    font-size:2.6em; color:#333;
+    white-space: pre-line;
+    text-transform: uppercase;
+}
+.slide ul li figure figcaption p{
+    font-size:.8em;
+    width:100%;
+}
+.slide ul li figure figcaption a{
+    color:#333;
+    margin-top:20px;
+    text-decoration: underline;
+}
+
+
+.slide{position:relative;}
+.slide ul{
+    position:relative;
+    height:220px;
+}
+.slide ul li{
+    position:absolute; left:0; top:0;
+    width:100%;
+}
+.slide .num{
+    position:absolute; 
+    right:0; top:-30px;
+}
+.slide .num code{
+    color:#333; font-weight:bold;
+}
+
+.slide ul li{display:none;}
+.slide ul li:first-of-type{
+    display:block;
+}
+
+
+
+
+footer{
+    background:#333;
+    color:#aaa;
+    text-align:center;
+    padding:15px 0;
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Layout</title>
+    <style>
+        *{margin: 0; padding:0}
+        body{font-family: '돋움'; text-align: justify}
+/*float:left-overlow:hidden*/
+        #a1{width: 800px; background: orange; margin: 5px 5px 50px 5px; padding: 10px}
+        #a1 div{overflow: hidden}
+        #a1 img{border: 1px solid red; margin: 20px; float: left}
+        #a1 p{border: 1px solid blue; margin-top: 20px}
+/*float:left-clear:both(clear box)*/
+        .a3{width: 800px; background: lightblue; margin: 5px 5px 50px 5px; padding: 10px}
+        .a3 img{border: 1px solid red; margin: 20px; float: left}
+        .a3 p{border: 1px solid blue; margin: 20px}
+        .a3 .clearBox{clear:both}
+/*case2 ul-li/ float-overflow*/
+        .a4{width: 800px; background: lightgreen; margin: 5px 5px 50px 5px; padding: 10px}
+        .a4 li{overflow: hidden}
+        .a4 img{border: 1px solid red; margin: 20px; float: left}
+        .a4 p{border: 1px solid blue; margin: 20px}
+/*case2-2 float-clear: overflow 필요*/
+        .a5{width: 800px; background: pink; margin: 5px 5px 50px 5px; padding: 10px}
+        .a5 li{list-style: none; overflow: hidden}
+        .a5 img{border: 1px solid red; margin: 20px; float: left}
+        .a5 p{border: 1px solid blue; margin: 20px}
+        .a5 .clearBox{clear: both}
+/*float:left-float:left(overflow 안 먹힐 때)*/
+        #a2{width: 800px; background: lightyellow; margin: 5px 5px 50px 5px; padding: 10px}
+        #a2 div{float: left}
+        #a2 img{border: 1px solid red; margin: 20px; float: left}
+        #a2 p{border: 1px solid blue; margin: 20px}
+    </style>
+</head>
+<body>
+<p>designed by &#123;<a href="https://www.flaticon.com/authors/smashicons">Smashicons</a>&#125; from Flaticon</p>
+<!--float:left-overlow:hidden-->
+    <div id=a1>
+        <div>
+            <img src="../images/play-button.png">
+            <p>인터넷 표준기관인 W3C(www.w3c.org)는 XHTML 1.0이란 새로운 표준을 내놓았습니다. 이는 웹페이지를 만드는 데 가장 많이 쓰이는 언어인 HTML이 차세대 언어 XML로 가기 위한 다리가 된다는 점에서 커다란 의미를 지닙니다. 인터넷 표준기관인 W3C(www.w3c.org)는 XHTML 1.0이란 새로운 표준을 내놓았습니다. 이는 웹페이지를 만드는 데 가장 많이 쓰이는 언어인 HTML이 차세대 언어 XML로 가기 위한 다리가 된다는 점에서 커다란 의미를 지닙니다.</p>
+        </div>
+        <div>
+            <img src="../images/play-button.png">
+            <p>인터넷 표준기관인 W3C(www.w3c.org)는 XHTML 1.0이란 새로운 표준을 내놓았습니다. 이는 웹페이지를 만드는 데 가장 많이 쓰이는 언어인 HTML이 차세대 언어 XML로 가기 위한 다리가 된다는 점에서 커다란 의미를 지닙니다. 인터넷 표준기관인 W3C(www.w3c.org)는 XHTML 1.0이란 새로운 표준을 내놓았습니다. 이는 웹페이지를 만드는 데 가장 많이 쓰이는 언어인 HTML이 차세대 언어 XML로 가기 위한 다리가 된다는 점에서 커다란 의미를 지닙니다.</p>
+        </div>
+        <div>
+            <img src="../images/play-button.png">
+            <p>인터넷 표준기관인 W3C(www.w3c.org)는 XHTML 1.0이란 새로운 표준을 내놓았습니다. 이는 웹페이지를 만드는 데 가장 많이 쓰이는 언어인 HTML이 차세대 언어 XML로 가기 위한 다리가 된다는 점에서 커다란 의미를 지닙니다. 인터넷 표준기관인 W3C(www.w3c.org)는 XHTML 1.0이란 새로운 표준을 내놓았습니다. 이는 웹페이지를 만드는 데 가장 많이 쓰이는 언어인 HTML이 차세대 언어 XML로 가기 위한 다리가 된다는 점에서 커다란 의미를 지닙니다.</p>
+        </div>
+    </div>
+<!--float:left-clear:both(clear box)-->
+    <div class="a3">
+        <img src="../images/play-button.png">
+        <p>인터넷 표준기관인 W3C(www.w3c.org)는 XHTML 1.0이란 새로운 표준을 내놓았습니다. 이는 웹페이지를 만드는 데 가장 많이 쓰이는 언어인 HTML이 차세대 언어 XML로 가기 위한 다리가 된다는 점에서 커다란 의미를 지닙니다. 인터넷 표준기관인 W3C(www.w3c.org)는 XHTML 1.0이란 새로운 표준을 내놓았습니다. 이는 웹페이지를 만드는 데 가장 많이 쓰이는 언어인 HTML이 차세대 언어 XML로 가기 위한 다리가 된다는 점에서 커다란 의미를 지닙니다.</p>
+        <div class="clearBox"></div>
+        <img src="../images/play-button.png">
+        <p>인터넷 표준기관인 W3C(www.w3c.org)는 XHTML 1.0이란 새로운 표준을 내놓았습니다. 이는 웹페이지를 만드는 데 가장 많이 쓰이는 언어인 HTML이 차세대 언어 XML로 가기 위한 다리가 된다는 점에서 커다란 의미를 지닙니다. 인터넷 표준기관인 W3C(www.w3c.org)는 XHTML 1.0이란 새로운 표준을 내놓았습니다. 이는 웹페이지를 만드는 데 가장 많이 쓰이는 언어인 HTML이 차세대 언어 XML로 가기 위한 다리가 된다는 점에서 커다란 의미를 지닙니다.</p>
+        <div class="clearBox"></div>
+        <img src="../images/play-button.png">
+        <p>인터넷 표준기관인 W3C(www.w3c.org)는 XHTML 1.0이란 새로운 표준을 내놓았습니다. 이는 웹페이지를 만드는 데 가장 많이 쓰이는 언어인 HTML이 차세대 언어 XML로 가기 위한 다리가 된다는 점에서 커다란 의미를 지닙니다. 인터넷 표준기관인 W3C(www.w3c.org)는 XHTML 1.0이란 새로운 표준을 내놓았습니다. 이는 웹페이지를 만드는 데 가장 많이 쓰이는 언어인 HTML이 차세대 언어 XML로 가기 위한 다리가 된다는 점에서 커다란 의미를 지닙니다.</p>
+    </div>
+<!--case 2: ul-li/ float-overflow-->
+    <ul class="a4">
+        <li>
+            <img src="../images/play-button.png">
+            <p>인터넷 표준기관인 W3C(www.w3c.org)는 XHTML 1.0이란 새로운 표준을 내놓았습니다. 이는 웹페이지를 만드는 데 가장 많이 쓰이는 언어인 HTML이 차세대 언어 XML로 가기 위한 다리가 된다는 점에서 커다란 의미를 지닙니다. 인터넷 표준기관인 W3C(www.w3c.org)는 XHTML 1.0이란 새로운 표준을 내놓았습니다. 이는 웹페이지를 만드는 데 가장 많이 쓰이는 언어인 HTML이 차세대 언어 XML로 가기 위한 다리가 된다는 점에서 커다란 의미를 지닙니다.</p>
+        </li>
+        <li>
+            <img src="../images/play-button.png">
+            <p>인터넷 표준기관인 W3C(www.w3c.org)는 XHTML 1.0이란 새로운 표준을 내놓았습니다. 이는 웹페이지를 만드는 데 가장 많이 쓰이는 언어인 HTML이 차세대 언어 XML로 가기 위한 다리가 된다는 점에서 커다란 의미를 지닙니다. 인터넷 표준기관인 W3C(www.w3c.org)는 XHTML 1.0이란 새로운 표준을 내놓았습니다. 이는 웹페이지를 만드는 데 가장 많이 쓰이는 언어인 HTML이 차세대 언어 XML로 가기 위한 다리가 된다는 점에서 커다란 의미를 지닙니다.</p>
+        </li>
+        <li>
+            <img src="../images/play-button.png">
+            <p>인터넷 표준기관인 W3C(www.w3c.org)는 XHTML 1.0이란 새로운 표준을 내놓았습니다. 이는 웹페이지를 만드는 데 가장 많이 쓰이는 언어인 HTML이 차세대 언어 XML로 가기 위한 다리가 된다는 점에서 커다란 의미를 지닙니다. 인터넷 표준기관인 W3C(www.w3c.org)는 XHTML 1.0이란 새로운 표준을 내놓았습니다. 이는 웹페이지를 만드는 데 가장 많이 쓰이는 언어인 HTML이 차세대 언어 XML로 가기 위한 다리가 된다는 점에서 커다란 의미를 지닙니다.</p>
+        </li>
+    </ul>
+<!--cace2-2 float-clear-->
+    <ul class="a5">
+        <li>
+            <img src="../images/play-button.png">
+            <p>인터넷 표준기관인 W3C(www.w3c.org)는 XHTML 1.0이란 새로운 표준을 내놓았습니다. 이는 웹페이지를 만드는 데 가장 많이 쓰이는 언어인 HTML이 차세대 언어 XML로 가기 위한 다리가 된다는 점에서 커다란 의미를 지닙니다. 인터넷 표준기관인 W3C(www.w3c.org)는 XHTML 1.0이란 새로운 표준을 내놓았습니다. 이는 웹페이지를 만드는 데 가장 많이 쓰이는 언어인 HTML이 차세대 언어 XML로 가기 위한 다리가 된다는 점에서 커다란 의미를 지닙니다.</p>
+        </li>
+        <div class="clearBox"></div>
+        <li>
+            <img src="../images/play-button.png">
+            <p>인터넷 표준기관인 W3C(www.w3c.org)는 XHTML 1.0이란 새로운 표준을 내놓았습니다. 이는 웹페이지를 만드는 데 가장 많이 쓰이는 언어인 HTML이 차세대 언어 XML로 가기 위한 다리가 된다는 점에서 커다란 의미를 지닙니다. 인터넷 표준기관인 W3C(www.w3c.org)는 XHTML 1.0이란 새로운 표준을 내놓았습니다. 이는 웹페이지를 만드는 데 가장 많이 쓰이는 언어인 HTML이 차세대 언어 XML로 가기 위한 다리가 된다는 점에서 커다란 의미를 지닙니다.</p>
+        </li>
+        <div class="clearBox"></div>
+        <li>
+            <img src="../images/play-button.png">
+            <p>인터넷 표준기관인 W3C(www.w3c.org)는 XHTML 1.0이란 새로운 표준을 내놓았습니다. 이는 웹페이지를 만드는 데 가장 많이 쓰이는 언어인 HTML이 차세대 언어 XML로 가기 위한 다리가 된다는 점에서 커다란 의미를 지닙니다. 인터넷 표준기관인 W3C(www.w3c.org)는 XHTML 1.0이란 새로운 표준을 내놓았습니다. 이는 웹페이지를 만드는 데 가장 많이 쓰이는 언어인 HTML이 차세대 언어 XML로 가기 위한 다리가 된다는 점에서 커다란 의미를 지닙니다.</p>
+        </li>
+    </ul>
+<!--float:left-float:left(overflow 안 먹힐 때)-->
+    <div id="a2">
+        <div>
+            <img src="../images/play-button.png">
+            <p>인터넷 표준기관인 W3C(www.w3c.org)는 XHTML 1.0이란 새로운 표준을 내놓았습니다. 이는 웹페이지를 만드는 데 가장 많이 쓰이는 언어인 HTML이 차세대 언어 XML로 가기 위한 다리가 된다는 점에서 커다란 의미를 지닙니다. 인터넷 표준기관인 W3C(www.w3c.org)는 XHTML 1.0이란 새로운 표준을 내놓았습니다. 이는 웹페이지를 만드는 데 가장 많이 쓰이는 언어인 HTML이 차세대 언어 XML로 가기 위한 다리가 된다는 점에서 커다란 의미를 지닙니다.</p>
+        </div>
+        <div>
+            <img src="../images/play-button.png">
+            <p>인터넷 표준기관인 W3C(www.w3c.org)는 XHTML 1.0이란 새로운 표준을 내놓았습니다. 이는 웹페이지를 만드는 데 가장 많이 쓰이는 언어인 HTML이 차세대 언어 XML로 가기 위한 다리가 된다는 점에서 커다란 의미를 지닙니다. 인터넷 표준기관인 W3C(www.w3c.org)는 XHTML 1.0이란 새로운 표준을 내놓았습니다. 이는 웹페이지를 만드는 데 가장 많이 쓰이는 언어인 HTML이 차세대 언어 XML로 가기 위한 다리가 된다는 점에서 커다란 의미를 지닙니다.</p>
+        </div>
+        <div>
+            <img src="../images/play-button.png">
+            <p>인터넷 표준기관인 W3C(www.w3c.org)는 XHTML 1.0이란 새로운 표준을 내놓았습니다. 이는 웹페이지를 만드는 데 가장 많이 쓰이는 언어인 HTML이 차세대 언어 XML로 가기 위한 다리가 된다는 점에서 커다란 의미를 지닙니다. 인터넷 표준기관인 W3C(www.w3c.org)는 XHTML 1.0이란 새로운 표준을 내놓았습니다. 이는 웹페이지를 만드는 데 가장 많이 쓰이는 언어인 HTML이 차세대 언어 XML로 가기 위한 다리가 된다는 점에서 커다란 의미를 지닙니다.</p>
+        </div>
+    </div>
+</body>
+</html>

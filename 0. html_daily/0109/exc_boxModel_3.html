@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Box Model3</title>
+    <style>
+        *{margin: 0; padding: 0}
+        /*b1*/
+        .b1 p{width: 300px; border: 1px solid red; margin: 10px; padding: 5px}
+        .b1 span{border: 1px solid blue; margin: 10px}
+        .b1 .s1{display: block}
+        /*b2*/
+        .b2{width: 300px; margin-top: 50px}
+        .b2 .p1{width: 300px; border: 10px solid red; padding: 0 20px}
+        .b2 .p2{width: 360px; background: orange}
+        .b2 .p3{width: 300px; background: pink}
+    </style>
+</head>
+<body>
+<!--display property-->
+    <div class="b1">
+        <p>단락 요소입니다.</p>
+        <span class="s1">인라인 요소입니다.</span>
+        <span>인라인 요소입니다.</span>
+    </div>
+<!--width=width+padding+border-->
+    <div class="b2">
+    <p class="p1">단락 요소입니다.</p>
+    <p class="p2">w: 360</p>
+    <p class="p3">w: 300</p>
+    </div>
+</body>
+</html>

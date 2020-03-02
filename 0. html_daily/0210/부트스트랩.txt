@@ -1,0 +1,17 @@
+부트스트랩
+
+1줄 12단 100%
+ex) .col-md-4.col-md-4.col-md-4: 같은 너비 3단
+-.col: 가로
+-md: 화면 화면 유형
+-4: 줄 수(비율)
+
+ex) 화면 유형
+-xs (phones)
+-sm (tablets)
+-md (desktops)
+-lg (larger desktops): 해상도 큰 데스크탑 (1900 이상)
+
+*Each tier of classes scales up,
+meaning if you plan on setting the same widths for xs and sm,
+you only need to specify xs.
