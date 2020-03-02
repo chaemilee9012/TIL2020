@@ -1,8 +1,7 @@
 @import url('common.css');
 @import url('https://fonts.googleapis.com/css?family=Baloo&display=swap');
 
-
-header{
+body > header{
     width: 100%;
     background: #fff;
     position: fixed; left: 50%; top: 0; z-index: 100;
@@ -138,14 +137,15 @@ main{
     width: 90%; margin: 0 auto;
     padding-top: 5vw;
 }
-main header{
-    width:100%; padding: 2vw 0; margin-bottom: 2vw;
-    text-align:left;
+main > header{
+    width: 100%; padding: 2vw 0;
+    margin-bottom: 2vw;
+    text-align: left;
     position: relative; z-index: 0
 }
 main header h2{
-    font-size:2.5em;
-    margin-bottom:35px
+    font-size: 2.5em;
+    margin-bottom: 35px
 }
 main header a{
     padding: 0 1em
@@ -153,9 +153,9 @@ main header a{
 main header a:first-of-type{
     padding-left: 0
 }
-main header:after{
-    content:'';
-    width:100%; height:1px; background:#ccc;
+main > header:after{
+    content: '';
+    width: 100%; height: 1px; background: #ccc;
     position: absolute; left: 0; bottom: 0
 }
 /* ---------------------- 주문 목록 --------------------------------------------------------- */
@@ -210,13 +210,14 @@ main header:after{
 }
 /* ---------------------- 총 주문 금액 --------------------------------------------------------- */
 .price{
-    width: 100%
+    width: 100%;
+    margin-bottom: 3vw
 }
 .price h3{
     display: none
 }
 .price table{
-    width: 100%; margin-bottom: 2vw;
+    width: 100%; 
     text-align: center;
     border-collapse: collapse;
     border: 2px solid #96d5c1
@@ -250,7 +251,8 @@ main header:after{
 }
 /* ---------------------- 주문 고객 정보 --------------------------------------------------------- */
 .info_custmr{
-    width: 100%
+    width: 100%;
+    margin-bottom: 3vw
 }
 .info_custmr h3{
     font-size: 1.5em; font-weight: 600;
@@ -263,25 +265,25 @@ main header:after{
 .info_custmr form table{
     width: 100%;
     border-top: 2px solid #f29a82;
-    /* border-collapse: collapse; */
+    border-collapse: collapse;
+
 }
 .info_custmr form table tbody{
-    border: 1px solid #333;
-    width: 100%;
-    
-}
-.info_custmr form table tbody tr{
     width: 100%
 }
+.info_custmr form table tbody tr{}
 .info_custmr form table tbody th{
-    border: 1px solid #f00;
-    padding: 0 1vh;
+    border-bottom: 1px solid #ccc;
+    background: #eee;
+    padding: 0 2vh;
     font-size: 1.1rem
 }
 .info_custmr form table tbody td{
-    border: 1px solid #00f;
     padding: 1vh;
     font-size: 1.1rem;
+}
+.info_custmr form table tbody .border_bt{
+    border-bottom: 1px solid #ccc;
 }
 .info_custmr form table tbody td input{
     padding: 5px;
@@ -295,20 +297,55 @@ main header:after{
     font-size: 1.1rem
 }
 .info_custmr form table tbody td select option{}
-
-.delivery{}
-.delivery header{}
-.delivery header h3{}
+/* ---------------------- 배송지 정보 --------------------------------------------------------- */
+.delivery{
+    width: 100%;
+    margin-bottom: 3vw
+}
+.delivery header{
+    padding-bottom: 1vw
+}
+.delivery header h3{
+    font-size: 1.5em; font-weight: 600;
+    text-align: left;
+    padding: 1vw 0
+}
 .delivery header input{}
-.delivery header table{}
-.delivery header table form{}
-.delivery header table form tbody{}
-.delivery header table form tbody th{}
-.delivery header table form tbody td{}
-.delivery header table form tbody td input{}
-.delivery header table form tbody td button{}
-.delivery header table form tbody td select{}
-.delivery header table form tbody td select option{}
+.delivery form{
+    width: 100%
+}
+.delivery form table{
+    width: 100%;
+    border-top: 2px solid #96d5c1;
+    border-collapse: collapse;
+}
+.delivery form table tbody{
+    width: 100%
+}
+.delivery form table tbody tr{}
+.delivery form table tbody th{
+    border-bottom: 1px solid #ccc;
+    background: #eee;
+    padding: 0 2vh;
+    font-size: 1.1rem
+}
+.delivery form table tbody td{
+    padding: 2vh;
+    font-size: 1.1rem;
+}
+.delivery form table tbody .border_bt{
+    border-bottom: 1px solid #ccc
+}
+.delivery form table tbody td input{
+    padding: 5px;
+    border: 1px solid #ccc; outline-style: none;
+    font-size: 1.1rem
+}
+.delivery form table tbody td select{
+    font-size: 1.1rem;
+    padding: 5px
+}
+
 
 
 

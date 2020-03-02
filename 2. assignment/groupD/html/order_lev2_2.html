@@ -134,7 +134,7 @@
                     <tbody>
                         <tr>
                             <th rowspan="2">보내시는 분</th>
-                            <td rowspan="2" colspan="3">
+                            <td rowspan="2" colspan="3" class="border_bt">
                                 <input type="text" id="name" placeholder="이원더" required>
                             </td>
                             <th rowspan="2">이메일</th>
@@ -152,35 +152,35 @@
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="3">※ 주문 정보를 이메일로 보내드립니다.</td>
+                            <td colspan="3" class="border_bt">※ 주문 정보를 이메일로 보내드립니다.</td>
                         </tr>
                         <tr>
                             <th rowspan="2">주소</th>
                             <td colspan="3">
                                 <input type="text" value="우편번호" readonly>
-                                <button>우편번호찾기</button>
+                                <input type="button" value="우편번호찾기" required>
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="3">
+                            <td colspan="3" class="border_bt">
                                 <input type="text" placeholder="주소" readonly>
                             </td>
-                            <td colspan="3">
+                            <td colspan="3" class="border_bt">
                                 <input type="text" placeholder="상세 주소">
                             </td>
                         </tr>
                         <tr>
                             <th rowspan="2">휴대전화</th>
                             <td colspan="3">
-                                <input type="text" maxlength="4" placeholder="010">-<input type="text" maxlength="4" placeholder="1234">-<input type="text" maxlength="4" placeholder="5678">
+                                <input type="text" maxlength="4" size="10" placeholder="010">-<input type="text" maxlength="4" size="10" placeholder="1234">-<input type="text" maxlength="4" size="10" placeholder="5678">
                             </td>
                             <th rowspan="2">전화번호</th>
-                            <td rowspan="2" colspan="3">
-                                <input type="text" maxlength="4" placeholder="010">-<input type="text" maxlength="4" placeholder="1234">-<input type="text" maxlength="4" placeholder="5678">
+                            <td rowspan="2" colspan="3" class="border_bt">
+                                <input type="text" maxlength="4" size="10" placeholder="010">-<input type="text" maxlength="4" size="10" placeholder="1234">-<input type="text" maxlength="4" size="10" placeholder="5678">
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="3">※ 주문 정보를 sms로 보내드립니다.</td>
+                            <td colspan="3" class="border_bt">※ 주문 정보를 sms로 보내드립니다.</td>
                         </tr>
                     </tbody>
                 </table>
@@ -197,35 +197,37 @@
                 <input type="radio" id="new_address" name="address">
                 <label for="new_address">새로운 주소</label>
             </header>
-            <table> 
-                <form action="#">
+            <form action="#">
+                <table> 
                     <tbody>
                         <tr>
                             <th>받으시는 분</th>
-                            <td colspan="2"><input type="text" placeholder="이원더" required></td>
+                            <td colspan="3" class="border_bt"><input type="text" placeholder="이원더" required></td>
                         </tr>
                         <tr>
                             <th rowspan="2">주소</th>
-                            <td><input type="text" value="우편번호" readonly></td>
-                            <td><button>우편번호찾기</button></td>
+                            <td>
+                                <input type="text" value="우편번호" readonly>
+                                <input type="button" value="우편번호찾기" required>
+                            </td>
                         </tr>
                         <tr>
-                            <td colspan="4"><input type="text" value="주소"" readonly></td>
-                            <td colspan="3"><input type="text" value="상세 주소"></td>
+                            <td class="border_bt"><input type="text" value="주소"" readonly></td>
+                            <td colspan="2" class="border_bt"><input type="text" value="상세 주소"></td>
                         </tr>
                         <tr>
                             <th>휴대전화</th>
-                            <td><input type="text" maxlength="4" placeholder="010"></td>
-                            <td><input type="text" maxlength="4" placeholder="1234"></td>
-                            <td><input type="text" maxlength="4" placeholder="1234"></td>
+                            <td class="border_bt">
+                                <input type="text" maxlength="4" size="10" placeholder="010">-<input type="text" maxlength="4" size="10" placeholder="1234">-<input type="text" maxlength="4" size="10" placeholder="5678">
+                            </td>
                             <th>전화번호</th>
-                            <td><input type="text" maxlength="4" placeholder="010"></td>
-                            <td><input type="text" maxlength="4" placeholder="1234"></td>
-                            <td><input type="text" maxlength="4" placeholder="1234"></td>
+                            <td class="border_bt">
+                                <input type="text" maxlength="4" size="10" placeholder="010">-<input type="text" maxlength="4" size="10" placeholder="1234">-<input type="text" maxlength="4" size="10" placeholder="5678">
+                            </td>
                         </tr>
                         <tr>
                             <th rowspan="2">배송 요청사항</th>
-                            <td>
+                            <td colspan="3">
                                 <select name="request" id="request">
                                     <option value="">배송 요청사항 없음</option>
                                     <option value="">배송 전 연락바랍니다.</option>
@@ -235,11 +237,11 @@
                             </td>
                         </tr>
                         <tr>
-                            <td><input type="text"></td>
+                            <td colspan="3" class="border_bt"><input type="text" size="30"></td>
                         </tr>
                     </tbody>
-                </form>
-            </table>
+                </table>
+            </form>
         </section> <!-- 배송지 정보 끝 ---------------------------------------------------------->
         <div class="button">
             <ul class="bttn_manage"> <!-- 버튼 -------------------------------------------------------->
