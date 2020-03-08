@@ -5,30 +5,25 @@ console.log(ran);
 
 
 
-//출석체크
-var sCheck = document.querySelector(".study-check");
-var input = sCheck.querySelectorAll('div input');
-var tbody = sCheck.querySelector('tbody');
-var sNum = tbody.querySelectorAll('tr').length,
-    sCount=null;
+// //출석체크
+// var sCheck = document.querySelector(".study-check");
+// var input = sCheck.querySelectorAll('div input');
+// var tbody = sCheck.querySelector('tbody');
+// var sNum = tbody.querySelectorAll('tr').length,
+//     sCount=null;
 
-input[1].onclick = studyCheck;
-function studyCheck(){
-    var name = input[0].value;
-    if(name == ""){
-         alert('수강생 이름을 입력하세요.')   
-    }
-    else{
-        sNum++;
-        sNum <= 9 ? sCount = '0'+sNum : sCount=sNum;
-        tbody.innerHTML += "<tr><td>"+sCount+"</td><td>"+name+"</td></tr>";
-    }
-}
-
-
-
-
-
+// input[1].onclick = studyCheck;
+// function studyCheck(){
+//     var name = input[0].value;
+//     if(name == ""){
+//          alert('수강생 이름을 입력하세요.')   
+//     }
+//     else{
+//         sNum++;
+//         sNum <= 9 ? sCount = '0'+sNum : sCount=sNum;
+//         tbody.innerHTML += "<tr><td>"+sCount+"</td><td>"+name+"</td></tr>";
+//     }
+// }
 
 
 
@@ -55,11 +50,6 @@ result2[1].onclick = function(){
 result2[2].onclick = function(){
     result2[0].value = 0;
 }
-
-
-
-
-
 
 
 
