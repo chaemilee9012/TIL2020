@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        var body = {
+            setColor: function (color){
+                document.querySelector('body').style.color = color;
+            }, 
+            backColor: function (color){
+                document.querySelector('body').style.backgroundColor = color;
+            }
+        }
+        var link = {
+            setColor: function (color){
+                var aList = document.querySelectorAll('a');
+                var i = 0;
+
+                while(i < aList.length){
+                    aList[i].style.color = color;
+                    i = i + 1;
+                }
+            }
+        }
+        
+        function nightDay(self){
+
+            if(self.value == 'night'){
+                body.backColor('black');
+                body.setColor('white');
+                self.value = 'day';
+                link.setColor('powderblue');
+            } else{
+                body.backColor('white');
+                body.setColor('black');
+                self.value = 'night';
+                link.setColor('blue');
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1><a href="#">WEB</a></h1>
+    <input type="button" value="night" onclick="nightDay(this);">
+    <ol>
+        <li><a href="1.html">HTML</a></li>
+        <li><a href="2.html">CSS</a></li>
+        <li><a href="3.html">JavaScript</a></li>
+    </ol>
+    <h2>HTML</h2>
+    <p>
+        Hypertext Markup Language (HTML) is the standard markup language for documents designed to be displayed in a web browser. It can be assisted by technologies such as Cascading Style Sheets (CSS) and scripting languages such as JavaScript. Web browsers receive HTML documents from a web server or from local storage and render the documents into multimedia web pages. HTML describes the structure of a web page semantically and originally included cues for the appearance of the document.
+    </p>
+    <input type="button" value="night" onclick="nightDay(this);">
+</body>
+
+</html>

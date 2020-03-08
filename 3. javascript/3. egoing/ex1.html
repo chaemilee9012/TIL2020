@@ -5,6 +5,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <script>
+        function setColor(color){
+            var aList = document.querySelectorAll('a');
+            var i = 0;
+
+            while(i < aList.length){
+                aList[i].style.color = color;
+                // console.log(aList[i]);
+                i = i + 1;
+            }
+        }
+        function bodyColor(color){
+            document.querySelector('body').style.color = color;
+        }
+        function backColor(color){
+            document.querySelector('body').style.backgroundColor = color;
+        }
+        function nightDay(self){
+            // var target = document.querySelector('body');
+
+            if(self.value == 'night'){
+                // target.style.backgroundColor = 'black';
+                backColor('black');
+                // target.style.color = 'white';
+                bodyColor('white');
+                self.value = 'day';
+                setColor('powderblue');
+
+                // while(i < aList.length){
+                //     var aList = document.querySelectorAll('a');
+                //     var i = 0;
+
+                //     aList[i].style.color = 'powderblue';
+                //     // console.log(aList[i]);
+                //     i = i + 1;
+                // }
+            } else{
+                backColor('white');
+                // target.style.backgroundColor = 'white';
+                bodyColor('black');
+                // target.style.color = 'black';
+                self.value = 'night';
+                setColor('blue');
+
+                // while(i < aList.length){
+                //     var aList = document.querySelectorAll('a');
+                //     var i = 0;
+
+                //     aList[i].style.color = 'blue';
+                //     // console.log(aList[i]);
+                //     i = i + 1;
+                // }
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -38,20 +94,36 @@
         document.querySelector('#night_day').value = 'night';
     }
     "> -->
+<!-- 
     <input type="button" value="night" onclick="
     var target = document.querySelector('body');
+    var aList = document.querySelectorAll('a');
+    var i = 0;
+
     if(this.value == 'night'){
         target.style.backgroundColor = 'black';
         target.style.color = 'white';
         this.value = 'day';
+
+        while(i < aList.length){
+            aList[i].style.color = 'powderblue';
+            // console.log(aList[i]);
+            i = i + 1;
+        }
     } else{
         target.style.backgroundColor = 'white';
         target.style.color = 'black';
         this.value = 'night';
+
+        while(i < aList.length){
+            aList[i].style.color = 'blue';
+            // console.log(aList[i]);
+            i = i + 1;
+        }
     }
     ">
-
-
+    -->
+    <input type="button" value="night" onclick="nightDay(this);">
     <ol>
         <li><a href="1.html">HTML</a></li>
         <li><a href="2.html">CSS</a></li>
@@ -73,19 +145,19 @@
         document.querySelector('#night_day').value = 'night';
     }
     "> -->
-    <input type="button" value="night" onclick="
-    var target = document.querySelector('body');
+    <input type="button" value="night" onclick="nightDay(this);">
+    <!-- 
+    <script>
+        var aList = document.querySelectorAll('a');
+        var i = 0;
 
-    if(this.value == 'night'){
-        target.style.backgroundColor = 'black';
-        target.style.color = 'white';
-        this.value = 'day';
-    } else{
-        target.style.backgroundColor = 'white';
-        target.style.color = 'black';
-        this.value = 'night';
-    }
-    ">
+        while(i < aList.length){
+            aList[i].style.color = 'powderblue';
+            console.log(aList[i]);
+            i = i + 1;
+        }
+    </script>
+     -->
 </body>
 
 </html>
