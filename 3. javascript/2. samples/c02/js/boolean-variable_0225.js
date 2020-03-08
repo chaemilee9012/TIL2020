@@ -34,47 +34,31 @@ elShip.className = shipping;
 
 // function off(){
 //     elShip.className = inStock;
-//     console.log(elShip);
+//     console.log(elShip.className);
 // }
 // elShip.addEventListener("click", off);
 
 
 // 클릭할 때마다 아이콘 바꾸기 *true가 아닐 때 클릭하면 false로 바꿔라
-
-var click = document.getElementsByClassName("span");
-
-
-function change(){
-    if(click.className == true){
-        click.className = false;
-        console.log("true");
+function stChange(){
+    if(this.className == 'true'){
+        this.className = 'false';
     } else{
-        click.className = true;
-        console.log("false");
+        this.className = 'true';
+    }
+    // if(elStock.className == 'true'){
+    //     elStock.className = 'false';
+    // } else{
+    //     elStock.className = 'true';
+    // }
+}
+elStock.addEventListener('click', stChange)
+
+function shChange(){
+    if(elShip.className == 'false'){
+        elShip.className = 'true';
+    } else{
+        elShip.className = 'false';
     }
 }
-
-click.addEventListener("click", change);
-
-
-// function on(){
-//     elStock.className = shipping;
-//     console.log(elStock.className);
-// }
-// elStock.addEventListener("click", on);
-
-
-// function onReverse(){
-//     if(elStock.className != true){
-//         elStock.classNme = inStock;
-//         console.log(elStock.classNme);
-//     }
-// }
-// elStock.addEventListener("click", onReverse);
-
-
-// function off(){
-//     elShip.className = inStock;
-//     console.log(elShip);
-// }
-// elShip.addEventListener("click", off);
+elShip.addEventListener('click', shChange)
