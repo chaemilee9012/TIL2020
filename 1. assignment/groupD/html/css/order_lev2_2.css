@@ -423,16 +423,21 @@ main h3{
 .method h3{}
 .method ul{
     width: 100%;
-    border-top: 2px solid #96d5c1;
+    border-top: 2px solid #f29a82;
     padding: 1vw 0;
     display: flex; justify-content: space-evenly
 }
 .method ul li{
-    border: 1px solid #333;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+.method ul li:nth-of-type(1){
+    border: 1px solid #96d5c1;
 }
 .method ul li a{
     padding: 1vw 2vw
 }
+
 .method ul li:nth-of-type(2) a{
     padding: 1vw 1vw
 }
