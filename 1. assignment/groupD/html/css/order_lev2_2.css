@@ -9,7 +9,7 @@ body > header{
     border-bottom: 1px dotted #ccc
 }
 header .fixed{
-    width: 90%; margin: 0 auto;
+    width: 80%; margin: 0 auto;
     display: flex; justify-content: flex-start
 }
 /* --------------------- 로고 ------------------------------------------------------------------ */
@@ -134,7 +134,7 @@ header .ic_menu a img{
 }
 /* ---------------------- main_헤더 --------------------------------------------------------- */
 main{
-    width: 90%; margin: 0 auto;
+    width: 80%; margin: 0 auto;
     padding-top: 5vw;
 }
 main > header{
@@ -158,15 +158,16 @@ main > header:after{
     width: 100%; height: 1px; background: #ccc;
     position: absolute; left: 0; bottom: 0
 }
-/* ---------------------- 주문 목록 --------------------------------------------------------- */
-.prod_list{
-    width: 100%
-}
-.prod_list h3{
+main h3{
     font-size: 1.5em; font-weight: 600;
     text-align: left;
     padding: 1vw 0
 }
+/* ---------------------- 주문 목록 --------------------------------------------------------- */
+.prod_list{
+    width: 100%
+}
+.prod_list h3{}
 .prod_list table{
     width: 100%; margin-bottom: 2vw;
     text-align: center;
@@ -208,7 +209,7 @@ main > header:after{
 .prod_list table tbody td img{
     width: 70px
 }
-/* ---------------------- 총 주문 금액 --------------------------------------------------------- */
+/* ---------------------- price --------------------------------------------------------- */
 .price{
     width: 100%;
     margin-bottom: 3vw
@@ -254,11 +255,7 @@ main > header:after{
     width: 100%;
     margin-bottom: 3vw
 }
-.info_custmr h3{
-    font-size: 1.5em; font-weight: 600;
-    text-align: left;
-    padding: 1vw 0
-}
+.info_custmr h3{}
 .info_custmr form{
     width: 100%;
 }
@@ -305,11 +302,7 @@ main > header:after{
 .delivery header{
     padding-bottom: 1vw
 }
-.delivery header h3{
-    font-size: 1.5em; font-weight: 600;
-    text-align: left;
-    padding: 1vw 0
-}
+.delivery header h3{}
 .delivery header input{}
 .delivery form{
     width: 100%
@@ -345,7 +338,108 @@ main > header:after{
     font-size: 1.1rem;
     padding: 5px
 }
-/* ---------------------- notice ----------------------------------------------------------------- */
+/* ---------------------- container ----------------------------------------------------------------- */
+.container{
+    width: 100%;
+    display: flex; justify-content: space-between
+}
+.container h3{}
+.container table{
+    width: 100%;
+    border-top: 2px solid #f29a82;
+    border-collapse: collapse
+}
+.container table tr{}
+.container table tr th{
+    border-bottom: 1px solid #ccc;
+    background: #eee;
+    font-size: 1.25rem; font-weight: 600;
+}
+.container table tr td{
+    font-size: 1.25rem;
+    padding: 1vw;
+    text-align: right
+}
+/* ---------------------- discount ----------------------------------------------------------------- */
+.discount{
+    width: 45%
+}
+.discount h3{}
+.discount form{
+    width: 100%
+}
+.discount form table{}
+.discount form table tr{}
+.discount form table tr th{
+    width: 20%
+}
+.discount form table tr td{
+    border-bottom: 1px solid #ccc
+}
+.discount form table tr td:nth-of-type(1){
+    width: 50%;
+    border-right: 1px solid #ccc
+}
+.discount form table tr td:nth-of-type(2){
+    font-size: 1rem
+}
+.discount form table tr:last-of-type td{
+    text-align: center;
+}
+.discount form span{
+    width: 100%;
+    padding-top: 1vh;
+    text-align: right
+}
+/* ---------------------- total --------------------------------------------------------------------- */
+.total{
+    width: 45%
+}
+.total h3{}
+.total table{}
+.total table tr{}
+.total table tr th{
+    width: 30%
+}
+.total table tr td{
+    border-bottom: 1px solid #ccc;
+    padding-right: 2vw
+}
+.total table tr:last-of-type td{
+    color: #f29a82;
+    font-size: 1.5rem; font-weight: 600
+}
+.total table tr td code{
+    font-size: 1.25rem
+}
+.total table tr:last-of-type td code{
+    color: #f29a82;
+    font-size: 1.5rem; font-weight: 600
+}
+/* ---------------------- method ----------------------------------------------------------------- */
+.method{
+    width: 45%
+}
+.method h3{}
+.method ul{
+    width: 100%;
+    border-top: 2px solid #96d5c1;
+    padding: 1vw 0;
+    display: flex; justify-content: space-evenly
+}
+.method ul li{
+    border: 1px solid #333;
+}
+.method ul li a{
+    padding: 1vw 2vw
+}
+.method ul li:nth-of-type(2) a{
+    padding: 1vw 1vw
+}
+
+
+
+
 
 /* ---------------------- 1:1 채팅 ----------------------------------------------------------------- */
 aside{}
