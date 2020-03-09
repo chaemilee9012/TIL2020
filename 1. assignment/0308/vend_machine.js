@@ -1,12 +1,10 @@
 var resultBox = document.querySelector('.result');
-// var resultContents = document.querySelectorAll('.result p');
-var resultContents = document.getElementsByTagName('p');
+var resultContents = document.querySelectorAll('.result p');
 // console.log(resultContents);
 
 var topHeight = 0;
 
-// var inputJs = document.querySelectorAll('.status input');
-var inputJs = document.getElementsByTagName('input');
+var inputJs = document.querySelectorAll('.status input');
 // console.log(inputJs);
 
 
@@ -20,6 +18,16 @@ function resultHeight(){
 }
 resultHeight();
 
+// 정답 --------------------------------------------------
+// for(let j = 0; j < resultContents.length; j++){
+//     inputJs[j].onclick = function(){
+//         for(var i=0;i<resultContents.length;i++){
+//             resultContents[i].style.display = 'none';
+//         }
+//         resultContents[j].style.display = 'block';
+//     };
+// };
+// 정답 --------------------------------------------------
 
 // inputJs[0].onclick = function(){
 //     resultContents[0].style.display = 'block';
@@ -121,10 +129,6 @@ resultHeight();
 //             resultContents[i].style.display = 'block';
 //         }
 //     }
-// }
-
-// for(var i = 0; i < inputJs[i].length; i++){
-//     inputJs[i].addEventListener('click', show);
 // }
 
 // for(var i = 0; i < inputJs[i].length; i++){

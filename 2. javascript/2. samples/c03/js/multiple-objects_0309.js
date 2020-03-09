@@ -1,5 +1,5 @@
 // Create the template for objects that are hotels
-function Hotel(name, rooms, booked) {
+function Hotel(name, rooms, booked) { // 도서관
   this.name = name;
   this.rooms = rooms;
   this.booked = booked;
@@ -7,6 +7,8 @@ function Hotel(name, rooms, booked) {
     return this.rooms - this.booked;
   };
 }
+
+// function(){} // 책꽂이
 
 
 // Create two hotel objects
@@ -17,11 +19,13 @@ var parkHotel = new Hotel('Park', 120, 77);
 // Update the HTML for the page
 var details1 = quayHotel.name + ' rooms: ';
     details1 += quayHotel.checkAvailability();
+
 var elHotel1 = document.getElementById('hotel1');
 elHotel1.textContent = details1;
 
 var details2 = parkHotel.name + ' rooms: ';
     details2 += parkHotel.checkAvailability();
+
 var elHotel2 = document.getElementById('hotel2');
 elHotel2.textContent = details2;
 

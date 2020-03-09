@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex3 ----------------------------------------------------------------------------------------->
+    <article class="ex3">
+        <h2>DOM - 데이터 값 변경</h2>
+        <div class="box">
+            <input type="text" list="src_txt">
+            <datalist id="src_txt">
+                <option>p02.jpg</option>
+                <option>p03.jpg</option>
+                <option>p04.jpg</option>
+            </datalist>
+            <select name="" id="">
+                <option>선모양 선택</option>
+                <option value="dotted">---------------------</option>
+                <option value="solid">──────────</option>
+                <option value="double">============</option>
+            </select>
+            <input type="button" value="변경">
+        </div>
+        <div>
+            <img src="../img/p02.jpg" class="img" alt="">
+        </div>
+    </article>
+    <!-- ex2 ----------------------------------------------------------------------------------------->
+    <article class="ex2">
+        <h2>DOM - 데이터 값 변경</h2>
+        <div class="box">
+            <input type="text" list="src_txt">
+            <datalist id="src_txt">
+                <option>p02.jpg</option>
+                <option>p03.jpg</option>
+                <option>p04.jpg</option>
+            </datalist>
+            <input type="button" value="변경">
+        </div>
+        <div>
+            <img src="../img/p02.jpg" class="img" alt="">
+        </div>
+    </article>
+    <!-- ex1 ----------------------------------------------------------------------------------------->
+    <article class="ex">
+        <h2>DOM - 데이터 값 변경</h2>
+        <div>
+            <input class="img_src" type="text" list="src_txt">
+            <datalist id="src_txt">
+                <option>p02.jpg</option>
+                <option>p03.jpg</option>
+                <option>p04.jpg</option>
+            </datalist>
+            <input class="change_btn" type="button" value="변경">
+        </div>
+        <div>
+            <img src="../img/p02.jpg" class="img" alt="">
+        </div>
+    </article>
+    <script>
+        // ex3 ------------------------------------------------------------------------------------
+        var ex3 = document.querySelector('.ex3');
+
+        ex3.onclick = function(){
+            var target = event.target;
+            if(target.type != 'button'){
+                return;
+            }
+            var imgJs = ex3.querySelector('.img');
+            var boxJs = ex3.querySelector('.box');
+
+            // console.log(boxJs.children[2].value);
+
+            imgJs.src = "../img/" + boxJs.children[0].value;
+            imgJs.style.borderStyle = boxJs.children[2].value;
+            
+        }
+
+        // ex2 ------------------------------------------------------------------------------------
+        //부모 요소에 이벤트 걸고 자식요소 골라내서 적용하는 방법
+        var ex2 = document.querySelector('.ex2');
+
+        ex2.onclick = function(){ // 부모 클릭
+            var target = event.target; //event.target: 클릭하는 대상 선택
+            // console.log(target.type);
+            if(target.type == 'button'){ // button과 같으면 스크립트 실행
+                // console.log('ok');
+            }
+            //대상자에 해당될 경우 실행할 스크립트
+            if(target.type != 'button'){ // button과 값이 같지 않으면 스크립트 실행 X = button과 같으면 스크립트 실행
+                return;
+            }
+            // console.log('ok');
+            var imgJs = ex2.querySelector('.img');
+            var boxJs = ex2.querySelector('.box');
+            // var inputSrc = box.children[0].value;
+
+            // console.log(boxJs.children[0].value);
+            
+            imgJs.src = "../img/" + boxJs.children[0].value;
+        }
+
+        // ex1 ------------------------------------------------------------------------------------
+        // var changeBtn = document.querySelector('.change_btn');
+        var ex1 = document.querySelector('.ex');
+        var changeBtn = ex1.querySelector('.change_btn');
+        // console.log(changeBtn);
+
+        changeBtn.onclick = function(){
+            console.log('ex1'); // ex1, 2 따로 작동하는지 확인
+            // var imgSrc = document.querySelector('.img_src');
+            var imgSrc = ex1.querySelector('.img_src');
+            // console.log(imgSrc.value);
+            // var imgJs = document.querySelector('.img');
+            var imgJs = ex1.querySelector('.img');
+            imgJs.src = "../img/" + imgSrc.value;
+        }
+        changeBtn.value = '원본';
+    </script>
+</body>
+</html>
