@@ -1,0 +1,188 @@
+@import url('common.css');
+.header {
+    width: 100%;
+    background: #4087c3;
+}
+
+.header ul {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.header ul li {
+    display: inline-block;
+}
+
+.header ul li > a {
+    color: #fff;
+    padding: 10px 10px;
+    text-transform: uppercase;
+}
+
+
+/*
+.header ul li a:after{
+    content:'|';
+    padding:0 20px;
+    opacity:.2;
+    font-size:.8em;
+    vertical-align: top;
+}
+.header ul li:last-of-type a:after{
+    content:'';
+}
+*/
+
+.header ul li {
+    position: relative;
+}
+
+.header ul li > a:before {
+    content: '';
+    border: 5px solid transparent;
+    border-bottom: 5px solid #fff;
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 5px);
+    opacity: 0;
+    z-index: 2;
+}
+
+.header ul li:hover > a:before {
+    opacity: 1;
+}
+
+
+/*sub menu*/
+
+.header ul li div {
+    position: absolute;
+    top: 38px;
+    left: 0;
+    border: 2px solid #4087c3;
+    display: none;
+}
+
+.header ul li div a {
+    color: #4087c3;
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid #4087c3;
+    padding: 10px 0;
+}
+
+.header ul li:hover div {
+    display: block;
+}
+
+
+/*menu*/
+
+.header .menu {
+    position: absolute;
+    right: 40px;
+    top: 10px;
+    width: 40px;
+    height: 40px;
+}
+
+.header .menu span {
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.header .menu span:nth-of-type(1) {
+    top: 0;
+}
+
+.header .menu span:nth-of-type(2) {
+    top: 9px;
+}
+
+.header .menu span:nth-of-type(3) {
+    top: 19px;
+}
+
+
+/*header_style2*/
+
+.header_2 {
+    background: #eee;
+}
+
+.header_2 div {
+    width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header_2 div h1 {
+    font-size: 2em;
+}
+
+.header_2 div ul {}
+
+.header_2 div ul li {
+    display: inline-block;
+    margin-left: 30px;
+}
+
+.header_2 div ul li a {
+    position: relative;
+}
+
+.header_2 div ul li a:after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    width: 0%;
+    height: 2px;
+    background: #555;
+    transition: .5s;
+}
+
+.header_2 div ul li:hover a:after {
+    width: 100%;
+    left: 0;
+}
+
+
+/*select box*/
+.select {
+    display: inline-block;
+    border: 1px solid #000;
+    border-top: 0;
+}
+.select > a {
+    padding: 0 20px;
+}
+
+.select > a,
+.select ul li {
+    border-top: 1px solid #000;
+    width: 100%;
+}
+.select ul {}
+.select ul li {}
+.select ul li a {}
+
+
+.select ul {
+    display: none;
+    background: #eee;
+}
+.select:hover ul {
+    display: block;
+}
+
+
+
+
+
