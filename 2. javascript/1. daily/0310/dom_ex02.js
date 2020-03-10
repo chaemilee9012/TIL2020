@@ -13,10 +13,13 @@ window.addEventListener('DOMContentLoaded', function(){
     var txtList = ex3.querySelector('.txt_list');
     var target;
 
-
-    btnInput.addEventListener('click', function(){
+    txtInput.addEventListener('keypress', function(){
         txtList.innerHTML += "<p class=" + "n" + ">" + txtInput.value + "</p>";
     });
+
+    // btnInput.addEventListener('click', function(){
+    //     txtList.innerHTML += "<p class=" + "n" + ">" + txtInput.value + "</p>";
+    // });
 
     txtList.addEventListener('click', function(){
         target = event.target; // event.target: 이벤트가 발생했을 때의 target → p
