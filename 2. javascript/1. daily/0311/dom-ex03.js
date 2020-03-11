@@ -167,17 +167,44 @@ window.addEventListener('DOMContentLoaded',function() {
 
     // 여러 개의 div
     // 여러 개의 li
+    // var liDiv;
+    // for(var i = 0; i < liJs.length; i++){
+    //     liJs[i].addEventListener('click', function(){
+    //         for(var j = 0; j < divJs.length; j++){
+    //             divJs[j].classList.remove('on');
+    //         }
+    //         // var liDiv = event.target.querySelector('div');
+    //         liDiv = this.querySelector('div');
+    //         liDiv.classList.toggle('on');
+    //         console.log(liDiv.classList.contains('on'));
+
+    //     });
+    // }
+
     var liDiv;
     for(var i = 0; i < liJs.length; i++){
         liJs[i].addEventListener('click', function(){
-            for(var j = 0; j < divJs.length; j++){
-                divJs[j].classList.remove('on');
-            }
-            // var liDiv = event.target.querySelector('div');
             liDiv = this.querySelector('div');
-            liDiv.classList.toggle('on');
+
+            for(var j = 0; j < divJs.length; j++){
+                if(liDiv.classList.contains('on') == false){
+                    liDiv.classList.add('on');
+                } else {
+                    divJs[j].classList.remove('on');
+                }
+                console.log(divJs[j].classList);
+            }
+
+            
+            // console.log(liDiv.classList.contains('on'));
+
+            // if(liDiv.classList.contains('on') == false){
+            //     liDiv.classList.add('on');
+            // }
         });
     }
+
+
 });
 
     
