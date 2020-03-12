@@ -43,18 +43,27 @@ window.addEventListener('DOMContentLoaded',function(){
     //     }
     // });
 
-    tab.addEventListener('click', function() {
-        var target = event.target;
-        var data = event.target.dataset.id;
-        // console.log(data);
+    // tab.addEventListener('click', function() {
+    //     var target = event.target;
+    //     var data = event.target.dataset.id;
+    //     // console.log(data);
 
-        for(var i = 0; i < tabCon.length; i++) {
-            tab.children[i].className = '';
-            tabCon[i].className = '';
-        }
+    //     for(var i = 0; i < tabCon.length; i++) {
+    //         tab.children[i].className = '';
+    //         tabCon[i].className = '';
+    //     }
 
-        target.className = 'active';
-        tabCon[data].className = 'active';
-        // console.log(target);
-    });
+    //     target.className = 'active';
+    //     tabCon[data].className = 'active';
+    //     // console.log(target);
+    // });
+
+    var tabLi = ex2.querySelectorAll('.tab li');
+
+    for(var i = 0; i < tabCon.length; i++) {
+        tabLi.addEventListener('click', function() {
+            
+        })
+    }
+
 });
