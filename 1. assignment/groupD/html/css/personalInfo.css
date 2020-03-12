@@ -1,14 +1,14 @@
 @import url('common.css');
-@import url('https://fonts.googleapis.com/css?family=Baloo&display=swap');
 
 /* layout */
+
 #total{
-    width:1920px;
-    min-width:480px;
+    width:100%;
     margin:0 auto;
 }
 
 /* header */
+
 header{
     width:100vw;
     position:fixed;
@@ -104,7 +104,6 @@ nav ul li dl dd:hover a{
 .burger_menu{
     display:none;
 }
-
 .burger_menu span{
     width:20px;
     height:2px;
@@ -150,13 +149,13 @@ nav ul li dl dd:hover a{
     height:15px;
 } */
 
-
 /* section */
 section{
     width:100%;
     margin:0 auto;
     text-align:center;
-    padding:170px 0;
+    padding-top:8%;
+
 }
 section .contents{
     width:100%;
@@ -167,143 +166,58 @@ section .con_tit{
     width:100%;
 }
 section .con_tit dl{
-    line-height:35px;
+    line-height:1.5em;
     text-align:left;
-    padding:0 235px;
+    padding:0 13%;
 }
 
 section .con_tit dl:after{
     content:'';
     background:#ccc;
     display:block;
-    width:calc(1920px - 470px);
+    width:100%;
     height:2px;
-    margin-top:35px;
+    margin-top:2%;
 }
 
 
 section .con_tit dl dt a{
     font-size:2.08em;
     color:#333;
-    margin-bottom:35px;
+    margin-bottom:2%;
 }
 section .con_tit dl dd{
     display:inline-block;
 }
-section .con_tit dl dd:nth-of-type(1){}
-section .con_tit dl dd:nth-of-type(2){}
-
-/* -------------------- container ---------------- */
-.con_wrap{
-    width:100%;
-    margin-top:70px;
-    display:flex;
-    justify-content:center;
+section .con_text dl dt{
+    font-size:1.5em;
 }
-/* ------------------- con_left -------------------- */
-.con_left{
-    border:1px solid #ccc;
-    margin-right:70px;
-}
-.left_wrap{
-    padding:35px 50px;
-}
-.left_tit ul li input{
-    border:1px solid #ccc;
-}
-
-.left_tit ul li:nth-of-type(1){
-    display:block;
-}
-.left_tit ul li:nth-of-type(1) strong{
-    font-size:2.08em;}
-
-.left_tit ul li:nth-of-type(2){
-    display:block;
-}
-
-.left_tit ul li:nth-of-type(2) span{
-    margin-right:35px; 
-    margin-top:35px;
-    font-size:1em;
-    font-weight:500;
-}
-
-.left_tit ul li:nth-of-type(3){
-    display:block;
-}
-
-.left_tit ul li:nth-of-type(3) span{
-    margin-right:20px;
-    margin-top:35px;
-    font-size:1em;
-    font-weight:500;
-}
-/* ------------------ identify --------------- */
-.find_info{
-    margin-top:10px;
-}
-.find_info ul{
-    display:flex;
-    justify-content:center;
-}
-.find_info ul li:nth-of-type(1){
-    margin-right:15px;
-}
-.find_info ul li:nth-of-type(1):after{
-    content:'';
-    width:1px;
-    height:8px;
-    background-color:#ccc;
-    display:inline-block;
-    margin-left:15px;
-}
-.find_info ul li:nth-of-type(2){}
-/* ------------- button --------------------- */
-.left_button ul{
-    display:flex;
-    justify-content:center;
-    margin-top:35px;
-}
-.left_button ul li:nth-of-type(1){
-    margin-right:40px;
-    padding:10px 40px;
-    border:2px solid #ccc;
-}
-.left_button ul li:nth-of-type(2){
-    background-color:#00b050;
-    padding:10px;
-    border:2px solid #ccc;
-}
-
-.left_button ul li:nth-of-type(2) a{
-    color:#fff;
-}
-
-.con_right{
-    border:1px solid #ccc;
-}
-.con_right p{
+section .con_text dl dd{
     white-space:pre-line;
-    padding:35px 50px;
+    font-size:1rem;
 }
-.con_right p strong{
-    font-size: 2.08em;
+/* --------------- con_text ------------------------------ */
+section .con_text{
+    padding:4% 15% 2% 15%;
+    text-align:left;
 }
-
-.con_right p a{
-    padding:15px 50px;
-    border:2px solid #ccc;
+section .con_text dl{
+    line-height:2.5vw;
 }
+section .con_text dl dd:nth-of-type(odd){
+    font-size:1.25em;
+    font-weight:600;
+}
+/* ----------------------footer strat--------------------- */
 /* 1:1 채팅 */
-aside .feedback{
+.feedback{
     width: 50px; height: 50px; border-radius: 50%;
-    background: #fff url('../img/sub_login/ic_chat.png') no-repeat center;
+    background: #fff url('../img/sub_term/ic_chat.png') no-repeat center;
     border: 2px solid #333;
     position: fixed; z-index: 100;
     right: 100px; bottom: 60px
 }
-aside .feedback img{
+.feedback img{
     width: 100%;
 
 }
@@ -388,26 +302,67 @@ footer{
 }
 
 /* ------ media --------- */
-
 @media(max-width:1024px){
     header{
         width:100vw;
     }
     .header_left{
         margin:0 auto;
+        display:block;
+        text-align:center;
     }
-    nav, .header_right{
+    .header_left .logo{
+        width:10vw;
+        margin-left:20vw;
+        margin-bottom:1vh;
+    }
+    nav{
+        display:block;
+        justify-content:space-around;
+    }
+
+    nav ul li{
+        margin-right:6vw;
+    }
+    .header_right{
         display:none;
     }
     .burger_menu{
         position:absolute;
-        right:10%;
+        right:20%;
+        display:none;
     }
     .burger_menu span{
-        display:block;
+        display:none;
     }
 
 /* container */
+    section{
+        padding-top:12%;
+    }
+    section .con_tit dl{
+        text-align:center;
+    }
+    section .con_tit dl:after{
+        width:70vw;
+    }
+    section .con_tit dl dd{
+        display:none;
+    }
+    section .con_tit dl img{
+        display:none;
+    }
+    
+    .con_text dl dt{
+        font-size:1.5vw;
+    }    
+    .con_text dl dd{
+        font-size:1vw;
+    }
+    /* content */
+    .con_text dd{
+    line-height:5vh;
+    }
    
 /* footer */
     .footer_tit{
@@ -430,17 +385,34 @@ footer{
     header{
         width:100vw;
     }
+    .header_left .logo{
+        width:10vw;
+        margin-left:0;;
+        margin-bottom:1vh;
+    }
     nav, .header_right{
         display:none;
     }
     .burger_menu{
         position:absolute;
         right:10%;
+        display:block;
     }
     .burger_menu span{
         display:block;
     }
+    /* container */
 
+    section{
+        padding-top:8%;
+    }
+    .con_tit dl dt{
+        font-size:1.5vw;
+    }
+     /* content */
+     .con_text dd{
+        line-height:5vh;
+    }
    
     /* footer */
     .footer_tit{
@@ -467,23 +439,28 @@ footer{
     }
     .foot_left, .foot_info{
         display:block;
-        float:left;
+        float:initial;
+        text-align:center;
     }
-    .foot_left{
-        margin-left:5%;
-        margin-bottom:5%;
+    .foot_info ul{
+        display:flex;
+        justify-content:center;        
+    }
+    .foot_info ul li{
+        margin-right:1%;
     }
     .foot_center{
         float:right;
-        display:block;
+        display:none;
         margin-right:5%;
     }
-    .foot_contacts, .foot_bank{
-        display:block;
+    .foot_contacts, .foot_bank,.foot_address{
+        display:none;
     }
     .foot_quick{
         display:none;
     }
+    
 }
 @media(max-width:480px){
     /* header */
@@ -500,7 +477,10 @@ footer{
     .burger_menu span{
         display:block;
     }
-
+    /* content */
+    .con_text dd{
+        line-height:5vh;
+    }
     /* footer */
     .footer_tit{
         padding: 0 5%;
@@ -525,4 +505,5 @@ footer{
     .foot_left, .foot_center, .foot_quick{
         display:none;
     }
+    
 }

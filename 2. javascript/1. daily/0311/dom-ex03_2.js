@@ -97,10 +97,10 @@ window.addEventListener('DOMContentLoaded', function() {
 window.addEventListener('DOMContentLoaded', function() {
     var ex5 = document.querySelector('.ex5');
     var faqJs = ex5.querySelector('.faq');
-    // var liJs = faqJs.querySelectorAll('li');
     var divJs = faqJs.querySelectorAll('li div');
 
     var target;
+    
     faqJs.addEventListener('click', function() {
         // console.log(event.target.nodeName);
         // if(event.target.nodeName == 'LI') {

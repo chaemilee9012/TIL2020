@@ -24,11 +24,12 @@ footer .foot_nav li:last-of-type:after{
 }
 footer .foot_nav li a{
     width: 95%;
-    padding: 1vw
+    padding: 15px
 }
 footer p{
-    width: 100%; padding: 3vw 0;
-    font-size: .9em;
+    width: 100%;
+    padding: 3vw 0;
+    font-size: .9rem;
     white-space: pre-line; line-height: 1.5em
 }
 /* ---------------------- ps ------------------------------------------------------------------ */
@@ -42,9 +43,8 @@ footer .postscript li{
 }
 footer .postscript li a{}
 footer .postscript li img{
-    height: 2vw
+    height: 30px
 }
 footer .postscript li span{
-    padding-left: 1vh;
-    font-size: .9em
+    padding-left: 15px
 }
