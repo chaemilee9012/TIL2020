@@ -97,9 +97,7 @@ window.addEventListener('DOMContentLoaded', function() {
 window.addEventListener('DOMContentLoaded', function() {
     var ex5 = document.querySelector('.ex5');
     var faqJs = ex5.querySelector('.faq');
-    var divJs = faqJs.querySelectorAll('li div');
-
-    var target;
+    var liJs = faqJs.querySelectorAll('li');
     
     faqJs.addEventListener('click', function() {
         // console.log(event.target.nodeName);
@@ -118,16 +116,63 @@ window.addEventListener('DOMContentLoaded', function() {
         // }
         
         // 2) 타겟 이용
-        target = event.target;
-        // console.log(target.children);
-        target.children[0].classList.toggle('on');
+        // target = event.target;
+        // // console.log(target.children);
+        // target.children[0].classList.toggle('on');
 
-        // 2) 선생님 답 -------------------------------------------------
-        // var liDiv = event.target.querySelector('div');
-
+        // liDiv.classList.toggle('on');
         // if(event.target.nodeName == 'LI'){
         //     // console.log(liDiv);
         //     liDiv.classList.toggle('on');
         // }
+
+        // 2) 선생님 답 -------------------------------------------------
+        var liDiv = event.target.querySelector('div');
+
+        if(event.target.nodeName == 'LI'){
+            // console.log(liDiv);
+            for(var i = 0; i < liJs.length; i++){
+                liJs[i].children[0].classList.remove('on');
+            }
+            liDiv.classList.toggle('on');
+        }
+
+        // div 클릭하면 안 보이게 ------------------------------------------------
+        if(event.target.nodeName == 'DIV') {
+            // console.log(event.target);
+            event.target.classList.toggle('on');
+        }
     });
+
+        // div 클릭하면 안 보이게 ------------------------------------------------
+
+    //     event.target.children[0].classList.toggle('on');
+
+    //     // if(event.target.nodeName == 'LI' || event.target.nodeName == 'DIV'){
+    //     //     // console.log(liDiv);
+    //     //     liDiv.classList.toggle('on');
+    //     // }
+
+        
+
+    //     // var liDiv = event.target.querySelector('div');
+    //     // console.log(event.target.classList);
+
+    //     // if(event.target.nodeName == 'LI'){
+    //     //         // console.log(liDiv);
+    //     //         liDiv.classList.toggle('on');
+    //     //     }
+
+    // var li = event.target.querySelectorAll('li');
+    // console.log('li');
+    
+        
+        // this.addEventListener('click', function() {
+        // // liDiv = target.querySelector('div');
+        // // this.classList.toggle('on');
+        //     console.log('ok');
+        // });
+
+
+    
 });

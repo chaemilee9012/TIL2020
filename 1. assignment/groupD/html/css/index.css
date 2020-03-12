@@ -1,6 +1,7 @@
 ﻿@import url('common/common.css');
 @import url('common/header.css');
 @import url('common/footer.css');
+
 /* ---------------------- 비주얼 -------------------------------------------------------------- */
 .visual{
     width: 100%; height: 680px;
