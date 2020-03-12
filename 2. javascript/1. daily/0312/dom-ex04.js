@@ -62,8 +62,8 @@ window.addEventListener('DOMContentLoaded',function(){
 
     for(var i = 0; i < tabCon.length; i++) {
         tabLi.addEventListener('click', function() {
-            
+            this.className = 'active';
+            tabCon[i].className = 'active';
         })
     }
-
 });
