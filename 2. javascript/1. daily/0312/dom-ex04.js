@@ -61,9 +61,9 @@ window.addEventListener('DOMContentLoaded',function(){
     var tabLi = ex2.querySelectorAll('.tab li');
 
     for(var i = 0; i < tabCon.length; i++) {
-        tabLi.addEventListener('click', function() {
+        tabLi[i].addEventListener('click', function() {
             this.className = 'active';
             tabCon[i].className = 'active';
-        })
+        });
     }
 });
