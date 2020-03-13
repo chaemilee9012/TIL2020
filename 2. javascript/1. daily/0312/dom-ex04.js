@@ -44,7 +44,7 @@ window.addEventListener('DOMContentLoaded',function() {
     // });
 
 
-    // 방법 1) -----------------------------------------------------------------------------
+    // 방법 1) ---------------------------------------------------------------------------
     // tab.addEventListener('click', function() {
     //     var target = event.target;
     //     var data = event.target.dataset.id;
@@ -61,7 +61,7 @@ window.addEventListener('DOMContentLoaded',function() {
     // });
 
 
-    // 방법 2) -----------------------------------------------------------------------------
+    // 방법 2) ---------------------------------------------------------------------------
     var tabLi = ex2.querySelectorAll('.tab li');
     var j = 0;
 
@@ -160,27 +160,10 @@ window.addEventListener('DOMContentLoaded',function() {
         b: 2
     }
     ------------------------------------------------------------------ */
-
-
-
 });
 
 
 //ex3 --------------------------------------------------------------------------
-/*
-    for(let i = 0; i < tabCon.length; i++) {
-        tabLi[i].addEventListener('click', function() {
-            tabLi[j].classList.remove('active');
-            tabCon[j].classList.remove('active');
-
-            this.classList.add('active'); // 탭
-            tabCon[i].classList.add('active'); // 콘텐츠
-
-            j = i; // 바로 직전에 클릭한 tabLi 찾아내서 i값 이용
-        });
-    }
-*/
-
 window.addEventListener('DOMContentLoaded',function() {
     var ex3 = document.querySelector('#ex3');
     var detImg = ex3.querySelector('.detail img');
@@ -195,6 +178,5 @@ window.addEventListener('DOMContentLoaded',function() {
             thumJs.children[i].classList.remove('active');
         }
         event.target.classList.add('active');
-
     });
 });
