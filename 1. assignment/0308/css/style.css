@@ -39,8 +39,10 @@ article .result p{
     word-break: keep-all;
     word-wrap: break-word;
     text-align: center;
-    white-space: pre-line;
-    display: none
+    white-space: pre-line
+}
+article .result p.block{
+    display: block
 }
 article .result p small{
     font-size: 0.8em;

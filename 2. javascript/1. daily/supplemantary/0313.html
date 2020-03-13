@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+</head>
+<body>
+    <!-- 요청 -->
+    <button>요청(좀 더 자세히 보이겠지?)</button>
+
+    <!-- 응답 내용(숨겨진 내용) -->
+    <div class="ans">
+        응답
+    </div>
+
+    <!-- 디자인 -->
+    <style>
+        .ans{
+            border: 1px solid #333;
+            padding: 200px;
+            position: absolute; z-index: -10;
+            left: 0; top: 0;
+            transform: translate(-100%);
+            transition: .5s
+        }
+        div.show{
+            transform: translate(0%);
+        }
+    </style>
+
+    <!-- 제어 -->
+    <script>
+        var button = document.querySelector('button');
+        var ansJs = document.querySelector('.ans');
+
+        button.addEventListener('click', function() {
+           ansJs.classList.toggle('show')
+        });
+    </script>
+</body>
+</html>

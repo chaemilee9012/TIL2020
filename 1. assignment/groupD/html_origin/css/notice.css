@@ -12,144 +12,98 @@
 
 /* header */
 
-body > header{
-    width: 100%;
-    background: #fff;
-    position: fixed; left: 50%; top: 0; z-index: 100;
-    transform: translateX(-50%);
-    border-bottom: 1px dotted #ccc
-}
-header .fixed{
-    width: 80%; margin: 0 auto;
-    display: flex;
-    justify-content: flex-start
-}
-/* --------------------- 로고 ------------------------------------------------------------------ */
-header .fixed div{
-    width: 70%;
-    display: flex;
-    justify-content: flex-start
-}
-header div h1{}
-header div h1 a{
-    font-family: 'Baloo', cursive; font-size: 2.5rem;
-    padding: 1vw 0
-}
-header div h1 strong{
-    font-family: 'Baloo', cursive; font-size: 2.5rem
-}
-header div h1 strong:nth-of-type(1){
-    color: #f29a82  
-}
-header div h1 strong:nth-of-type(2){
-    color: #96d5c1
-}
-/* ----------------------- nav_title --------------------------------------------------------- */
-header div nav{
-    width: 75%;
-    text-align: center
-}
-header div nav .nav_title{
-    width: 100%;
-    display: flex; justify-content: space-between
-}
-header div nav .nav_title li{
-    width: 16%
-}
-header div nav .nav_title li a{
-    width: 100%;
-    padding: 2vw 0;
-    font-size: 1.25em;
-    position: relative
-}
-header div nav .nav_title li a:after{
-    content: '';
-    width: 0%; height: 2px;
-    background: #ccc;
-    position: absolute; left: 50%; bottom: -2px;
-    transform: translateX(-50%);
-    transition: .5s
-}
-header div nav .nav_title li:hover a:after{
-    width: 100%
-}
-/* ----------------------- nav_list --------------------------------------------------------- */
-header div nav .nav_list{
-    width: 100%;
-    display: none
-}
-header:hover nav .nav_list{
-    margin-bottom: 1vh;
-    display: flex;
-    justify-content: space-between; align-items: flex-start
-}
-header div nav .nav_list > li{
-    width: 16%;
-    position: relative
-}
-header div nav .nav_list li a{
-    width: 100%;
-    padding: 1vw 0
-}
-header div nav .nav_list > li:nth-of-type(odd) a:hover{
-    background: rgba(242, 154, 130, 0.3)
-}
-header div nav .nav_list > li:nth-of-type(even) a:hover{
-    background: rgba(150, 213, 193, 0.3)
-}
-header div nav .nav_list > li:after{
-    content: '';
-    width: 0%; height: 2px;
-    background: #ccc;
-    position: absolute; left: 50%; top: 0;
-    transform: translateX(-50%);
-    transition: .5s
-}
-header div nav .nav_list li:hover:after{
-    width: 100%
-}
-header div nav .nav_list li ul{
-    width: 100%
-}
-header div nav .nav_list li ul li{
-    width: 100%
-}
-header div nav .nav_list li ul li a{
-    width: 100%
-}
-/* ----------------------ic_menu --------------------------------------------------------- */
-header .fixed .ic_menu{
-    width: 30%; height: 5vw;
-    display: flex;
-    justify-content: space-between; align-items: center
-}
-header .ic_menu div{
-    width: 60%;
-    display: flex;
-    justify-content: flex-end; align-items: baseline
-}
-header .ic_menu div input{
-    height: 40%;
-    margin-right: 0;
-    border-bottom: 1px solid #333;
-    outline-style: none
-}
-header .ic_menu div a{}
-header .ic_menu div a img{}
-header .ic_menu a{
-    width: 30px
-}
-header .ic_menu a img{
-    width: 100%
-}
-header .ic_menu > a:first-of-type{
-    margin-left: 0
-}
-header .ic_menu a img{
-    width: 90%
+header{
+    width:100vw;
+    position:fixed;
+    z-index:100;
+    background-color:#fff;
+    padding:1% 10%;
 }
 
+header .header_wrap{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+}
+.header_left{
+    display:flex;
+}
+.header_wrap .logo{
+    margin-right:5vw;
+    margin-top:3%;
+}
+.header_wrap .logo figure{
+    width:100%;
+}
+.header_wrap .logo figure img{
+    width:100%;
+}
+/* -------------- navigation 1depth ---------------- */
 
+.header_wrap nav{
+    position:relative;
+    width:100%;
+}
+
+.header_wrap nav > ul{
+    display:flex;
+    margin:5% 0%;
+    position:relative;
+    justify-content:space-between;
+}
+.header_wrap nav > ul > li{
+    /* word-spacing:30px; */
+}
+nav ul li{
+    position:relative;
+    font-size:0;
+    margin:0 4vw 0 0;
+    text-align:center;
+}
+
+nav ul li > a:nth-of-type(1){
+    position:relative;
+    font-size:0.6vw;
+}
+
+nav ul li > a:nth-of-type(1):after{
+    content:'';
+    position:absolute;
+    left:50%;
+    width:0%;
+    height:2px;
+    background:#333;
+    transition:.5s;
+    bottom:-5px;
+}
+
+nav ul li:hover > a:nth-of-type(1):after{
+    width:100%;
+    left:0;
+}
+
+nav ul li dl{
+    display:none;
+    overflow:hidden;
+}
+nav ul li:hover dl{
+    display:block;
+}
+nav ul li dl dd{
+    margin-top:15px;
+    line-height:30px;
+    text-align:center;
+}
+nav ul li dl dd a{
+    font-size:0.6vw;
+}
+nav ul li dl dd:hover{
+    background-color:#ccc;
+}
+nav ul li dl dd:hover a{
+    color:#fff;
+
+}
 .burger_menu{
     display:none;
 }
@@ -264,6 +218,7 @@ section .con_tit dl dd:nth-of-type(2){}
     margin-top:35px;
     border-bottom:2px solid #ccc;
     padding-bottom:35px;
+    margin-bottom:35px;
 }
 .cont_nav ul{
     display:flex;
@@ -284,112 +239,134 @@ section .con_tit dl dd:nth-of-type(2){}
     transition:.5s;
 }
 
-.tab_tit{
+.info{
     width:100%;
-    padding:35px 35px;
-    border-bottom:2px solid #333;
-    padding-bottom:35px;
+    border-collapse:collapse; 
 }
 
-.tab_tit ul{
-    display:flex;
-}
-
-.tab_tit ul li:nth-of-type(1){
-    margin-right:500px;
-}
-.tab_tit ul li:nth-of-type(2){
-    margin-right:500px;
-}
-.tab_tit ul li:nth-of-type(3){
-    margin-right:90px;
-}
-.tab_tit ul li:nth-of-type(4){
-    margin-right:90px;
-}
-.tab_tit ul li:nth-of-type(5){}
-
-.input_line{
-    margin:35px 0;
-}
-.input_line form input{
-    display:block;
+.info thead{
     width:100%;
-    margin-top:35px;
-    border:transparent;
-    border-bottom:1px solid #ccc;
-    padding-bottom:35px;
+    /* background-color:rgba(242, 154, 130, 0.3); */
+}
+.info thead th{
+    font-size:1.5em;
+}
+.info tbody{
+    padding:2% 0;
+    height:100vh;
     
 }
 
+.info tbody tr{
+    padding:2% 0;
+    
+}
+
+.info tbody tr td{
+    font-size:1em;
+    padding:2% 0;
+   
+}
+.info tbody tr>td:nth-of-type(2){
+    text-align:left;
+}
+
 .bottom_nav nav ul{
+    margin-top:35px;
     display:flex;
     justify-content:center;
 }
 
-/* ---------------------- 1:1 채팅 ----------------------------------------------------------------- */
-aside{}
-aside a{
-    width: 50px; height: 50px;
+/* 1:1 채팅 */
+.feedback{
+    width: 50px; height: 50px; border-radius: 50%;
+    background: #fff url('../img/sub_notice/ic_chat.png') no-repeat center;
     border: 2px solid #333;
-    border-radius: 50%;
-    background: #fff;
-    padding: 7px;
     position: fixed; z-index: 100;
-    right: 5vw; bottom: 5vw
+    right: 100px; bottom: 60px
 }
-aside a img{
-    width: 100%
+.feedback img{
+    width: 100%;
+
 }
-/* ---------------------- 푸터 ----------------------------------------------------------------- */
+
+/* footer */
+
 footer{
-    width: 100%; padding-top: 8vw;
-    text-align: center
+    width:100%;
+
+    margin:35px 0;
 }
-footer .foot_nav{
-    width: 100%;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc
+.footer_tit{
+    width:100%;
+    padding:0 11% ;
+    background:#ccc;}
+.tit_wrap{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
 }
-footer .foot_nav li{
-    width: 15%;
-    position: relative
+.sitemap{
+    margin-right:35px !important;
 }
-footer .foot_nav li:after{
-    content: '';
-    width: 1px; height: 1rem;
-    background: #ccc;
-    position: absolute; right: 0; top: 50%;
-    transform: translateY(-50%)
+.footer_tit ul{
+    display:flex;
+    margin:2% 0;
+    justify-content:space-around;
 }
-footer .foot_nav li:last-of-type:after{
-    display: none
+.footer_tit div{
+    display:flex;
+    margin:2% 0;
 }
-footer .foot_nav li a{
-    width: 95%;
-    padding: 1vw
+
+.footer_tit ul li{
+    margin:0 35px;
 }
-footer p{
-    width: 100%; padding: 3vw 0;
-    font-size: .9em;
-    white-space: pre-line; line-height: 1.5em
+
+.footer_tit div p{
+    margin:0 35px;
 }
-/* ---------------------- ps ------------------------------------------------------------------ */
-footer .postscript{
-    width: 100%;
-    margin-bottom: 3vw
+
+/* footer_cont */
+.footer_cont{
+    width:80%;
+    margin:2% 10%;
 }
-footer .postscript li{
-    margin: 0 2vw;
-    display: inline-flex; align-items: center
+.foot_con_wrap{
+    display:flex;
+    justify-content:space-around;
 }
-footer .postscript li a{}
-footer .postscript li img{
-    height: 2vw
+.footer_cont .foot_logo{
+    padding-top:30px;
 }
-footer .postscript li span{
-    padding-left: 1vh;
-    font-size: .9em
+.footer_cont .foot_logo figure{
+}
+.footer_cont .foot_logo img{
+}
+
+.foot_left{line-height:35px;}
+.foot_address{margin-bottom:35px;}
+.foot_address ul li{
+    display:block;
+}
+.foot_info ul li{
+    display:block;
+}
+.foot_center{line-height:35px;}
+.foot_contacts{margin-bottom:5px;}
+.foot_contacts ul li{
+    display:block;
+}
+.foot_bank{}
+.foot_bank ul li{
+    display:block;
+}
+.foot_quick{line-height:35px;}
+.foot_quick ul li{
+    display:block;
+}
+.footer_cont div ul li:nth-of-type(1){
+    font-weight:600;
 }
 
 /* ------------------ media --------------------- */

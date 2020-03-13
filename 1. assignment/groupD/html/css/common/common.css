@@ -8,14 +8,14 @@ ul,li, dl, dt{
     list-style-type: none;
     display: inline-block
 }
+span, a, strong{
+    display: inline-block
+}
 a{
     color:#333;
     text-decoration: none;
-    display: inline-block
 }
-span{
-    display: inline-block
-}
+
 input{
     border: none
 }

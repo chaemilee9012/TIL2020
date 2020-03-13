@@ -155,12 +155,11 @@ nav ul li dl dd:hover a{
 
 /* section */
 section{
-    width:100%;
+    width:1920px;
     margin:0 auto;
     text-align:center;
-    padding:170px 0;
+    padding-top:170px;
 
-    
 }
 section .contents{
     width:100%;
@@ -171,7 +170,7 @@ section .con_tit{
     width:100%;
 }
 section .con_tit dl{
-    line-height:35px;
+    line-height:1.5em;
     text-align:left;
     padding:0 235px;
 }
@@ -186,8 +185,8 @@ section .con_tit dl:after{
 }
 
 
-section .con_tit dl dt{
-    font-size:30px;
+section .con_tit dl dt a{
+    font-size:2.08em;
     color:#333;
     margin-bottom:35px;
 }
@@ -197,83 +196,101 @@ section .con_tit dl dd{
 section .con_tit dl dd:nth-of-type(1){}
 section .con_tit dl dd:nth-of-type(2){}
 
-/* .con_text */
-section .con_text{
-    margin:35px 600px;
+/* con_text */
+.con_text{
+    width:100%;
+    padding:35px 235px;
+}
 
+.cont{
+    width:100%;
+    text-align:center;
 }
-section .con_text dl{
-}
-section .con_text dl dt{
-    font-size:2em;
+.cont dl dt{
+    font-size: 2.08em;
+    margin-bottom:35px;
     color:#333;
+}
+.cont dl dd{
+    font-size: 1em;
+}
+.cont_nav{
+    margin-top:35px;
+    border-bottom:2px solid #ccc;
+    padding-bottom:35px;
     margin-bottom:35px;
 }
-section .con_text dl dd{
-    font-size:15px;
-}
-section .con_text div{
-}
-
-section .council {
+.cont_nav ul{
     display:flex;
     justify-content:center;
-    border:2px solid #ccc;
-    margin:35px 0;
 }
-section .council ul{
+.cont_nav ul li{
+    margin:0 0 0 80px;
+    padding:20px 20px;
+    color:#333;
+}
+
+.cont_nav ul li:hover{
+    background-color:rgba(242, 154, 130, 0.5);
+    transition:.5s;
+}
+.cont_nav ul li:hover a{
+    color:#fff;
+    transition:.5s;
+}
+/* ------------------------- table -------------------------- */
+.info{
+    border-collapse:collapse;
+    width:100%; 
+}
+
+.info thead{
+}
+.info thead th{}
+.info tbody{
+    padding:2% 0;
+}
+
+.info tbody tr{
+    padding:2% 0;
+    border-bottom:1px solid #ccc;
+}
+
+.info tbody tr td{
+    font-size:1em;
+    padding:1% 0;
     text-align:left;
-    line-height:35px;
-    margin:35px 50px 35px 35px;
-    position:relative;
+
+    /* border:1px solid #f00; */
 }
-section .council ul:after{
-    content:'';
-    background:#ccc;
-    width:1px;
-    height:250px;
-    display:inline-block;
-    position:absolute;
-    right:-35px;;
-    top:0;
+.info tbody tr:nth-of-type(4) td{
+    padding:3% 0;
+    white-space:pre-line;
 }
-section .council ul li{
-    font-size:15px;
-    font-weight:500;
-    display:block;
+.info tbody tr:nth-of-type(5){
+    border:none;
 }
-section .council ul li:nth-of-type(1){
-    font-size:30px;
-    font-weight:600;
+.info tbody input{
+    border:1px solid #ccc;
 }
-section .council ul li:nth-of-type(2){
-    font-size:20px;
-    margin:35px 0;
-    font-weight:600;
+
+
+
+.bottom_nav{
+   text-align:left;
 }
-section .council ul li:nth-of-type(3){
-    font-size:12px;
-}
-section .council ul li:nth-of-type(4){}
-section .council ul li:nth-of-type(5){}
-section .council figure{
+.bottom_nav p{
+    width:100px;
+    border:1px solid #ccc;
     text-align:center;
-    padding:35px 80px 35px 80px;
+    padding:1% 0%;
+    margin-top:1%;
 }
-section .council figure img{
-    width:145px;
-    height:145px;
-    margin-bottom:35px;
-}
-section .con_text figure figcaption{}
-section .con_text figcaption p{}
-section .con_text figcaption p:nth-of-type(1){}
-section .con_text figcaption p:nth-of-type(2){}
 
 /* 1:1 채팅 */
 .feedback{
     width: 50px; height: 50px; border-radius: 50%;
-    background: #fff url('../img/sub_customer/ic_chat.png') no-repeat center;
+    background: #fff url('../img/sub_notice/ic_chat.png') no-repeat center;
     border: 2px solid #333;
     position: fixed; z-index: 100;
     right: 100px; bottom: 60px
@@ -361,8 +378,9 @@ footer{
 .footer_cont div ul li:nth-of-type(1){
     font-weight:600;
 }
-/* ------ media --------- */
 
+/* ------------------ media --------------------- */
+/* ------ media --------- */
 @media(max-width:1024px){
     header{
         width:100vw;

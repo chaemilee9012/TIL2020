@@ -405,8 +405,7 @@ footer{
 }
 footer .foot_nav{
     width: 100%;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc
+    border-top: 1px solid #ccc; border-bottom: 1px solid #ccc
 }
 footer .foot_nav li{
     width: 15%;

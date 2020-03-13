@@ -1,7 +1,10 @@
 @import url('common.css');
 @import url('https://fonts.googleapis.com/css?family=Baloo&display=swap');
 
+
+
 /* layout */
+
 #total{
     width:1920px;
     min-width:480px;

@@ -299,11 +299,18 @@ main h3{
     border-top: 1px solid #ccc
 }
 .price table tbody td{
-    padding: 1vw 0; width: 15%
+    padding: 1vw 0; width: 15%;
+    font-size: 1.25rem
+}
+.price table tbody td:nth-of-type(2){
+    font-weight: 600
 }
 .price table tbody tr:nth-of-type(3) td:nth-of-type(1){
     padding-right: 4vw;
     text-align: right
+}
+.price table tbody tr:nth-of-type(3) td:nth-of-type(2){
+    color: #f29a82; font-size: 1.5rem
 }
 /* ---------------------- 주문 고객 정보 --------------------------------------------------------- */
 .info_custmr{

@@ -170,12 +170,11 @@ main h3{
 }
 /* ---------------------- 주문 목록 --------------------------------------------------------- */
 .prod_list{
-    width: 100%;
-    margin-bottom: 2vw;
+    width: 100%
 }
 .prod_list h3{}
 .prod_list table{
-    width: 100%;
+    width: 100%; margin-bottom: 2vw;
     text-align: center;
     border-collapse: collapse;
     border-top: 2px solid #f29a82;
@@ -219,7 +218,7 @@ main h3{
 /* ---------------------- price --------------------------------------------------------- */
 .price{
     width: 100%;
-    margin-bottom: 2vw
+    margin-bottom: 3vw
 }
 .price h3{
     display: none
@@ -260,7 +259,7 @@ main h3{
 /* ---------------------- 주문 고객 정보 --------------------------------------------------------- */
 .info_custmr{
     width: 100%;
-    margin-bottom: 2vw
+    margin-bottom: 3vw
 }
 .info_custmr h3{}
 .info_custmr form{
@@ -303,7 +302,7 @@ main h3{
 /* ---------------------- 배송지 정보 --------------------------------------------------------- */
 .delivery{
     width: 100%;
-    margin-bottom: 2vw
+    margin-bottom: 3vw
 }
 .delivery header{
     padding-bottom: 1vw
@@ -475,15 +474,17 @@ main h3{
 }
 .checkout .btn li a{
     width: 200px;
-    border: 1px solid #ccc;
     border-radius: 10px;
     padding: 25px 0; margin-right: 3vw;
     font-size: 1.5em;
     text-align: center
 }
-.checkout .btn li:last-of-type a{
-    background: #96d5c1;
-    border: none
+.checkout .btn li:nth-of-type(1) a{
+    border: 1px solid #ccc;
+    background: none
+}
+.checkout .btn li:nth-of-type(2) a{
+    background: #96d5c1
 }
 /* ---------------------- 1:1 채팅 ----------------------------------------------------------------- */
 aside{}
