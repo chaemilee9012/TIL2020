@@ -23,15 +23,18 @@
     var controlJs = document.querySelector('.controls');
     var inputJs = document.querySelectorAll('input');
     var imgJs = document.querySelector('img');
+    var hlJs = document.querySelector('.hl');
+
+    hlJs.style.color = inputJs[2].value;
 
     imgJs.style.border = inputJs[0].value + 'px solid ' + inputJs[2].value;
     imgJs.style.filter = 'blur(' + inputJs[1].value + 'px)';
 
-    inputJs[0].addEventListener('touchend', function() {
+    inputJs[0].addEventListener('mousemove', function() {
     imgJs.style.border = this.value + 'px solid ' + inputJs[2].value;
     });
 
-    inputJs[1].addEventListener('touchend', function() {
+    inputJs[1].addEventListener('mousemove', function() {
     imgJs.style.filter = 'blur(' + this.value + 'px)';
     });
 

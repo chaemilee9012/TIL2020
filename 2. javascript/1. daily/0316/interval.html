@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    .elm{
+      width: 100px; height: 100px;
+      background: #000;
+      position: absolute; left: 0
+    }
+  </style>
+  <div class="elm"></div>
+  <script>
+    var idx = 0;
+    var elmJs = document.querySelector('.elm');
+    var elmWidth = Math.max(elmJs.offsetWidth, elmJs.scrollWidth);
+
+    // console.log(window.innerWidth); // 브라우저 width
+    // console.log(elmJs.offsetWidth); // 요소 width
+    // console.log(elmJs.scrollWidth); // 요소 width
+    // console.log(Math.max(100, 600)); // 매개변수 중 가장 큰 값 계산
+    // console.log(Math.min(100, 600)); // 매개변수 중 가장 작은 값 계산
+    // console.log(Math.max(elmJs.offsetWidth, elmJs.scrollWidth)); // width 값 중 가장 큰 값
+
+    // setInterval(실행명령, 반복시간)
+    var inter = setInterval(function(){
+      /*실행명령*/
+      idx++;
+      // elmJs.style.left = idx + 'px';
+      elmJs.style.top = idx + 'px';
+
+      if(idx > (window.innerWidth - elmWidth)){
+        clearInterval(inter); // 인터벌 죵료
+      }
+      // if(idx > (window.innerHeigth - elmWidth)){
+      //   clearInterval(inter); // 인터벌 죵료
+      // }
+    }, /*반복 시간*/ 1000);
+
+    
+  </script>  
+</body>
+</html>

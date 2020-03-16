@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="slide.js"></script>
+  
+  <style>
+    *{box-sizing: border-box;}
+    .slide{
+      width:500px; height:310px; margin:0 auto;
+      position:relative;
+      border:5px solid #000;
+      overflow: hidden;
+    }
+    .slide ul{
+      width:100%;     
+      position:absolute;margin:0;padding:0;
+      left: 0;
+      list-style:none;
+      transition:.5s;
+    }
+    .slide ul li{width:100%; position:absolute;}
+    .slide ul li img{width:100%; height:300px;}
+    .slide p{
+      position:absolute;
+      top:34%; left:5%;
+      width:90%;
+      z-index:2;
+    }
+    .slide p a{
+      font-size:0;
+      display:block;
+      width:60px; height:60px;
+      background:#ddd;
+      border-radius:100%;
+      position:relative;
+      text-align:center;
+      line-height:50px;
+      cursor: pointer;
+    }
+    .slide p a:first-child{float:left;}
+    .slide p a:first-child:after{
+      content:'<';
+      font-size:30px;        
+    }
+    .slide p a:last-child{float:right;}
+    .slide p a:last-child:after{
+      content:'>';
+      font-size:30px;        
+    }
+    .indi{
+      position: absolute;
+      bottom: 10px; left: 50%;
+      z-index: 10
+    }
+    .indi a{
+      width: 15px; height: 15px;
+      background: #000;
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="slide">
+    <ul class="slide_ani">
+      <li class="s_bn"><img src="../img/img-01.jpg"></li>
+      <li class="s_bn"><img src="../img/img-02.jpg"></li>
+      <li class="s_bn"><img src="../img/img-03.jpg"></li>
+    </ul>
+    <p class="btn">
+      <a class="prev">prev</a>
+      <a class="next">next</a>
+    </p>
+    <div class="indi"></div>
+  </div>
+
+  <script>
+    /* 차쌤
+    var slide = document.querySelector('.slide');
+    var slideAni = slide.querySelector('.slide_ani'); //ul
+    var banners = slide.querySelectorAll('.s_bn');  //li
+
+    var prevBtn = slide.querySelector('.prev'); 
+    var nextBtn = slide.querySelector('.next');
+    var bannerLen = banners.length;
+    var indi = '';
+    var indiTag = slide.querySelector('.indi');
+    var firstClone = banners[0].cloneNode(true);
+    var lastClone = banners[2].cloneNode(true);
+      
+      console.log(firstClone)
+      console.log(lastClone)
+      
+      for(var i=0; i<bannerLen; i++){
+          banners[i].style.left = 100 * i + '%'; 
+          indi += '<a></a>';
+      }
+      indiTag.innerHTML = indi;
+      
+      
+      var idx = 0;    
+      nextBtn.addEventListener('click',function(){
+          ++idx;
+          slideAnimate();
+          
+      });
+      
+      prevBtn.addEventListener('click',function(){
+          --idx;
+          slideAnimate();
+      });
+      
+      function slideAnimate(){
+      
+          slideAni.style.left = -100 * idx + '%';
+          update();
+          
+      }
+      function update(){
+          if(idx == 0){
+              prevBtn.style.display = 'none';
+          }else{
+              prevBtn.style.display = 'block';
+          }
+          
+          if(idx == bannerLen-1){
+              nextBtn.style.display = 'none';
+          }else{
+              nextBtn.style.display = 'block';
+          }
+      }
+      slideAnimate();
+    */
+
+    var slideJs = document.querySelector('.slide');
+    var slideAni = slideJs.querySelector('.slide_ani');
+    var sBn = slideJs.querySelectorAll('.s_bn');
+    var prevBtn = slideJs.querySelector('.prev');
+    var nextBtn = slideJs.querySelector('.next');
+
+    var indiJs = '';
+    // 자리 세팅 & 인디케이터 표시
+    for(var i = 0; i < sBn.length; i++) {
+      sBn[i].style.left = (i * 100) + '%';
+      indiJs += '<a></a>';
+    }
+    
+    var idx = 0;
+    var indiTag = slideJs.querySelector('.indi');
+        indiTag.innerHTML = indiJs;
+
+    // 슬라이드 이동
+    nextBtn.addEventListener('click', function() {
+      // slideMove('next');
+      ++idx;
+      slideMove(/*++idx*/); // true
+      console.log('nextBtn idx: ' + idx);
+    });
+
+    prevBtn.addEventListener('click', function() {
+      // slideMove('prev');
+      --idx;
+      slideMove(/*--idx*/); // false
+      console.log('prevBtn idx: ' + idx);
+    });
+
+    function slideMove(/*k*/){
+      // if(k == 'next') {
+      // if(k) { // k == 1
+      //   idx++;
+      // } else { // k == 0
+      //   idx--;
+      // }
+      slideAni.style.left = (-100 * idx) + '%';
+      btnDisplay();
+    }
+    // 버튼 숨기기
+    function btnDisplay() {
+      if(idx == 0) {
+        prevBtn.style.display = 'none'; 
+      } else if(idx == (sBn.length - 1)) {
+        nextBtn.style.display = 'none';
+      } else {
+        prevBtn.style.display = 'block';
+        nextBtn.style.display = 'block';
+      }
+    }
+    slideMove();
+
+    /*
+    nextBtn.addEventListener('click', function() {
+      // slideMove('next');
+      slideMove(++idx); // true
+      console.log('nextBtn idx: ' + idx);
+    });
+
+    prevBtn.addEventListener('click', function() {
+      // slideMove('prev');
+      slideMove(--idx); // false
+      console.log('prevBtn idx: ' + idx);
+    });
+
+    function slideMove(k){
+      if(k == 'next') {
+      if(k) { // k == 1
+        idx++;
+      } else { // k == 0
+        idx--;
+      }
+      slideAni.style.left = (-100 * idx) + '%';
+    }
+    slideMove();
+    */
+  </script>
+</body>
+
+</html>
