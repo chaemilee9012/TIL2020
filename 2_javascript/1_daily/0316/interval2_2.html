@@ -43,18 +43,38 @@
     1. a 태그를 클릭한다.
     2. 클릭한 a 태그의 데이터 아이디와 같은 번호를가진 div를 찾아낸다.
     3. div 시작점과 스크롤 위치를 비교한다.
-    4. div 시작점 < 스크롤 위치 → 스크롤 아래로
+    4. div 시작점 < 스크롤 위치 → 스크롤 아래로 
        div 시작점 > 스크롤 위치 → 스크롤 위로
   */
 
     var navJs = document.querySelector('nav');
-    var divJs = document.querySelector('div');
+    var divJs = document.querySelectorAll('div');
+    var yIdx = 0;
 
     navJs.addEventListener('click', function() {
+      // event.preventDefault();
+      var id = event.target.dataset.id;
+
+      // console.log(divJs[id].offsetTop);
       
+      var down = setInterval(function() {
+        if(divJs[id].offsetTop > window.scrollY) {
+          yIdx += 10;
+        } else {
+          clearInterval(down);
+        }
+        window.scrollTo(0, yIdx);
+      }, 0);
+
+      var up = setInterval(function() {
+        if(divJs[id].offsetTop < window.scrollY) {
+          yIdx -= 10;
+        } else {
+          clearInterval(up);
+        }
+        window.scrollTo(0, yIdx);
+      }, 0);
     });
-
-
   </script>  
 </body>
 </html>
