@@ -21,10 +21,49 @@
     <img src="../../1_daily/img/img-03.jpg" alt="">
   </div>
   <script>
-    // start
-    $('.fade img').not(':first').hide(); // not(':first'): 첫번째 제외 ㅁ
-    $('.fade img').eq(0).fadeOut(); // fadeOut(): 서서히 사라짐
-    //end
+  // start
+    $('.fade img').not(':first').hide();
+    // not(':first'): 첫번째 제외 → .hide 앞까지 선택자
+    
+    var idx = 0;
+    var interval;
+    function loop(){
+      interval = setInterval(function() {
+        // 서서히 사라짐
+        $('.fade img').eq(idx).fadeOut(1000);
+
+        idx++;
+
+        // idx 초기화: 무한 루프
+        if(idx == 3) {
+          idx = 0;
+        }
+
+        // 서서히 나타남
+        $('.fade img').eq(idx).fadeIn(1000);
+      }, 1000);
+    } loop();
+
+    // $('.fade').on('mouseover', function() {
+    // mouseover: 해당 영역 위에 커서 올라가 있는 동안 계속
+    //            에러 일으킬 가능성 O
+
+    $('.fade').on('mouseenter', function() {
+    //mouseenter: 해당 영역에 커서 들어갈 때 1번
+
+      clearInterval(interval);
+      console.log('a');
+    });
+    // $('.fade').on('mouseout', function() {
+    // mouseover: 해당 영역 위에 커서 없는 동안 계속
+    //            에러 일으킬 가능성 O
+
+    $('.fade').on('mouseleave', function() {
+    //mouseleave: 해당 영역에서 커서 나올 때 1번
+      loop();
+    });
+
+  //end
   </script>
 
 </body>

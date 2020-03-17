@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <style>
+    .each{
+      padding: 50px;
+      margin: 100px;
+      border: 5px solid #333
+    }
+    img{
+      width: 300px; height: 200px;
+    }
+  </style>
+</head>
+<body>
+  <div class="each">
+    <img src="../../1_daily/img/img-01.jpg" alt="">
+    <img src="../../1_daily/img/img-02.jpg" alt="">
+    <img src="../../1_daily/img/img-03.jpg" alt="">
+  </div>
+
+  <script>
+    $(function() {
+      var widJq = $('.each').width();
+      // width(): 패딩, 마진, 보더 제외
+      console.log('width: ' + widJq);
+
+      var innerWid = $('.each').innerWidth();
+      // innerWidth(): 패딩 포함
+      console.log('innerWidth: ' + innerWid);
+
+      var outerWid = $('.each').outerWidth();
+      // outerWidth(): 패딩, 보더 포함
+      console.log('outerWidth: ' + outerWid);
+
+      var outerWidT = $('.each').outerWidth(true);
+      // outerWidth(true): 패딩, 보더, 마진 포함
+      console.log('outerWidth(true): ' + outerWidT);
+
+
+      var elmCss = $('.each').css('padding');
+      console.log('padding: ' + parseInt(elmCss));
+
+    });
+    var divJs = document.querySelector('.each');
+
+    console.log(divJs.style);
+  </script>
+</body>
+</html>
