@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+</head>
+
+<body>
+
+
+<div class="tab">
+    <p>
+       <a class="active" data-num="0">tap01</a>
+       <a data-num="1">tap02</a>
+       <a data-num="2">tap03</a>
+    </p>
+    <div class="con">
+        <div class="active">con01</div>
+        <div>con02</div>
+        <div>con03</div>
+    </div>
+</div>
+
+<style>
+    .tab p a{
+        border:1px solid #000; padding:20px;
+        display:inline-block;
+    }
+    .tab p a.active{
+        background:yellow;
+    }
+    .con{position:relative;}
+    .con div{
+        border:1px solid #000; padding:100px;
+        display:none;
+    }
+    .con div.active{display:block;}
+</style>
+
+<script>
+    /*
+        1. 슬라이드(시간올래걸림,난이도높음)
+        2. 페이드인 페이드아웃
+        3. 탭
+        4. 메뉴 = 서브메뉴, 버거메뉴
+        5. 팝업 = 자세히보기팝업, 공지팝업(오늘하루보기)
+        6. 스크롤제어
+    */
+var tabButton = document.querySelectorAll('.tab p a'),
+    tabCon = document.querySelectorAll('.con div');
+
+// 방법 2 ---------------------------------------------------------------------
+var tab;
+    tab = function() {
+    // 함수를 변수에 담아서 쓸 경우 함수 먼저 선언하고 뒤에 호출
+    
+    // aa();
+    // function aa() {}
+    // 함수명으로 호출할 때 → 함수 선언 나중에 해도 호출한 부분 앞으로 함수 호이스팅
+      var dNum = event.target.dataset.num;
+
+      for(var i = 0; i < tabButton.length; i++) {
+        tabButton[i].classList.remove('active');
+        tabCon[i].classList.remove('active');
+      }
+
+      tabButton[dNum].classList.add('active');
+      tabCon[dNum].classList.add('active');
+    }
+
+for(let i = 0; i < tabButton.length; i++) {
+  tabButton[i].addEventListener('click', tab/*, true*/);
+}
+
+// 방법 1 ---------------------------------------------------------------------
+// for(let i = 0; i < tabButton.length; i++) {
+//   tabButton[i].addEventListener('click', function(){
+//     tabButton[i].classList.add('active');
+//     tabCon[i].classList.add('active');
+//   });
+// }
+
+
+// var p = document.querySelector('p');
+// p.addEventListener('click', function() {
+//   console.log('b');
+// }/*, true*/);
+// addEventListener('이벤트', 함수, true/faulse): 기본값 true
+// true == bubbling → 자식 요소 이벤트 먼저 실행
+// fause == capturing → 부모 요소 이벤트 먼저 실행
+
+
+
+
+    
+    
+    
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
