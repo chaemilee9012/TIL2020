@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <style>
+    *{
+      margin: 0; padding: 0
+    }
+    header{
+      width: 100%;
+      padding: 10px 0;
+      background: #ddd;
+      position: relative;
+      left: 0; top: 0;
+      text-align: center;
+      position: fixed;
+
+    }
+    header.active{
+      position: fixed;
+      left: 0; top: 0
+    }
+    header a.active{
+      background: orange
+    }
+    section{
+      height: 900px;
+      padding-top: 40px
+    }
+    section:nth-of-type(even){
+      background: #eee
+    }
+    .bn{
+      height: 200px; background: #090
+    }
+  </style>
+</head>
+<body>
+  <div class="bn">banner</div>
+  <header>
+    <nav>
+      <a href="#" data-num="0">Navi01</a>
+      <a href="#" data-num="1">Navi02</a>
+      <a href="#" data-num="2">Navi03</a>
+      <a href="#" data-num="3">Navi04</a>
+    </nav>
+  </header>
+  <section>contents_01</section>
+  <section>contents_02</section>
+  <section>contents_03</section>
+  <section>contents_04</section>
+  <script>
+  
+  </script>
+</body>
+</html>
