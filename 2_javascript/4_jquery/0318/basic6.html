@@ -24,7 +24,7 @@
     }
     section{
       height: 900px;
-      margin-top: 40px
+      /* margin-top: 40px */
     }
     section:nth-of-type(even){
       background: #eee
@@ -76,7 +76,7 @@
             var conTop = $('.con').eq(i).offset().top;
             var winScroll = $(window).scrollTop();
 
-            if((conTop*.8) < winScroll) {
+            if(conTop <= winScroll - $(window).height() * .1) {
               // $('header a').removeClass('active');
               $('header a').eq(i).addClass('active').siblings().removeClass('active');
               // siblings(): 선택자의 형제 엘리먼트

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+<header></header>
+<div></div>
+
+<style>
+    *{margin:0;}
+    div{height:2000px;}    
+    header{
+        width:100%; height:80px; background:#000;
+        position:fixed; top:0; left:0;
+        transition:.5s;
+    }
+    header.active{
+        top:-80px;
+    }
+</style>
+
+<script>
+/*
+1. 스크롤을 움직인다.
+2. 현재 화면의 scrollY 값을 구한다.
+3_1. 스크롤을 이동한 후 화면의 scrollY 값이 이전 scrollY 값보다 크면 (휠 내림)
+     header 숨김
+3_2. 이동 후 화면 scrollY 값이 이전 scrollY 값보다 작으면 (휠 올림)     
+     header 보임
+*/
+
+window.addEventListener('scroll', function() {
+  var firstScrl = this.scrollY;
+  // console.log(winScrlY);
+
+
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 차쌤 ----------------------------------------------------------------------
+// var bln = true;
+// var upScroll, downScroll;
+// var header = document.querySelector('header');
+
+// window.addEventListener('scroll',function(e){
+    
+//     //console.log(e);
+//     upScroll = this.scrollY;
+    
+//     if(bln) {
+//         bln=false;
+    
+//         if(upScroll > downScroll){
+//             header.classList.add('active');   
+//         }else{
+//             header.classList.remove('active');   
+//         }
+        
+//         setTimeout(function(){
+//             bln = true;
+//         },500);
+//     }
+//     downScroll = upScroll;
+// });    
+</script>
+
+</body>
+</html>

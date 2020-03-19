@@ -56,23 +56,17 @@
     <section>contents_04</section>
   </main>
   <script>
-  // vanilla -----------------------------------------------------------
-  // click
-    // 화면 이동
-    /*
-    1. a태그 클릭한다.
-    2. 클릭한 태그 num과 같은 번호를 인덱스로 가진 section을 찾는다.
-    3. 해당 section offsetTop과 scrollY를 비교한다.
-    4_1. offsetTop > scrollY → 스크롤 아래로
-    4_2. offsetTop < scrollY → 스크롤 위로
-    */
-
-  // scroll
-    // a 태그 강조
-    // header fixed
-
+  // scroll ------------------------------------------------------
+  /*
+  1. a태그 클릭한다.
+  2. 클릭한 태그 num과 같은 번호를 인덱스로 가진 section을 찾는다.
+  3. 해당 section offsetTop과 scrollY를 비교한다.
+  4_1. offsetTop > scrollY → 스크롤 아래로
+  4_2. offsetTop < scrollY → 스크롤 위로
+  */
 
   // jq -----------------------------------------------------------------
+  
   $(function() {
   // click
     $('nav a').on('click', function() {
