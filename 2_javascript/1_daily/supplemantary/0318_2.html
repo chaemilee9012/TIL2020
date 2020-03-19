@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    .tab p a{
+        border:1px solid #000; padding:20px;
+        display:inline-block;
+    }
+    .tab p a.active{
+        background:yellow;
+    }
+    .con{position:relative;}
+    .con div{
+        border:1px solid #000; padding:100px;
+        display:none;
+    }
+    .con div.active{display:block;}
+</style>
+</head>
+
+<body>
+
+
+<div class="tab">
+    <p>
+       <a class="active" data-num="0">tap01</a>
+       <a data-num="1">tap02</a>
+       <a data-num="2">tap03</a>
+    </p>
+    <div class="con">
+        <div class="active">con01</div>
+        <div>con02</div>
+        <div>con03</div>
+    </div>
+</div>
+<script>
+/*
+1. tab 메뉴 클릭한다.
+2_1. 클릭한 tab에 activ 클래스를 더한다.
+2_2. 클릭한 tab 제외 active 뺀다 
+3. 클릭한 tab의 data-num 값을 가져온다.
+4_1. 해당 data-num과 같은 인덱스를 가진 div에 active 클래스를 더한다.
+4_2. 해당 div 제외 active 뺀다.
+*/
+  var pJs = document.querySelector('p');
+  var divJs = document.querySelectorAll('.con div');
+  var dNum;
+
+  pJs.addEventListener('click', function(e) {
+    if(e.target.nodeName != 'A'){
+      return;
+    }
+    for(var i = 0; i < divJs.length; i++) {
+      pJs.children[i].classList.remove('active');
+    }
+    e.target.classList.add('active');
+    dNum = e.target.dataset.num;
+    
+    for(var i = 0; i < divJs.length; i++) {
+      divJs[i].classList.remove('active');
+    }
+    divJs[dNum].classList.add('active');
+  });
+
+
+</script>
+</body>
+</html>
