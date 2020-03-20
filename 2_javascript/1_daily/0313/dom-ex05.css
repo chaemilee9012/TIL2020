@@ -11,5 +11,22 @@
     position:fixed; top:0; left:0;
     display:none;
 }
+.popup.appear{
+display: flex; flex-direction: column;
+}
 
-.popup img{}
+*{font-size:26px;}
+article{border:3px solid #000; width:800px; margin:200px auto; padding:100px;}
+h1{font-size:40px;}
+
+.popup .button{
+width: 380px;
+display: flex;
+justify-content: space-between
+}
+
+a{
+display: inline-block;
+color: #eee;
+text-decoration: none
+}
