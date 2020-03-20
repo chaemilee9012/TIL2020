@@ -17,7 +17,6 @@
       }
       div{
           width:100%; height:100vh;
-          background:#aaa;
           display:flex; 
           justify-content: center;
           align-items: center;
@@ -43,6 +42,7 @@
         //start
         var move=0, num=0;
         $('section').css('top','0px');
+        
         $('section div').on('mousewheel',function(e){
             
           var delta = e.originalEvent.wheelDelta;
