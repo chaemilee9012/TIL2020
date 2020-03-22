@@ -32,3 +32,25 @@ a{
   color: #eee;
   text-decoration: none;
 }
+<<<<<<< HEAD
+=======
+.popup.appear{
+display: flex; flex-direction: column;
+}
+
+*{font-size:26px;}
+article{border:3px solid #000; width:800px; margin:200px auto; padding:100px;}
+h1{font-size:40px;}
+
+.popup .button{
+width: 380px;
+display: flex;
+justify-content: space-between
+}
+
+a{
+display: inline-block;
+color: #eee;
+text-decoration: none
+}
+>>>>>>> 4801f326b7db3199a78d04106895ccd1fcf26b4e
