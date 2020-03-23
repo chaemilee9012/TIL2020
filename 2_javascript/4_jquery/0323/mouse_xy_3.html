@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link src="">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <style>
+    *{margin:0;}
+    body{}
+    section{
+        position:relative;
+        height:2000px;
+        border:5px solid #f00;
+    }
+    div{
+        width:100px; height:100px;
+        position: absolute;
+        background:#f00;
+    }
+  </style> 
+</head>
+
+<body>
+  <section>
+    <div>01</div>
+  </section>
+
+  <script>
+    $(function () {
+      //start
+      var parentNode = $('section');
+      var dragBln;
+      var offset = {
+            x: 0,
+            y: 0
+          }
+
+      parentNode.on('mousedown', function(e) {
+        // console.log('누름');
+        dragBln = true; // 이제부터 드래그
+
+        // div 클릭한 위치 고정
+        offset.x = e.offsetX;
+        offset.y = e.offsetY;
+      });
+
+      parentNode.on('mousemove', function(e) {
+        // console.log('움직임');
+        if(dragBln) {
+          console.log('드래그 중');
+
+          if(e.target.nodeName == 'DIV') {
+            $('section div').css({
+              // div 클릭한 위치 그대로 옮기기
+              left: e.pageX - offset.x, // 현재 위치(pageX) - div 클릭한 위치
+              top: e.pageY - offset.y // 현재 위치(pageY) - div 클릭한 위치
+            });
+          }
+
+          // if(e.target.nodeName != 'DIV') {
+          //   return;
+          // }
+          // $('section div').css({
+            // left: e.pageX - offset.x,
+            // top: e.pageY - offset.y
+          // });
+        }
+      });
+
+      parentNode.on('mouseup', function(e) {
+        // console.log('마우스 뗌');
+        dragBln = false; // 드래그 끝
+      });
+      //end
+    });
+  </script>
+</body>
+</html>
