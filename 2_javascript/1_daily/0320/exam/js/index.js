@@ -8,6 +8,7 @@ window.addEventListener('DOMContentLoaded', function() {
   var ulGal = document.querySelector('.gallery');
   var imgGal = ulGal.querySelectorAll('img');
   var figcGal = ulGal.querySelectorAll('figcaption');
+
   var lyPop = document.querySelector('.ly-pop');
   var imgPop = lyPop.querySelector('img');
   var divPop = lyPop.querySelector('div');
@@ -49,6 +50,7 @@ window.addEventListener('DOMContentLoaded', function() {
   function changeContents() {
     imgPop.src = imgGal[dNum].src;
     figcPop.textContent = figcGal[dNum].textContent;
+    
     for(var i = 0; i < divPop.children.length; i++) {
       divPop.children[i].style.display = 'inline-block';
     }

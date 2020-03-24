@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link src="">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  <style>
+    .drag{
+      width: 100px; height: 100px;
+      background: #ddd
+    }
+    .drop{
+      width: 300px; height: 300px;
+      border: 1px solid #333;
+      background: pink
+    }
+  </style> 
+</head>
+
+<body>
+  <div class="drag"></div>
+  <div class="drop"></div>
+
+  <script>
+    $(function () {
+    /*
+      jquery 등 플러그인 이용할 때 엘리먼트에 자동 적용되는 클래스 활용하면 좋음
+    */
+      //start
+      $('.drag').draggable({ 
+      /* draggable 옵션
+        axis: drag 축 지정
+        revert: 원래 자리로 되돌림
+        containment
+      */
+        // axis: 'x', // 'y'
+        // revert: true, // 기본값: false
+        start: function() {console.log('start');},
+        drag: function() {console.log('drag');},
+        stop: function() {console.log('stop');},
+      });
+
+      $('.drop').droppable();
+      //end
+    });
+  </script>
+</body>
+</html>
