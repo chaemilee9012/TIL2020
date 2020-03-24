@@ -19,8 +19,10 @@ window.addEventListener('DOMContentLoaded', function() {
     if(e.target.nodeName != 'IMG') {
       return;
     }
+    console.log(e.target.)
     dNum = e.target.dataset.num;
     changeContents();
+    console.log()
     lyPop.classList.add('active');
   });
   
@@ -50,7 +52,7 @@ window.addEventListener('DOMContentLoaded', function() {
   function changeContents() {
     imgPop.src = imgGal[dNum].src;
     figcPop.textContent = figcGal[dNum].textContent;
-    
+
     for(var i = 0; i < divPop.children.length; i++) {
       divPop.children[i].style.display = 'inline-block';
     }
