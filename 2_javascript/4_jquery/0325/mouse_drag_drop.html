@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link src="">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  <style>
+    .drag{
+      width: 100px; height: 100px;
+      background: #ddd
+    }
+    .visible{
+      visibility: hidden
+    }
+    .drop{
+      width: 300px; height: 300px;
+      border: 1px solid #333;
+      background: pink
+    }
+    .active{
+      background: orange
+    }
+  </style> 
+</head>
+
+<body>
+  <div class="drag" draggable="true"></div>
+  <div class="drop"></div>
+
+  <script>
+    // vanilla
+    var dragJs = document.querySelector('.drag');
+    var dropJs = document.querySelector('.drop');
+
+      // dragend, dragstart 이벤트 쓸 때 해당 엘리먼트에 draggable="true" 꼭 있어야 함
+    dragJs.addEventListener('dragstart', function(e) {
+      // console.log('dragstart');
+      setTimeout(function() {
+        dragJs.classList.add('visible');
+      }, 10); // 0.01초 뒤에 함수 실행
+    });
+
+    dragJs.addEventListener('dragend', function() {
+      // console.log('dragend');
+      dragJs.classList.remove('visible');
+    });
+
+    dropJs.addEventListener('dragover', function(e) {
+      // console.log('dragover');
+      e.preventDefault();
+    });
+
+    dropJs.addEventListener('dragenter', function() {
+      console.log('dragenter');
+      dropJs.classList.add('active');
+    });
+
+    dropJs.addEventListener('dragleave', function() {
+      console.log('dragleave');
+      dropJs.classList.remove('active');
+    });
+
+    dropJs.addEventListener('drop', function() {
+      console.log('drop');
+      this.append(dragJs);
+    });
+
+    // jq ------------------------------------------------------------------
+    // $(function () {
+    // /*
+    //   jquery 등 플러그인 이용할 때 엘리먼트에 자동 적용되는 클래스 활용하면 좋음
+    // */
+    //   //start
+    //   $('.drag').draggable({ 
+    //   /* draggable 옵션
+    //     axis: drag 축 지정
+    //     revert: 원래 자리로 되돌림
+    //     containment
+    //   */
+    //     // axis: 'x', // 'y'
+    //     // revert: true, // 기본값: false
+    //     containment: '.drop', // drag할 수 있는 영역을 drop 대상 영역 안으로 한정
+    //     start: function() {console.log('start');},
+    //     drag: function() {console.log('drag');},
+    //     stop: function() {console.log('stop');},
+    //   });
+
+    //   $('.drop').droppable({
+    //     accept: $('.drag'), // 드랍 대상
+    //     hoverClass: 'active',
+    //     drop: function() {
+    //       $(this).append($('.drag')); 
+    //       // 선택자 안으로 이동 → .drag를 .drop 안으로 이동
+    //     }
+    //   });
+    //   //end
+    // });
+  </script>
+</body>
+</html>
