@@ -52,47 +52,47 @@
   <section class="con">contents_03</section>
   <section class="con">contents_04</section>
   <script>
-    $(function() {
-      // click event
-      $('header a').on('click', function() {
-        var idx = $(this).index();
-        var offsetTop = $('.con').eq(idx).offset().top;
-        // console.log(offsetTop);
-        var headerHei = $('header').innerHeight()
-        // console.log($('header').innerHeight());
+    // jq -------------------------------------------------------------------------
+    // $(function() {
+    //   // click event
+    //   $('header a').on('click', function() {
+    //     var idx = $(this).index();
+    //     var offsetTop = $('.con').eq(idx).offset().top;
+    //     // console.log(offsetTop);
+    //     var headerHei = $('header').innerHeight()
+    //     // console.log($('header').innerHeight());
 
-        event.preventDefault();
-        // $(window).scrollTop(offsetTop);
+    //     event.preventDefault();
+    //     // $(window).scrollTop(offsetTop);
 
-        $('html').animate({
-          scrollTop: offsetTop - headerHei
-        });
-      });
+    //     $('html').animate({
+    //       scrollTop: offsetTop - headerHei
+    //     });
+    //   });
 
-      var headerTop = $('header').offset().top;
-      // scroll event
-      $(window).on('scroll', function() {
-        if(headerTop <= $(this).scrollTop()) {
-          $('header').addClass('active');
-        } else { 
-          $('header').removeClass('active');
-        }
+    //   var headerTop = $('header').offset().top;
+    //   // scroll event
+    //   $(window).on('scroll', function() {
+    //     if(headerTop <= $(this).scrollTop()) {
+    //       $('header').addClass('active');
+    //     } else { 
+    //       $('header').removeClass('active');
+    //     }
 
-        $('.con').each(function(i) {
-            var conTop = $('.con').eq(i).offset().top;
-            var winScroll = $(window).scrollTop();
+    //     $('.con').each(function(i) {
+    //         var conTop = $('.con').eq(i).offset().top;
+    //         var winScroll = $(window).scrollTop();
 
-            if((conTop*.8) < winScroll) {
-              // $('header a').removeClass('active');
-              $('header a').eq(i).addClass('active').siblings().removeClass('active');
-              // siblings(): 선택자의 형제 엘리먼트
-            } else if($('.con').eq(0).offset().top > winScroll) {
-              $('header a').eq(0).removeClass('active');
-            }
-          });
-      });
-      // end
-    });
+    //         if((conTop*.8) < winScroll) {
+    //           // $('header a').removeClass('active');
+    //           $('header a').eq(i).addClass('active').siblings().removeClass('active');
+    //           // siblings(): 선택자의 형제 엘리먼트
+    //         } else if($('.con').eq(0).offset().top > winScroll) {
+    //           $('header a').eq(0).removeClass('active');
+    //         }
+    //       });
+    //   });
+    // });
   </script>
 </body>
 </html>
