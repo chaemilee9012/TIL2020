@@ -64,24 +64,39 @@ textDiv.addEventListener('click', function() {
 1. 스크롤한다.
 2. 특정 영역 넘어가면 헤더 상단 고정
 */
-window.addEventListener('scroll', function(e) {
+// window.addEventListener('scroll', function(e) {
 
-  if(window.scrollY >= headerJs.offsetHeight) {
-    navi.classList.add('active');
-  } else {
-    navi.classList.remove('active');
-  }
-});
+//   if(window.scrollY >= headerJs.offsetHeight) {
+//     navi.classList.add('active');
+//   } else {
+//     navi.classList.remove('active');
+//   }
+// });
 
 $(function() {
+  $('.menu_link ul li a').on('click',function(){
+    var idx = $(this).index();
+    var conTop = $('article').eq(idx).offset().top;
+
+    $('html').animate({
+      scrollTop: conTop
+    })
+  });
+  
   $(window).on('scroll', function() {
+    if($(window).scrollTop() > $('header').height()) {
+      $('.menu_link').addClass('active');
+    } else {
+      $('.menu_link').removeClass('active');
+    }
+
     var winScroll = $(window).scrollTop();
 
-    $('.menu_link ul li').each(function(i) {
+    $('article').each(function(i) {
       var articleTop = $(this).offset().top;
 
       if(winScroll >= articleTop) {
-        $('a').eq(i).addClass('active');
+        $('.menu_link ul li a').eq(i).addClass('active').siblings().removeClass('active');
       }
     })
   });
