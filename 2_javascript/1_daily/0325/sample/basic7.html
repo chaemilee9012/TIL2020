@@ -14,7 +14,8 @@
       width: 100%;
       padding: 10px 0;
       background: #ddd;
-      position: relative;
+      /* position: relative; */
+      position: fixed;
       left: 0; top: 0;
       text-align: center
     }
@@ -41,10 +42,10 @@
   <div class="bn">banner</div>
   <header>
     <nav>
-      <a href="#">Navi01</a>
-      <a href="#">Navi02</a>
-      <a href="#">Navi03</a>
-      <a href="#">Navi04</a>
+      <a href="#" data-num="0">Navi01</a>
+      <a href="#" data-num="1">Navi02</a>
+      <a href="#" data-num="2">Navi03</a>
+      <a href="#" data-num="3">Navi04</a>
     </nav>
   </header>
   <section class="con">contents_01</section>
@@ -53,7 +54,77 @@
   <section class="con">contents_04</section>
   <script>
     // vanilla
-    
+    /*
+    1. a태그 누른다.
+    2. 클릭한 태그와 인덱스가 같은 콘텐츠를 찾는다.
+    2. 해당 콘텐츠 시작 위치와 현재 스크롤 위치를 구한다.
+    3. 콘텐츠 시작점 > 스크롤 위치: 스크롤 아래로
+       콘텐츠 시작점 < 스크롤 위치: 스크롤 위로
+    */
+
+    var navigation = document.querySelector('header');
+    var conJs = document.querySelectorAll('.con');
+    var idx = 0;
+
+    navigation.addEventListener('click', function(e) {
+      e.preventDefault();
+      var dNum = e.target.dataset.num;
+      var top = conJs[dNum].offsetTop;
+      var navHeight = this.offsetHeight;
+
+      console.log(navHeight);
+
+
+      var down = setInterval(function() {
+        if(top > window.scrollY) {
+          idx += 10;
+        } else {
+          clearInterval(down);
+        }
+        var yIdx = idx - navHeight;
+        window.scrollTo(0, yIdx);
+        // console.log(idx);
+        console.log(idx - navHeight);
+      }, 0)
+
+      var up = setInterval(function() {
+        if(top < window.scrollY) {
+          idx -= 10;
+        } else {
+          clearInterval(up);
+        }
+        window.scrollTo(0, idx + navHeight);
+      }, 0)
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     // jq -------------------------------------------------------------------------
     // $(function() {
