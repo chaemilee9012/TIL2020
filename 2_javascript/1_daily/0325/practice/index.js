@@ -11,33 +11,33 @@ var textDiv = document.querySelector('.text');
 var headerJs = document.querySelector('header');
 
 // 스크롤 이동
-navi.addEventListener('click', function(e) {
-  var dNum = e.target.dataset.num;
-  var top = articleJs[dNum].offsetTop;
-  var yIdx = 0;
+// navi.addEventListener('click', function(e) {
+//   var dNum = e.target.dataset.num;
+//   var top = articleJs[dNum].offsetTop;
+//   var yIdx = 0;
 
-  e.preventDefault();
+//   e.preventDefault();
 
-  var down = setInterval(function() {
-    yIdx = window.scrollY;
-    if(top > window.scrollY) {
-      yIdx += 10;
-    } else {
-      clearInterval(down);
-    }
-    window.scrollTo(0, yIdx);
-  }, 0)
+//   var down = setInterval(function() {
+//     yIdx = window.scrollY;
+//     if(top > window.scrollY) {
+//       yIdx += 10;
+//     } else {
+//       clearInterval(down);
+//     }
+//     window.scrollTo(0, yIdx);
+//   }, 0)
 
-  var up = setInterval(function() {
-    yIdx = window.scrollY;
-    if(top < window.scrollY) {
-       yIdx -= 10;
-    } else {
-      clearInterval(up);
-    }
-    window.scrollTo(0, yIdx);
-  }, 0)
-});
+//   var up = setInterval(function() {
+//     yIdx = window.scrollY;
+//     if(top < window.scrollY) {
+//        yIdx -= 10;
+//     } else {
+//       clearInterval(up);
+//     }
+//     window.scrollTo(0, yIdx);
+//   }, 0)
+// });
 
 // 버거메뉴
 logo.addEventListener('click', function(e) {
@@ -64,40 +64,48 @@ textDiv.addEventListener('click', function() {
 1. 스크롤한다.
 2. 특정 영역 넘어가면 헤더 상단 고정
 */
-// window.addEventListener('scroll', function(e) {
 
-//   if(window.scrollY >= headerJs.offsetHeight) {
-//     navi.classList.add('active');
-//   } else {
-//     navi.classList.remove('active');
-//   }
-// });
+/*
+1. 스크롤한다.
+2. section 넘어갈 때마다 해당 menu_link에 active 클래스 추가
+*/
 
 $(function() {
-  $('.menu_link ul li a').on('click',function(){
+  var winHeight = $(window).height();
+  
+  $('.menu_link ul li').on('click',function(){
     var idx = $(this).index();
-    var conTop = $('article').eq(idx).offset().top;
+    var conTop = $('section article').eq(idx).offset().top;
 
     $('html').animate({
-      scrollTop: conTop
+      scrollTop: conTop - $('header').height()
     })
   });
   
   $(window).on('scroll', function() {
-    if($(window).scrollTop() > $('header').height()) {
+    var winScroll = $(window).scrollTop();
+    var articleTop;
+
+    if(winScroll > $('header').height()) {
       $('.menu_link').addClass('active');
     } else {
       $('.menu_link').removeClass('active');
     }
 
-    var winScroll = $(window).scrollTop();
-
-    $('article').each(function(i) {
-      var articleTop = $(this).offset().top;
+    $('section article').each(function(i) {
+      articleTop = $(this).offset().top;
 
       if(winScroll >= articleTop) {
-        $('.menu_link ul li a').eq(i).addClass('active').siblings().removeClass('active');
+        $('.menu_link ul li').eq(i).addClass('active').siblings().removeClass('active');
+      }
+
+      if(articleTop - winHeight < winScroll) {
+        $('section article').eq(i).css({
+          opacity: 1,
+          paddingTop: 150
+        });
       }
     })
   });
+
 })

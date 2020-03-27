@@ -2,10 +2,6 @@
 @import url('https://fonts.googleapis.com/css?family=Satisfy&display=swap');
 
 
-/* ---------------- 추가 ----------------------------------------- */
-li{
-  padding-top: 200px
-}
 /* ---------------- logo ----------------------------------------- */
 header{
     width: 100%; height: 960px;
@@ -90,7 +86,7 @@ header .text a{
 .menu_link ul li{
   padding-top: 0
 }
-.menu_link ul li a.active{
+.menu_link ul li.active{
   background: #fa0
 }
 .menu_link ul li a{
@@ -103,8 +99,10 @@ section{
 }
 section article{
     width: 70%; margin: 0 auto;
-    padding-top: 160px;
-    text-align: center
+    padding-top: 300px;
+    text-align: center;
+    opacity: 0;
+    transition: 1s
 }
 section h2{
     font-size: 55px; color: #222;
