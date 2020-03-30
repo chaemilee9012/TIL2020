@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 제이쿼리 cdn 참조 -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+  <script>
+    // 제이쿼리 -------------------------------------------------------------------------------------
+    // $( "button.continue" ).html( "Next Step..." ) // $: 제이쿼리, (): 함수 
+
+    // 문서 내용 읽은 후 function 실행
+    $(function() { // == window.addEventListener('DOMContentLoaded', function() {});
+      // $('선택자').메소드(매개변수);
+      //선택자 앞에 $, 메소드 앞에 . 함수 뒤에 () 필수
+      $('.box').hide(); // hide() == display: none;
+      /* vJS
+      var boxJs = document.querySelector('.box');
+      a.style.display = 'none';
+      */
+
+     $('button:first').on('click', function() { // button:first == button:first-of-type
+      $('.box').css({
+        border: '1px solid #333',
+        padding: '60px',
+        // fontSize: '5em'
+        'font-size': '5em'
+      });
+      // $('.box').show(500); // show() == display: block; show(500): transition: .5s;
+      // $('.box').slideDown(500);
+      // $('.box').slideToggle(500);
+      // $('.box').slideToggle(500);
+      $('.box').fadeToggle(500);
+     });
+
+     $('button:last').on('click', function() {
+      // $('.box').hide(500);
+      // $('.box').slideUp(500);
+      // $('.box').fadeOut(500);
+     });
+    });
+    // == $(document).ready(function(){});
+  </script>
+  <button> show() </button>
+  <button> hide() </button>
+
+  <div class="box">콘텐츠입니다.</div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <style>
+    div{
+      height: 2000px
+    }
+    aside{
+      position: absolute;
+      right: 0; top: 100px;
+      width: 100px; height: 100px;
+      background: #f00;
+      transition: .5s
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+  <aside>top</aside>
+  <script>
+  $(function() {
+    var sTop = 0;
+
+    $(window).on('scroll', function() {
+      sTop = $(this).scrollTop();
+      // console.log('scroll 위치: ' + sTop);
+      $('aside').css({
+        top: sTop + 100
+      });
+      var docBtm = $(document).height() - $(window).height();
+      // console.log('문서 높이 - 브라우저 높이(브라우저 최하단 위치)' + docBtm);
+
+      console.log(sTop == docBtm);
+    });
+  });
+  </script>
+</body>
+</html>

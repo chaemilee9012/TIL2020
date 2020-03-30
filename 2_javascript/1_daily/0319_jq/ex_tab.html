@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    
+</head>
+<body>
+<style>
+    html,body{margin:0;}
+    section{
+        width:100%; 
+        overflow:hidden;
+        position:relative;
+        text-align:center;
+    }
+    .s1{
+        width:1000px;  margin:0 auto;
+        display:flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .s1 div{
+        width:30%; height:200px;
+        font-size:3em;
+        background:#ddd;
+        margin-top:40px;
+    }
+    button{font-size:2em;}
+    div.disappear{
+      display: none
+    }
+</style>
+
+<section>
+    <p>
+        <button>All</button>
+        <button>red</button>
+        <button>yellow</button>
+        <button>blue</button>
+    </p>
+    <div class="s1">
+        <div>blue</div>
+        <div>yellow</div>
+        <div>red</div>
+        <div>yellow</div>
+        <div>blue</div>
+        <div>red</div>
+        <div>yellow</div>
+        <div>red</div>
+        <div>blue</div>
+        <div>yellow</div>
+        <div>red</div>
+        <div>red</div>
+    </div>
+    
+</section>
+
+<script>
+/*
+1. 버튼을 클릭한다.
+2. 클릭한 버튼의 텍스트와 div를 비교한다.
+3. 버튼 텍스트와 다른 div → 숨김 
+    all → 모두 보임
+*/
+
+// vanilla -----------------------------------------------------------------
+  var btn = document.querySelector('p');
+  var divJs = document.querySelectorAll('.s1 div');
+  
+  btn.addEventListener('click', function() {
+    var btnTxt = event.target.textContent;
+
+    for(var i = 0; i < divJs.length; i++){
+      divJs[i].classList.remove('disappear');
+
+      if(btnTxt == 'All') {
+        divJs[i].classList.remove('disappear');
+      } else if(btnTxt != divJs[i].textContent) {
+        divJs[i].classList.add('disappear');
+        console.log(divJs[i].classList);
+      }
+    }
+  });
+
+// jq -----------------------------------------------------------------
+//   $(function() {
+//     $('p button').on('click', function(){
+//       var btnTxt = $(this).text();
+      
+//       $('.s1 div').each(function() {
+//         $(this).removeClass();
+//         if(btnTxt == 'All') {
+//           $(this).removeClass();
+//         } else if(btnTxt != $(this).text()) {
+//           $(this).addClass('disappear');
+//         }
+//       });
+//     });
+//   });
+</script>
+</body>    
+</html>

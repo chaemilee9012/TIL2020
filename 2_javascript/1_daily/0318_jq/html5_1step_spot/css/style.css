@@ -1,0 +1,137 @@
+@import url('common.css');
+@import url('https://fonts.googleapis.com/css?family=Nanum+Myeongjo&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+/*
+구글 폰트 아이콘 가이드
+google.github.io/material-design-icons/*/
+
+/*
+구글 아이콘 명칭 참고
+material.io/resources/icons/?style=baseline
+*/
+
+.m{
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-size: 24px;  /* Preferred icon size */
+    color:#f00;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            /*  x y blur color  */
+}
+
+header{
+  padding:60px 0;
+  width:1200px; margin:0px auto;
+  display:flex;
+  justify-content: space-between
+}
+header h1{}
+header nav{}
+header nav ul{}
+header nav ul li{
+  display: inline-block;
+  position: relative
+}
+header nav ul li > a{
+  margin:0 20px; text-transform: uppercase;
+}
+header nav ul li div{
+  position: absolute;
+  left: 0; top: 30px; z-index: 10;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  text-align: center;
+  display: none
+}
+header nav ul li div a{
+  display: block;
+  color: #fff;
+  padding: 10px
+}
+header > p{
+  position: relative;
+  /* overflow: hidden */
+}
+header p > span{
+  position: absolute;
+  right: 0; top: 60px;
+  background: rgb(255, 0, 0);
+  opacity: 0;
+  /* transform: translateX(100%); */
+  transition: .5s
+}
+header p > span a{
+  display: block;
+  padding: 10px 20px;
+  color: #fff
+}
+header .trigger_menu.active + span{
+  opacity: 1; top: 40px;
+}
+
+header .trigger_menu{width:38px; height:20px; font-size:0; position:relative;}
+header .trigger_menu span{
+    width:100%; height:2px; background:#000;
+    position:absolute; left:0;
+    transition:.3s
+}
+header .trigger_menu span:nth-of-type(1){}
+header .trigger_menu span:nth-of-type(2){top:44%; width:80%;}
+header .trigger_menu span:nth-of-type(3){bottom:0; width:90%;}
+
+header .trigger_menu.active span:nth-of-type(1){
+    transform:rotate(45deg); /*각도*/
+    top:46%
+}
+header .trigger_menu.active span:nth-of-type(2){
+    transform:translate(100%); /*오브젝트 위치 이동*/
+    opacity:0
+}
+header .trigger_menu.active span:nth-of-type(3){
+    transform:rotate(-45deg);
+    bottom:45%
+}
+/* ------------------ section --------------------------------------- */
+section{
+    background:url('../img/spot.jpg') 0 center;
+    height:600px
+}
+section div{
+    margin:0px auto ;
+    width:900px;
+    background:#fff;
+    padding:60px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    position:relative; top:40px;
+    transition:box-shadow .5s,top .5s
+}
+section:hover div{
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    top:60px;
+}
+section div h2{    
+    color:#333; font-size:1.6em;
+    padding-bottom:40px;
+    position:relative
+}
+section div h2 span{
+    position:absolute;right:0; top:0
+}
+section div h2 span a{
+    font-family: 'Material Icons';
+    font-size:24px;
+    font-weight:normal
+}
+section div figure{}
+section div figure figcaption{
+    white-space: pre-line;
+    font-size:1.3em; color:#333;
+    line-height:2.4; padding-top:20px
+}
+section div figure figcaption span{}
+
+footer{padding:160px 0; text-align:center; color:#999}
+
+
+

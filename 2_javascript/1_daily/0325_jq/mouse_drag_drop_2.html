@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link src="">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  <style>
+    .drag{
+      width: 600px; margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      list-style: none;
+      padding: 0
+    }
+    .drag li{
+      width: 100px; height: 100px;
+      border: 1px solid #333
+    }
+    .drag li.active{
+      border: 1px dotted #00f
+    }
+    .drag li img{
+      width: 100%; height: 100%
+    }
+    .drag li img.active{
+      display: none
+    }
+  </style> 
+</head>
+
+<body>
+  <ul class="drag">
+    <li class="drop">
+      <img src="../../1_daily/img/p_02.jpg" alt="" draggable="true">
+    </li>
+    <li class="drop"></li>
+    <li class="drop"></li>
+    <li class="drop"></li>
+    <li class="drop"></li>
+  </ul>
+
+  <script>
+    // vanilla
+    var dragJs = document.querySelector('.drag img');
+    var dropJs = document.querySelectorAll('.drop');
+    // dragend, dragstart 이벤트 쓸 때 해당 엘리먼트에 draggable="true" 꼭 있어야 함
+
+    // dragJs.addEventListener('dragstart', function() {
+    //   setTimeout(function() {
+    //     dragJs.classList.add('active')
+    //   }, 10);
+    // });
+
+    // dragJs.addEventListener('dragend', function() {
+    //   dragJs.classList.remove('active');
+    // });
+
+    for(var i = 0; i < dropJs.length; i++) {
+      dropJs[i].addEventListener('dragover', dragover);
+      dropJs[i].addEventListener('dragenter', dragenter);
+      dropJs[i].addEventListener('dragleave', dragleave);
+      dropJs[i].addEventListener('drop', dragDrop);
+    }
+    
+    function dragover(e) {
+      e.preventDefault();
+    }
+    function dragenter(e) {
+      e.preventDefault();
+      // console.log('dragenter');
+      // console.log(e.target);
+      e.target.classList.add('active');
+    }
+    function dragleave(e) {
+      e.preventDefault();
+      // console.log('dragleave');
+      e.target.classList.remove('active');
+    }
+    function dragDrop(e) {
+      e.preventDefault();
+      // console.log('drop');
+      this.append(dragJs); 
+    }
+    
+    /* touch 이벤트 종류
+      touchstrat
+      touchend
+      touchmove
+      touchcancel
+    */
+
+    // dragJs.addEventListener('touchstart',function(e){
+    //     // console.log('touchstart');
+    //     console.log(e.type);
+    // });
+    
+    // dragJs.addEventListener('touchmove',function(e){
+    //     console.log('touchmove');
+    // });
+    
+    // dragJs.addEventListener('touchend',function(e){
+    //     console.log('touchend');
+    // });
+
+
+    // jq ------------------------------------------------------------------
+    $(function () {
+    /*
+      jquery 등 플러그인 이용할 때 엘리먼트에 자동 적용되는 클래스 활용하면 좋음
+    */
+
+      $('.drag img').on('dragstart touchstart',function(){
+        console.log('touchstart');
+      });
+    
+      //start
+      $('.drag').draggable({ 
+      /* draggable 옵션
+        axis: drag 축 지정
+        revert: 원래 자리로 되돌림
+        containment
+      */
+        // axis: 'x', // 'y'
+        // revert: true, // 기본값: false
+        containment: '.drop', // drag할 수 있는 영역을 drop 대상 영역 안으로 한정
+        start: function() {console.log('start');},
+        drag: function() {console.log('drag');},
+        stop: function() {console.log('stop');},
+      });
+
+      $('.drop').droppable({
+        accept: $('.drag'), // 드랍 대상
+        hoverClass: 'active',
+        drop: function() {
+          $(this).append($('.drag')); 
+          // 선택자 안으로 이동 → .drag를 .drop 안으로 이동
+        }
+      });
+      //end
+    });
+  </script>
+</body>
+</html>

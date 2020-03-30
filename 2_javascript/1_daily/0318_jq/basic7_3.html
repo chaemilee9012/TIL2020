@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <style>
+    *{
+      margin: 0; padding: 0
+    }
+    .bn{
+      height: 200px; background: #090
+    }
+    header{
+      width: 100%;
+      padding: 10px 0;
+      background: #ddd;
+      position: relative;
+      left: 0; top: 0;
+      text-align: center;
+      /* position: fixed; */
+    }
+    header.fix{
+      position: fixed;
+      left: 0; top: 0
+    }
+    header a.active{
+      background: orange
+    }
+    section{
+      height: 1100px;
+      padding-top: 40px
+    }
+    section:nth-of-type(even){
+      background: #eee
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="bn">banner</div>
+  <header>
+    <nav>
+      <a href="#" data-num="0">Navi01</a>
+      <a href="#" data-num="1">Navi02</a>
+      <a href="#" data-num="2">Navi03</a>
+      <a href="#" data-num="3">Navi04</a>
+    </nav>
+  </header>
+  <main>
+    <section>contents_01</section>
+    <section>contents_02</section>
+    <section>contents_03</section>
+    <section>contents_04</section>
+  </main>
+  <script>
+  // scroll ------------------------------------------------------
+  /*
+  1. a태그 클릭한다.
+  2. 클릭한 태그 num과 같은 번호를 인덱스로 가진 section을 찾는다.
+  3. 해당 section offsetTop과 scrollY를 비교한다.
+  4_1. offsetTop > scrollY → 스크롤 아래로
+  4_2. offsetTop < scrollY → 스크롤 위로
+  */
+
+  // jq -----------------------------------------------------------------
+  
+  $(function() {
+  // click
+    $('nav a').on('click', function() {
+      // 화면 이동
+      /*
+      1. a태그 클릭한다.
+      2. 클릭한 태그 인덱스와 같은 인덱스 가진 section의 offsetTop 값을 가져온다.
+      3. html의 scrollTop에 offsetTop 값을 대입한다.
+      */
+      event.preventDefault();
+
+      var idx = $(this).index();
+      var offsetTop = $('section').eq(idx).offset().top;
+
+      $('html').animate({
+        scrollTop: offsetTop
+      })
+    });
+    
+  // scroll 
+    $(window).on('scroll', function() {
+    // a 태그 강조 
+    /*
+    1. window의 scroll 위치를 구한다.
+    2. 각 섹션의 offsetTop을 구한다.
+    3_1. window scroll이 offsetTop보다 커지면
+         현재 화면에 보이는 섹션과 같은 인덱스를 가진 a태그에 active 클래스 추가한다.
+    3_2. 현재 화면에 보이는 섹션과 인덱스가 다른 a태그에 active 클래스를 제거한다.
+    */
+      var winScrlTop = $(window).scrollTop();
+      
+      $('section').each(function(i) {
+        let secTop = $(this).offset().top;
+
+        if(winScrlTop >= secTop/* - $(window).height() * .1*/) {
+          $('nav a').eq(i).addClass('active').siblings().removeClass('active');
+        }
+      });
+     
+    // header fixed
+    /*
+    1. window scroll 위치를 구한다.
+    2. div 끝나는 지점을 구한다.
+    3. window scroll > div 끝나는 지점 → header에 fix 클래스를 추가한다.
+    */
+      var mainTop = $('main').offset().top;
+      if(winScrlTop >= mainTop) {
+        $('header').addClass('fix');
+      } else {
+        $('header').removeClass('fix');
+      }
+     });
+  });
+  </script>
+</body>
+</html>

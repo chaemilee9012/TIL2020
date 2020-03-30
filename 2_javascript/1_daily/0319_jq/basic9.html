@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <style>
+    div{
+      width: 400px; height: 500px;
+      background: #aaa;
+      margin: 0 auto;
+      margin-top: 200px;
+      opacity: 0;
+      transition: 1s
+    }
+  </style>
+</head>
+<body>
+  <section>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </section>
+  <script>
+  $(function() {
+    var sTop = 0;
+
+    $(window).on('scroll',function(){
+      var winHei = $(window).height(); // 브라우저 높이
+      
+      sTop = $(this).scrollTop(); // 화면 위치
+      
+      $('div').each(function(i) {
+        var con = $('div').eq(i).offset().top; // 콘텐츠 시작점
+        
+        if(con - winHei < sTop){
+          console.log('도착');
+          $('div').eq(i).css({
+            opacity: 1,
+            marginTop: 100 
+          });
+        }
+      });
+    });
+    
+    $(window).trigger('scroll'); 
+    // 윈도우 scroll 이벤트 강제 발생 (== vanillaJs: dispatchEvent())
+  });
+  </script>
+</body>
+</html>

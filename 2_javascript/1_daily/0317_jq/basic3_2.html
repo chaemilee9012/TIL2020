@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <style>
+    img{
+      width: 600px; height: 400px;
+      position: absolute;
+      left: 0; top: 0;
+      opacity: 100%;
+      transition: 1s
+    }
+    .non_active{
+      opacity: 0%
+    }
+  </style>
+</head>
+<body>
+  <div class="fade">
+    <img src="../../1_daily/img/img-01.jpg" alt="">
+    <img src="../../1_daily/img/img-02.jpg" alt="">
+    <img src="../../1_daily/img/img-03.jpg" alt="">
+  </div>
+
+  <script>
+    
+    // 바닐라 ------------------------------------------------------------
+    var divFade = document.querySelector('.fade');
+    var imgJs = divFade.querySelectorAll('img');
+
+    for(var i = 1; i < imgJs.length; i++) {
+      imgJs[i].className = 'non_active';
+    }
+
+    var idx = 0;
+    var interval;
+
+    function loop() {
+      interval = setInterval(function() {
+        imgJs[idx].classList.add('non_active');
+
+        idx++;
+        if(idx == 3){
+        idx = 0;
+        }
+
+        imgJs[idx].classList.remove('non_active');
+      }, 1000);
+    } loop();
+
+    divFade.addEventListener('mouseenter', function() {
+      clearInterval(interval);
+    });
+
+    divFade.addEventListener('mouseleave', function() {
+      loop();
+    });
+
+    // // 제이쿼리 ------------------------------------------------------------
+
+    /*
+      1. 1번 사진을 제외하고 모두 숨긴다.
+      2. 1번 사진이 서서히 사라진다.
+      3. 2번 사진이 서서히 나타난다.
+      4. 2~3을 반복한다.
+      5. mouseenter → 루프 멈춘다.
+      6. mouseleave → 루프 시작한다.
+    */
+
+    // // 1번 사진을 제외하고 모두 숨긴다.
+    // $('.fade img').not(':first').hide();
+
+    // // // 1번 사진이 서서히 사라진다.
+    // // $('.fade img').eq(0).fadeOut(1000);
+
+    // // // 2번 사진이 서서히 나타난다.
+    // // $('.fade img').eq(1).fadeIn(1000);
+
+    // // 2~3을 반복한다.
+
+    // var idx = 0;
+    // var interval;
+
+    // function loop() {
+    //   interval = setInterval(function() {
+    //     $('.fade img').eq(idx).fadeOut(1000);
+    //     idx++;
+    //     if(idx == 3) {
+    //       idx = 0;
+    //     }
+    //     $('.fade img').eq(idx).fadeIn(1000);
+    //   }, 1000);
+    // } loop();
+
+    // $('.fade').on('mouseenter', function() {
+    //   clearInterval(interval);
+    // });
+
+    // $('.fade').on('mouseleave', function() {
+    //   loop();
+    // });
+  </script>
+</body>
+</html>

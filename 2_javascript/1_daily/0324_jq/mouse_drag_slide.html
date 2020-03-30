@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link src="">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  <style>
+  *{
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+  }
+    .slide{
+      width: 300px; height: 300px;
+      border: 5px solid #00f;
+      position: relative
+    }
+    .slide ul{
+      list-style-type: none;
+      position: absolute;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+    }
+    .slide ul li{
+      width: 100%; height: 100%;
+      border: 1px solid #333;
+      background: #ddd;
+      position: absolute;
+      left: 0; top: 0
+    }
+    /*
+      배너 위치 조정은 js로 → 배너 갯수 변할 수 있으므로
+    */
+    /* .slide ul li:nth-of-type(1){left: 0}
+    .slide ul li:nth-of-type(2){left: 100%}
+    .slide ul li:nth-of-type(3){left: 200%}
+    .slide ul li:nth-of-type(4){left: 300%} */
+  </style> 
+</head>
+
+<body>
+  <div clsss="ban" draggable="true">rrrrrr</div>
+  <!-- dragend, dragstart 이벤트 쓸 때 해당 엘리먼트에 draggable="true" 꼭 있어야 함 -->
+  <div class="slide">
+    <ul>
+      <li>slide 01</li>
+      <li>slide 02</li>
+      <li>slide 03</li>
+      <li>slide 04</li>
+    </ul>
+  </div>
+
+  <script>
+    $(function () {
+    /*
+      jquery 등 플러그인 이용할 때 엘리먼트에 자동 적용되는 클래스 활용하면 좋음
+    */
+      //start
+      // var ulJs = document.querySelector('.slide ul');
+      var lengthLi = $('.slide li').length;
+      var idx = 0;
+
+      for(var i = 0; i < lengthLi; i++){
+        // ulJs.children[i].style.left = i * 100 + '%';
+        
+        $('.slide li').eq(i).css({
+          left: i * 100 + '%',
+        });
+      }
+
+      var posStart, posStop;
+      $('.slide ul').draggable({ 
+      /* draggable 옵션
+        axis: drag 축 지정
+        revert: 원래 자리로 되돌림
+        containment
+      */
+        axis: 'x', // 'y'
+        // revert: true, // 기본값: false
+        start: function(e) {
+          // console.log('start');
+          // console.log(e.pageX);
+          posStart = e.pageX;
+        },
+        drag: function(e) {
+          // console.log('drag');
+          // console.log(e);
+
+        },
+        stop: function(e) {
+          // console.log('stop');
+          // console.log(e.pageX);
+          posStop = e.pageX;
+
+          if(posStart > posStop) {
+            console.log('좌측');
+            console.log(posStart - posStop);
+            idx++;
+
+          } else{
+            console.log('우측');
+            console.log(posStop - posStart);
+            idx--;
+          }
+
+          dragging();
+          
+        },
+      });
+
+      function dragging() {
+        $('.slide ul').stop().animate({
+          left: -idx * 100 + '%'
+        });
+      }
+
+
+      $('.drop').droppable();
+
+      
+      var banJs = document.querySelector('.ban');
+      console.log(banJs);
+
+      // dragend, dragstart 이벤트 쓸 때 해당 엘리먼트에 draggable="true" 꼭 있어야 함
+      banJs.addEventListener('dragstart', function() {
+      /*
+        dragstart
+        dragend
+        dragover
+        dragenter
+        dragleave
+      */
+        console.log('dragstart');
+      });
+
+      banJs.addEventListener('dragend', function() {
+        console.log('dragend');
+      });
+      //end
+    });
+
+    
+  </script>
+</body>
+</html>

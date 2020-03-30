@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 태그명 원하는 대로 지정
+     가장 큰 부모 태그 하나에 모든 데이터 담아야 함 -->
+<items> 
+  <!-- <depth> 1개 이상 depth 들어갈 경우 depth로 구분-->
+    <item>../../../1_daily/img/p_01.jpg</item>
+    <item>../../../1_daily/img/p_02.jpg</item>
+    <item>../../../1_daily/img/p_03.jpg</item>
+  <!-- </depth> -->
+</items>

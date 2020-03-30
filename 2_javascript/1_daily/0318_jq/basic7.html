@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <style>
+    *{
+      margin: 0; padding: 0
+    }
+    header{
+      width: 100%;
+      padding: 10px 0;
+      background: #ddd;
+      position: relative;
+      left: 0; top: 0;
+      text-align: center
+    }
+    header.active{
+      position: fixed;
+      left: 0; top: 0
+    }
+    header a.active{
+      background: orange
+    }
+    section{
+      height: 900px;
+      margin-top: 40px
+    }
+    section:nth-of-type(even){
+      background: #eee
+    }
+    .bn{
+      height: 200px; background: #090
+    }
+  </style>
+</head>
+<body>
+  <div class="bn">banner</div>
+  <header>
+    <nav>
+      <a href="#">Navi01</a>
+      <a href="#">Navi02</a>
+      <a href="#">Navi03</a>
+      <a href="#">Navi04</a>
+    </nav>
+  </header>
+  <section class="con">contents_01</section>
+  <section class="con">contents_02</section>
+  <section class="con">contents_03</section>
+  <section class="con">contents_04</section>
+  <script>
+    $(function() {
+      // click event
+      $('header a').on('click', function() {
+        var idx = $(this).index();
+        var offsetTop = $('.con').eq(idx).offset().top;
+        // console.log(offsetTop);
+        var headerHei = $('header').innerHeight()
+        // console.log($('header').innerHeight());
+
+        event.preventDefault();
+        // $(window).scrollTop(offsetTop);
+
+        $('html').animate({
+          scrollTop: offsetTop - headerHei
+        });
+      });
+
+      var headerTop = $('header').offset().top;
+      // scroll event
+      $(window).on('scroll', function() {
+        if(headerTop <= $(this).scrollTop()) {
+          $('header').addClass('active');
+        } else { 
+          $('header').removeClass('active');
+        }
+
+        $('.con').each(function(i) {
+            var conTop = $('.con').eq(i).offset().top;
+            var winScroll = $(window).scrollTop();
+
+            if((conTop*.8) < winScroll) {
+              // $('header a').removeClass('active');
+              $('header a').eq(i).addClass('active').siblings().removeClass('active');
+              // siblings(): 선택자의 형제 엘리먼트
+            } else if($('.con').eq(0).offset().top > winScroll) {
+              $('header a').eq(0).removeClass('active');
+            }
+          });
+      });
+      // end
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <style>
+    *{
+      margin: 0; padding: 0
+    }
+    header{
+      width: 100%;
+      padding: 10px 0;
+      background: #ddd;
+      position: fixed;
+      left: 0; top: 0;
+      text-align: center
+    }
+    header a.active{
+      background: #00f;
+      color: #fff
+    }
+    section{
+      height: 900px;
+      /* margin-top: 40px */
+    }
+    section:nth-of-type(even){
+      background: #eee
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#" class="active">Navi01</a>
+      <a href="#">Navi02</a>
+      <a href="#">Navi03</a>
+      <a href="#">Navi04</a>
+    </nav>
+  </header>
+  <!-- a 태그랑 index 맞추기
+  <main>
+    <section>contents_01</section>
+    <section>contents_02</section>
+    <section>contents_03</section>
+    <section>contents_04</section>
+  </main>
+  -->
+  <section class="con">contents_01</section>
+  <section class="con">contents_02</section>
+  <section class="con">contents_03</section>
+  <section class="con">contents_04</section>
+  <script>
+    $(function() {
+      // click event
+      $('header a').on('click', function() {
+        var idx = $(this).index();
+        var offsetTop = $('.con').eq(idx).offset().top;
+        // console.log(offsetTop);
+        var headerHei = $('header').innerHeight()
+        // console.log($('header').innerHeight());
+
+        event.preventDefault();
+        // $(window).scrollTop(offsetTop);
+
+        $('html').animate({
+          scrollTop: offsetTop - headerHei
+        });
+      });
+
+      // scroll event
+        $(window).on('scroll', function() {
+          $('.con').each(function(i) {
+            var conTop = $('.con').eq(i).offset().top;
+            var winScroll = $(window).scrollTop();
+
+            if(conTop <= winScroll - $(window).height() * .1) {
+              // $('header a').removeClass('active');
+              $('header a').eq(i).addClass('active').siblings().removeClass('active');
+              // siblings(): 선택자의 형제 엘리먼트
+            };
+          })
+        });
+
+      // end
+    });
+  </script>
+</body>
+</html>
