@@ -20,6 +20,10 @@ $(function() {
     success: function(data) { // 로드된 데이터 모두 매개변수에 담아서 사용 가능
       // 문서(url) 정상적으로 호출됐을 때 실행
       var imgTag = '';
+      var itemRow = 3;
+      var first = 0;
+      var last = itemRow;
+
       $('section').css({
         display: 'flex'
       })
@@ -36,26 +40,32 @@ $(function() {
       // }, 2000);
 
       // 3개 씩 추가할 때: append 사용
-      setTimeout(function() {
-        $(data).find('item').each(function(i) {
-          if(i < 3) {
-            imgTag = "<img src=" + $(this).text() + ">";
-            $('section').append(imgTag);
-          }
-          // 버튼 누를 때 3~5 → 6~8로 조건 순차적으로 변경
-          // 0 3
-          // 3 6
-          // 6 9
-        });
+      setTimeout(() => {
+        function getItem() {
+          $(data).find('item').each(function(i) {
+            if(first <= i && i < last) {
+            //    0 ~ 11  &&  0 ~ 3
+            //    3 ~ 11  &&  0 ~ 6
+            //    6 ~ 11  &&  0 ~ 9
+            //    9 ~ 11  &&  0 ~ 12
+              imgTag = "<img src=" + $(this).text() + ">";
+              $('section').append(imgTag);
+              $('section img').eq(i).hide().fadeIn();
+            }
+          });
+        }
+        getItem();
         $('section').fadeIn();
+        $('button').on('click', () => {
+          first += itemRow;
+          last += itemRow;
+          getItem();
+        });
       }, 2000);
-
     },
     error: function() {
       // 호출 실패했을 때 실행
       alert('fail');
     }
-
-  
   });
 });
