@@ -1,79 +1,69 @@
-$(function () {
-    $.ajax({
-        url: 'data.xml',
-        dataType: 'xml',
-        type: 'get',
-        beforeSend: function () {
-            $('.loading').fadeIn();
-        },
-        success: function (data) {
-            var photo = '',
-                pop = '',
-                text = '',
-                idx = 0;
-            $(data).find('article').each(function () {
-                photo = '<article class="thumb">' + $(this).html() + '</article>';
-                $('#main').append(photo);
-            });
-            $('#main').on('click', 'article', function (e) {
-                e.preventDefault();
-                $('.poptrox-overlay').show();
-                idx = $(this).index();
-                dataInfo();
-                //                var url = $(this).find('a').attr('href'),
-                //                    text = $(this).find('h2').text(),
-                //                    pop = '';
-                //
-                //                pop = '<img src = "' + url + '" > ';
-                //                $('.poptrox-overlay').show();
-                //                $('.poptrox-popup .pic').html(pop);
-                //                $('.poptrox-popup .caption').html(text);
-                //                //my code
-            });
-            $('.nav-previous').click(function () {
-                if (idx <= 0) {
+var xhr = new XMLHttpRequest(); // Create XMLHttpRequest object
 
-                } else {
-                    idx--;
-                }
-                dataInfo();
-            });
-            $('.nav-next').click(function () {
-                idx++;
-                dataInfo();
-            });
+xhr.addEventListener('load', function () { // When readystate changes
+  var data = JSON.parse(xhr.responseText);
+  // console.log(data.item.length);
 
-            function dataInfo() {
-                pop = $('article').eq(idx).find('a').attr('href');
-                text = $('article').eq(idx).find('h2').text();
-                $('.poptrox-popup .pic img').attr('src', pop);
-                console.log(pop);
-                $('.caption').text(text);
-            }
+  var mainDiv = document.querySelector('#main');
+  var popUp = document.querySelector('.poptrox-overlay');
+  var closeBtn = popUp.querySelector('.closer');
+  var indiBtn = popUp.querySelectorAll('.btn');
+  var aboutIcon = document.querySelector('#header .icon');
+  var fullData, thumData, titData, dNum;
+  
+  for(let i in data.item) {
+    fullData = data.item[i].full;
+    thumData = data.item[i].thum;
+    titData = data.item[i].title;
+    
+    mainDiv.innerHTML += `<article class="thumb">
+                            <a href="${fullData}" class="image">
+                              <img src="${thumData}" alt="" data-num="${i}">
+                            </a>
+                            <h2>${titData}</h2>
+                          </article>`;
+  }
+  mainDiv.addEventListener('click',function(e) {
+      e.preventDefault();
+      dNum = e.target.dataset.num;
 
-            $('.icon').click(function () {
-                $('footer').toggleClass('active');
-            });
-
-            $('.closer').click(function () {
-                $('.poptrox-overlay').hide();
-            })
-
-            $('.primary').click(function (e) {
-                e.preventDefault();
-                if ($('#name').val() == '' || $('#email').val() == '') {
-                    alert('warning');
-                } else {
-                    $('footer').removeClass('active');
-                }
-            });
-        },
-        complete: function () {
-            $('.loading').fadeIn();
-            0
-        },
-        error: function () {
-            alert('fail');
-        }
+      changeContents();
+      popUp.classList.add('active');      
     });
+
+  closeBtn.addEventListener('click', function() {
+    popUp.classList.remove('active');
+  });
+
+  indiBtn[0].addEventListener('click', function() {
+    dNum--;
+    changeContents();
+  });
+
+  indiBtn[1].addEventListener('click', function() {
+    dNum++;
+    changeContents();
+  });
+
+  aboutIcon.addEventListener('click', () => {
+    document.querySelector('#footer').classList.toggle('active');
+  });
+
+  function changeContents() {
+    popUp.querySelector('img').src = data.item[dNum].full;
+    popUp.querySelector('.caption').textContent = data.item[dNum].title;
+
+    for(var i = 0; i < indiBtn.length; i++) {
+      indiBtn[i].style.display = 'block';
+    }
+
+    if(dNum == 0) {
+      indiBtn[0].style.display = 'none';
+    } else if(dNum == data.item.length - 1) {
+      indiBtn[1].style.dislay = 'none';
+    }
+  }
 });
+
+xhr.open('GET', 'data.json', true); // Prepare the request
+xhr.send(null);
