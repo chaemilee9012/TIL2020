@@ -1,0 +1,18 @@
+{
+  "portfolio": [
+    {"work": [
+      {"thum": "../../1_daily/img/p_01_thum.jpg"},
+      {"detail": "../../1_daily/img/p_01.jpg"},
+      {"name": "쿠팡"},
+      {"time": "24"},
+      {"link": "http://naver.com"}
+    ]},
+    {"work": [
+      {"thum": "../../1_daily/img/p_02_thum.jpg"},
+      {"detail": "../../1_daily/img/p_02.jpg"},
+      {"name": "위메프"},
+      {"time": "24"},
+      {"link": "http://kakao.com"}
+    ]}
+  ]
+}
