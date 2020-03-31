@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Console Tricks!</title>
+</head>
+<body>
+
+  <p onClick="makeGreen()">×BREAK×DOWN×</p>
+
+  <script>
+    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+
+    function makeGreen() {
+      const p = document.querySelector('p');
+      p.style.color = '#BADA55';
+      p.style.fontSize = '50px';
+    }
+
+    // Regular
+    console.log('hello');
+
+    // Interpolated
+    console.log('Hello I am a %s string!', '💩');
+    
+    /* printf style formatting (printf 함수 형식)
+    다양한 자료형 변수를 문자열로 변환하는 방식을 지정해주는 '형식 문자열(format string)'인 문자열 변수를 받아들인다.
+    → 서식문자 활용한 문자열 치환 기능
+
+    %O Pretty-print an Object on multiple lines.
+    %o Pretty-print an Object all on a single line.
+    %s String.
+    %d Number (both integer and float).
+    %j JSON. Replaced with the string '[Circular]' if the argument contains circular references.
+    %% Single percent sign ('%'). This does not consume an argument.
+    */
+
+    /* templete literal
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
+
+    기능: 여러 문자열을 하나의 문자열로 연결
+    표현 방식: `내용`, ${내용}
+    이스케이프: \`
+
+    ex1)
+      console.log('string text line 1\n' +
+      'string text line 2');
+    ex1_1)
+      console.log(`string text line 1
+      string text line 2`);
+
+    ex2)
+      let a = 5;
+      let b = 10;
+      console.log('Fifteen is ' + (a + b) + ' and\nnot ' + (2 * a + b) + '.');
+    ex2_1)
+      let a = 5;
+      let b = 10;
+      console.log(`Fifteen is ${a + b} and
+      not ${2 * a + b}.`);
+    */
+    
+    //ex3)
+      // var a = 1;
+      // var b = 'hello';
+      // var c = true;
+
+      // console.log(a); // 하나만 로그
+      // console.log(a, b, c); // 여러 개를 동시에 로그
+      // console.log('%d는 숫자 %s는 문자열', a, b); // C 언어처럼 로그
+      // console.log(`${a}는 숫자 ${b}는 문자열`);
+
+    // Styled
+    console.log('%c I am some great text', 'font-size:50px; background:red; text-shadow: 10px 10px 0 blue');
+    // %c: 스타일 지정 가능 (%c부터 %c까지, 또는 %c부터 문자열 끝까지)
+
+    // warning!
+    console.warn('OH NOOO');
+
+    // Error :|
+    console.error('Shit!');
+
+    // Info
+    console.info('Crocodiles eat 3-4 people per year');
+    // 정보 출력(브라우저에 따라 표현 방식 다름 'i' 같이 출력)
+
+    // Testing
+    const p = document.querySelector('p');
+    console.assert(p.classList.contains('ouch'), 'That is wrong!');
+    // 첫번째 인자가 false일 때 메세지 출력 & 스택 출력
+
+    // clearing
+    console.clear();
+
+    // Viewing DOM Elements
+    console.log(p);
+    console.dir(p);
+    // 상호작용 가능한 객체 형태로 출력(펼쳐볼 수 있음)
+
+    console.clear();
+
+    // Grouping together
+    dogs.forEach(dog => {
+      // console.group(`${dog.name}`);
+      console.groupCollapsed(`${dog.name}`);
+      // 이후 출력하는 내용을 한 그룹으로 묶어서 표현(1단계 씩 들여쓰기)
+
+      console.log(`This is ${dog.name}`);
+      console.log(`${dog.name} is ${dog.age} years old`);
+      console.log(`${dog.name} is ${dog.age * 7} dog years old`);
+      console.groupEnd(`${dog.name}`); // 끝낼 때 
+    });
+
+    console.clear();
+
+    // counting
+    console.count('Wes'); 
+    // '라벨' 몇 번 호출됐는지 확인
+    // console.countReset(); // count 리셋
+
+    console.count('Wes');
+    console.count('Steve');
+    console.count('Steve');
+    console.count('Wes');
+    console.count('Steve');
+    console.count('Wes');
+    console.count('Steve');
+    console.count('Steve');
+    console.count('Steve');
+    console.count('Steve');
+
+    console.countReset('Steve');
+    console.count('Steve');
+
+    console.clear();
+
+    // timing
+    // 작업 소요 시간 측정(벤치마킹)
+
+    console.time('fetching data'); // 시간 측정할 작업 이름 명시
+    // 시간 측정 시작
+    fetch('https://api.github.com/users/wesbos')
+      .then(data => data.json())
+      .then(data => {
+        console.timeEnd('fetching data'); // 시간 측정 종료
+        console.log(data);
+      });
+
+    /* 시간 측정 방법
+    const start = Date.now();
+    // 작업 진행
+    for(var i=0;i<100000000;i++){
+    // 1억번 반복
+    }
+    console.log((Date.now() - start) + ' 밀리초 소요');
+
+    console.time('작업 1');
+    // 작업 진행
+    for(var i=0;i<100000000;i++){
+    // 1억번 반복
+    }
+    console.timeEnd('작업 1');
+    */
+
+    // 표 형태로 데이터 표현
+    console.table(dogs);
+  </script>
+</body>
+</html>
