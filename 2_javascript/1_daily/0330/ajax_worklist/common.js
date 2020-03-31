@@ -13,15 +13,31 @@ $(function(){
       var thum, name, time;
       var workMain, workList='';
       
-      $(data).find('work').each(function() {
+      $(data).find('work').each(function(i) {
         thum = $(this).find('thum').text();
         name = $(this).find('name').text();
         time = $(this).find('time').text();
 
-        if(!$('.work')){
-          funcMain();
+        if(!$('section').hasClass('work')){
+          funcMain(i);
+        } else {
+          funcSub(i);
         }
+      });
 
+      function funcMain(idx) {        
+      workMain = `<figure><!--
+                    --><a href="sub.html#${idx}"><!--
+                      --><img src="${thum}" alt=""><!--
+                      --><figcaption>${name}</figcaption><!--
+                    --></a><!--
+                  --></figure>`;
+        // sub.html#idx: 클릭한 a태그 구분용
+         
+        $('section').append(workMain);
+      }
+
+      function funcSub() {
         // workList = `<li>
         //             <figure>
         //               <img src="${thum}" alt="">
@@ -32,7 +48,7 @@ $(function(){
         //             </figure>
         //           </li>`
 
-        workList += '<li>';
+        workList = '<li>';
         workList += '<figure>';
         workList += '<img src="' + thum + '" alt="">';
         workList += '<figcaption>';
@@ -42,14 +58,18 @@ $(function(){
         workList += '</figure>';
         workList += '</li>';
         // console.log(workList);
-      });
-      $('section ul').append(workList);
 
-      function funcMain() {        
-        workMain = `<figure><img src="${thum}" alt=""><figcaption>${name}</figcaption></figure>`;
+        $('section ul').append(workList);
 
-        $('section').append(workMain);
+        $('section ul li').on('click', () => {
+          console.log('a');
+        });
       }
+      
+      var url = location.hash.substr(1);
+      // location.hash: 주소값에서 #값 접근
+      // console.log(url);
+      $('section ul li').eq(url).addClass('active');
     }
   });
   //end
