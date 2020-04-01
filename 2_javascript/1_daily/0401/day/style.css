@@ -1,0 +1,19 @@
+ul{
+  list-style: none
+}
+a{
+  color: #333;
+  text-decoration: none
+}
+section{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 1300px; margin: 0 auto;
+}
+.active{
+  border: 1px solid #333
+}
+article figure{
+  display: flex; flex-direction: column
+}

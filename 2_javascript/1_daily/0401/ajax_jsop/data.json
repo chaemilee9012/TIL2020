@@ -1,0 +1,16 @@
+jsop({
+"event": [
+  "../../../1_daily/img/p_01.jpg",
+  "../../../1_daily/img/p_02.jpg",
+  "../../../1_daily/img/p_03.jpg",
+  "../../../1_daily/img/p_01.jpg",
+  "../../../1_daily/img/p_02.jpg",
+  "../../../1_daily/img/p_03.jpg",
+  "../../../1_daily/img/p_01.jpg",
+  "../../../1_daily/img/p_02.jpg",
+  "../../../1_daily/img/p_03.jpg",
+  "../../../1_daily/img/p_01.jpg",
+  "../../../1_daily/img/p_02.jpg",
+  "../../../1_daily/img/p_03.jpg"
+]
+});
