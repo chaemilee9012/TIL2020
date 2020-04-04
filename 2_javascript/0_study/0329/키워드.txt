@@ -1,0 +1,7 @@
+call stack
+event loop
+asynchronous callback
+task queue
+callback queue
+
+execute context

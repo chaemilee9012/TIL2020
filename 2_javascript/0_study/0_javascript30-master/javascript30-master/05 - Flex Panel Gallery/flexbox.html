@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,body,h1,h2,h3,h4,h5,h6,p,blockquote,img,dl,dt,dd,ol,ul,li,fieldset,legend,caption{margin: 0; padding:0;border:0};
+
+        div,span,article,section,header,footer,p,ul,li,label{box-sizing: border-box;}
+
+
+
+        .container{
+            display: flex;
+            /* flex-direction: row; */
+            /* flex-wrap: wrap; */
+            /* justify-content: center; */
+            /* align-items: center; */
+            /* align-content: space-around; */
+        width:500px;
+            height: 500px;
+            background: lightgray;
+        }
+
+        .item{
+            /* 1 */
+            flex: 1;
+           
+            /* 실제 점유하는공간크기
+             = 전부다 0으로 인식한다
+            진짜 1:2:1 */
+            background: rgba(255,0,0,0.5);
+        }
+
+        .item:nth-child(1){
+            /* flex-grow: 1; */
+            /* flex:1 ; */
+            flex-shrink: 0;
+            /* 컨텐츠폭을 제외한
+            여백!!을 1:2:1로 나눠가진다 */
+        }
+        .item:nth-child(2){
+          /* flex-grow: 1; */
+            /* flex-shrink: 2; */
+             /* flex:2; */
+        }
+        .item:nth-child(3){
+         /* flex-grow: 1; */
+            /* flex-shrink: 1; */
+            /* flex:1; */
+        }
+
+        .item:nth-child(odd){
+            background: rgba(255,255,0,0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">
+            <p>aaaaaaaaaa</p>
+            <p>aaaaaaaaaa</p>
+            <p>aaaaaaaaaa</p>
+        </div>
+        <div class="item">
+            <p>bbbbbb</p>
+            <p>bbbbb</p>
+   
+        </div>
+        <div class="item">
+            <p>ccc</p>
+        </div>
+    </div>
+</body>
+</html>
