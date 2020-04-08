@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="common.js"></script>
+</head>
+
+<body>
+  <svg width="300" height="300">
+    <mask id="mask">
+      <image xlink:href="../img/mountains.png"></image>
+    </mask>
+    <text x="0" y="100" font-size="100" mask="url(#mask)">
+      $$$$$$$$$$$$$$$$$$$$
+    </text>
+    <!-- svg 태그 안에서 이미지 링크 거는 법
+      1) ai에서 이미지 파일 열기
+      2) svg 코드 xlink:href=" 부분 복사해오기
+      3) image 태그 형태 완성시키기-->
+  </svg>
+</body>
+
+</html>
