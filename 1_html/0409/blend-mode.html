@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="common.js"></script>
+  <style>
+    h1 {
+      color: #aaa;
+      font-size: 60px;
+      left: 80px;
+      mix-blend-mode: difference;
+      position: absolute;
+      z-index: 10;  
+    }
+
+
+    .mix {
+      position: relative;
+    }
+
+    .mix p {
+      background: pink;
+      height: 200px;
+      mix-blend-mode: difference; /* 포토샵 블렌드 모드 다 있음 */
+      position: absolute;
+      width: 200px;
+    }
+
+    .mix p:nth-of-type(2) {
+      background: #00f;
+      left: 100px;
+      top: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>aaa</h1>
+  <div class="mix">
+    <p></p>
+    <p></p>
+  </div>
+</body>
+</html>

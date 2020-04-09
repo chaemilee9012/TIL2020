@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="common.js"></script>
+  <style>
+    div {
+      height: 200px;
+      width: 1000px;
+    }
+
+    .g1 {
+      /* background: linear-gradient(to top, #0a0, #000); */
+      /* to top, to right, to right, to left  */
+      /* background: linear-gradient(140deg, #0a0, #000); */
+      background: linear-gradient(140deg, #0a0 70%, #000 100%);
+      /* #0a0 70%, #000 100%
+        앞에서 쓰고 남은 공간 두번째 색으로 채움
+        → 남은 공간 충분히 안 채우면 그라데이션 안 생김
+      */
+    }
+
+    .g2 {
+      width: 800px; height: 400px;
+      /* background: radial-gradient(#0a0, #000); */
+      /* background: radial-gradient(circle, #0a0, #000 50%);
+      background: radial-gradient(at 30% 20%, #0a0, #000 50%); */
+      background: radial-gradient(closest-side, #0a0, #000 50%);
+      /* 
+        circle(원형), ellipse(타원형, defalt)
+        at 30% 20%: x, y 값으로 기준점 지정
+
+        farthest-corner, farthest-side,
+        closest-corner, closest-side
+      */
+    }
+
+    .g3 {
+      width: 200px; height: 200px;
+      background: conic-gradient(from 0deg, #0a0 1%, #000 0%);
+      /* 
+        at 0% 0%
+       */
+      
+      border-radius: 50%;
+      position: relative;
+    }
+
+    .g3 p {
+      background: #fff;
+      border-radius: 50%;
+      content: '';
+      left: 15%;
+      line-height: 140px;
+      margin: 0;
+      height: 70%;
+      position: absolute;
+      text-align: center;
+      top: 15%;
+      width: 70%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="g1"></div>
+  <div class="g2"></div>
+  <div class="g3">
+    <p data-p="70">0%</p>
+  </div>
+
+  <script>
+    var g3Js = document.querySelector('.g3');
+    var i = 0;
+    var num = g3Js.children[0].dataset.p;
+    
+    function skill(k) {
+      var loop = setInterval(function() {
+        i++;
+        g3Js.children[0].textContent = `${i}%`;
+        g3Js.style = `background: conic-gradient(from 0deg, #0a0 ${i}%, #000 0%)`;
+
+        if(i == k) {
+          clearInterval(loop);
+          i = 0;
+        }
+      }, 10);
+    }
+    skill(num);
+    
+  </script>
+</body>
+</html>
