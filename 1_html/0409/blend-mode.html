@@ -15,7 +15,6 @@
       z-index: 10;  
     }
 
-
     .mix {
       position: relative;
     }
@@ -33,6 +32,44 @@
       left: 100px;
       top: 100px;
     }
+
+    .mix2 {
+      background: #eee;
+      font-size: 100px;
+      padding: 100px 0;
+      position: relative;
+      text-align: center;
+    }
+
+    .mix2:after {
+      background: #fff; /* 글씨색 같이 바뀜 */
+      content: '';
+      height: 0%;
+      left: 0;
+      mix-blend-mode: difference;
+      /* difference: 검정색만 아니면 작동함 */
+      position: absolute;
+      top: 0;
+      transition: .5s;
+      width: 100%;
+    }
+
+    .mix2:hover:after {
+      height: 100%
+    }
+
+    .mix3 {
+      background: url(../img/camera.png) pink;
+      background-blend-mode: multiply;
+      /* background-blend-mode: difference; */
+      height: 300px;
+      margin: 100px auto;
+      transition: .5s;
+    }
+
+    .mix3:hover {
+      background-color: #fff
+    }
   </style>
 </head>
 
@@ -42,5 +79,9 @@
     <p></p>
     <p></p>
   </div>
+  <div class="mix2">
+    BLEND
+  </div>
+  <div class="mix3"></div>
 </body>
 </html>

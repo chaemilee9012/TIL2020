@@ -1,0 +1,18 @@
+- 원하는 폴더 지정 cmd 열기
+
+1. 윈도우 탐색기로 원하는 폴더 열기
+2. 주소창에 "cmd ." 입력
+
+
+- scss > css 컴파일하는 방법
+1. cmd창에 "scss style.scss:style.css" 입력
+   scss style.scss(scss 파일명):style.css(css 파일명)
+
+2. cmd 창에 "scss --watch .:." 입력
+
+
+- css 코드 정렬
+1. nested(기본)
+2. compact(한줄)
+3. expended(확장)
+4. compressed(축약)

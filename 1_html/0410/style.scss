@@ -1,0 +1,33 @@
+$color: #eee;
+
+@mixin after($dis) {
+  &:after {
+    clear: both;
+    content: '';
+    display: $dis;
+  }
+}
+
+body,
+html {
+  margin: 0;
+}
+
+header {
+  // overflow: hidden;
+  background: $color;
+  @include after(inline);
+
+  h1 {
+    float: left;
+    font-size: 2em;
+  }
+
+  nav {
+    float: right;
+  }
+
+  nav a {
+    display: inline-block;
+  }
+}
