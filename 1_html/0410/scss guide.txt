@@ -12,7 +12,10 @@
 
 
 - css 코드 정렬
+cmd 창에 "scss --style 정렬방법 style.css:style.css" 입력
+
 1. nested(기본)
 2. compact(한줄)
 3. expended(확장)
 4. compressed(축약)
+

@@ -1,19 +1,31 @@
-body,
-html {
-  margin: 0; }
+body, html {
+  margin: 0;
+}
 
 header {
-  background: #eee; }
-  header:after {
-    clear: both;
-    content: '';
-    display: inline; }
-  header h1 {
-    float: left;
-    font-size: 2em; }
-  header nav {
-    float: right; }
-  header nav a {
-    display: inline-block; }
+  background: #eee;
+}
+
+header:after {
+  clear: both;
+  content: '';
+  display: inline;
+}
+
+header h1 {
+  float: left;
+  font-size: 2em;
+}
+
+header nav {
+  float: right;
+}
+
+header nav a {
+  display: inline-block;
+}
+
+/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=style.css.map */
 
 /*# sourceMappingURL=style.css.map */
