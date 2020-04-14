@@ -43,15 +43,22 @@ header{
 }
 
 section {
-  ul li {
-    border: 1px solid #333;
-    height: 100px;
-    width: 200px;
-  }
+  clear: both;
+  
+  ul {
+    display: flex;
+    justify-content: space-between;
 
-  @for $i from 1 to 4 {
-    ul li:nth-of-type(#{$i}) {
-      background-image: url(../img/img-0#{$i}.jpg);
+    li {
+        border: 1px solid #333;
+        height: 400px;
+        width: 30%;
+    }
+
+    @for $i from 1 to 4 {
+        li:nth-of-type(#{$i}) {
+        background-image: url(../img/img-0#{$i}.jpg);
+        }
     }
   }
 }

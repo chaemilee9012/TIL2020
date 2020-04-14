@@ -25,16 +25,21 @@ header {
     font-size: 6em;
     background-image: url(../img/img-03.jpg); }
 
-section ul li {
-  border: 1px solid #333;
-  height: 100px;
-  width: 200px; }
-section ul li:nth-of-type(1) {
-  background-image: url(../img/img-01.jpg); }
-section ul li:nth-of-type(2) {
-  background-image: url(../img/img-02.jpg); }
-section ul li:nth-of-type(3) {
-  background-image: url(../img/img-03.jpg); }
+section {
+  clear: both; }
+  section ul {
+    display: flex;
+    justify-content: space-between; }
+    section ul li {
+      border: 1px solid #333;
+      height: 400px;
+      width: 30%; }
+    section ul li:nth-of-type(1) {
+      background-image: url(../img/img-01.jpg); }
+    section ul li:nth-of-type(2) {
+      background-image: url(../img/img-02.jpg); }
+    section ul li:nth-of-type(3) {
+      background-image: url(../img/img-03.jpg); }
 
 /*
 1. 컴포넌트별 css 작성
