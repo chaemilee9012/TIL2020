@@ -44,7 +44,7 @@ header{
 
 section {
   clear: both;
-  
+
   ul {
     display: flex;
     justify-content: space-between;
@@ -53,12 +53,12 @@ section {
         border: 1px solid #333;
         height: 400px;
         width: 30%;
-    }
-
-    @for $i from 1 to 4 {
-        li:nth-of-type(#{$i}) {
-        background-image: url(../img/img-0#{$i}.jpg);
+     
+        @for $i from 1 to 4 {
+          &:nth-of-type(#{$i}) {
+          background-image: url(../img/img-0#{$i}.jpg);
         }
+    }
     }
   }
 }
