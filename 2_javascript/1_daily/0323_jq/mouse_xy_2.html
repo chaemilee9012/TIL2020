@@ -33,15 +33,17 @@
       $(window).on('mousemove', function(e) {
         // viewport(브라우저 화면) 기준 커서 위치
         // console.log('clientY: ' + e.clientY);
+        console.log('clientX: ' + e.clientX);
 
         // 문서 전체 기준 커서 위치
-        // console.log('pageY: ' + e.pageY); 위치)
+        // console.log('pageY: ' + e.pageY);
+        console.log('pageX: ' + e.pageX);
 
         // 엘리멘트 기준 커서 위치
-        // console.log('clientY: ' + e.offsetY);
-        console.log('clientX: ' + e.clientX); // 클릭한 엘리먼트 좌측부터의 거리
+        // console.log('offsetY: ' + e.offsetY);
+        console.log('offsetX: ' + e.offsetX); // 클릭한 엘리먼트 좌측부터의 거리
 
-        if($(window).width()/2 < e.clientX) {
+        if($(window).width() / 2 < e.clientX) {
           console.log('우');
         } else {
           console.log('좌');

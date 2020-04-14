@@ -8,7 +8,7 @@
 1. cmd창에 "scss style.scss:style.css" 입력
    scss style.scss(scss 파일명):style.css(css 파일명)
 
-2. cmd 창에 "scss --watch .:." 입력
+2. cmd 창에 "scss --watch -E UTF-8 .:." 입력
 
 
 - css 코드 정렬

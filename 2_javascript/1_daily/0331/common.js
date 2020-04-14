@@ -6,7 +6,6 @@ $(function(){
     dataType: 'json',
     success: function(data){
       var sectionJs = document.querySelector('section');
-      var figureJs;
       var thumSrc, nameTxt;
 
       for(let i in data.portfolio) { // 2번
@@ -20,7 +19,7 @@ $(function(){
         }
       }
 
-      function funcMain(idx) {
+      function funcMain() {
         sectionJs.innerHTML += `<figure>
                                   <a href="#">
                                     <img src="${thumSrc}" alt="">

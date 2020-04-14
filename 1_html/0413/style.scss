@@ -1,0 +1,100 @@
+@import "common";
+
+$color1:#03f;
+$color2:#06f;
+$color3:#09f;
+$color4:#fff;
+
+%mt10{
+    margin-top:100px;
+}
+@mixin colorSet($c1, $c2){
+    background:$c1;
+    color:$c2;
+}
+@mixin after($dp){
+    content:'';
+    display:$dp;
+}
+@function fontSize($s){
+    @return $s/16px#{rem};
+}
+
+body{
+    background:$aaa;
+}
+
+figure,figcaption{margin:0px;padding:0;}
+#header{
+	@include colorSet(#000, #fff);
+    &:before{
+        @include after(block);
+        width:100%; height:4px;
+        background:$color3;
+        margin-bottom:10px;
+    }
+    text-align:center;
+    padding-bottom:10px;
+    @extend %mt10;
+}
+#section{
+    @extend %mt10;
+}
+#section div{
+    width:1000px; margin:0 auto;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+    
+    $value : null;
+    figure{
+        width:31%;
+        position:relative;
+        margin-bottom:20px;
+        font-size:0;
+        
+        &::after{
+            @include after(block);
+            position:absolute;
+            left:0; top:0;
+            background:rgba(0,0,0,0.6);
+            width: 10% * 5;
+            @if $value{
+                height: 10% * 5;
+            }@else{
+                height: 20% * 5;
+            }
+            opacity:0;
+            transition:.5s;
+        }
+        &:hover:after{
+            $value : true;
+            opacity:1
+        }
+        img{width:100%;}
+        
+        figcaption{
+            position:absolute;
+            left:0; bottom:0;
+            background:rgba(0,0,0,0.6);
+            width:100%;
+            font-size:fontSize(32px);
+            text-align:center;
+            padding:10px 0;
+            color:#eee;
+            
+        }
+    }
+    $list : 2, 4, 6, 8, 10, 11;
+    @each $i in $list{
+    //@for $i from 1 through 6{ 
+//      to through
+        figure:nth-of-type(#{$i}){
+            border:2px * $i solid #755221;
+        }
+    }
+}
+
+#footer{
+	
+}

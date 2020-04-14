@@ -1,0 +1,17 @@
+$color : #eee;
+
+@mixin after($dis){
+    &:after{
+        content:'';
+        clear:both;
+        display:$dis;
+    }
+}
+header{
+    background: $color;
+    @include after(inline);
+    
+    h1{font-size:2em; float:left;}
+    nav{float:right;}
+    nav a{display:inline-block;}
+}
