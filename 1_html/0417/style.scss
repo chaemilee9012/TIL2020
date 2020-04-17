@@ -1,0 +1,193 @@
+@import '_common';
+
+section{
+  width: 100%;
+
+  .container {
+    margin: 0 auto;
+    padding: 100px 0;
+    width: 1200px;
+  }
+
+  .intro {
+    display: flex;
+    padding-bottom: 150px;
+    width: 100%;
+
+    img {}
+    figcaption {
+      display: flex;
+      flex-direction: column;
+      width: 30%;
+
+      h2 {
+        font-size: 3em;
+        padding-bottom: 20px;
+        position: relative;
+        text-transform: uppercase;
+      }
+
+      h2:after{
+        background: #333;
+        content: '';
+        height: 1px;
+        position: absolute;
+        top: 0;
+        width: 150px;
+      }
+
+      h2:nth-of-type(1):after {
+        left: -180px;
+      }
+
+      p {
+        width: 80%;
+        padding-bottom: 20px;
+      }
+
+      a {
+        font-size: .9em;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+    }
+
+    @at_root .intro:nth-of-type(1) {
+      flex-direction: row-reverse;
+    }
+    @at_root .intro:nth-of-type(2) {
+      figcaption{
+        align-items: flex-end;
+        h2:after {
+          right: -180px;
+        }
+
+        p {
+          text-align: right;
+        }
+      }
+    }
+  }
+
+  
+  article {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    h2 {
+      font-size: 3em;
+      padding-bottom: 60px;
+      text-transform: uppercase;
+    }
+
+    p {
+      padding-bottom: 70px;
+      position: relative;
+      text-align: center;
+      white-space: pre-line;
+    }
+
+    p:after {
+      background: #bea67c;
+      content: '';
+      height: 2px;
+      left: 50%;
+      position: absolute;
+      top: -35px;
+      transform: translateX(-50%);
+      width: 45px;
+    }
+  }
+  .quality {
+    a {
+      padding-right: 70px;
+
+      span{
+        // border: 1px solid #333;
+        font-size: 0;
+        margin-bottom: 70px;
+        width: 100%;
+        position: relative;
+        
+        img{
+          width: 100%;
+        }
+      }
+
+      span:before{
+        border: 1px solid #999;
+        border-radius: 50%;
+        content: '';
+        height: 110%;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        transition: .5s;
+        width: 110%;
+      }
+
+      span:after {
+        background: url(img/ic01.png) center no-repeat;
+        content: '';
+        height: 100%;
+        left: 50%;
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        transition: .5s;
+        width: 100%;
+      }
+
+      span:hover:after {
+        opacity: 1;
+      }
+
+      figcaption{
+        position: relative;
+        text-align: center;
+        text-transform: capitalize;
+      }
+
+      figcaption:after{
+        background: #bea67c;
+        content: '';
+        height: 1px;
+        left: 50%;
+        position: absolute;
+        top: -20px;
+        transform: translateX(-50%);
+        width: 25px;
+      }
+    }
+
+    a:last-of-type {
+      padding: 0;
+    }
+  }
+}
+
+
+/*
+1. 컴포넌트별 css 작성
+2. 변수 선언($변수명: 값)
+3. @mixin aa() {재실행 코드}
+   @include aa(); → 재실행 코드 불러올 때
+4. %aa { 다중선택자에 실행할 코드}
+   @extend %aa{};
+
+      ex1)
+      ul{@extend %aa;}
+      li{@extend %aa;}
+      css → ul, li {}
+
+      ex2)
+      ul{명령}
+      li{@extend ul;}
+      a{@extend ul;}
+      css → li, a {ul 태그 명령 추가}
+
+5. @import '파일명'; (scss파일 호출)
+6. _common.scss → css 파일로 컴파일 하지 않음
+*/
