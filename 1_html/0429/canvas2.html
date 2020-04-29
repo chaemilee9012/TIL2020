@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <canvas id="canvas" width="600" height="600">
+    현재 브라우저가 canvas를 지원하지 않습니다.
+  </canvas>
+
+  <script>
+    var canvasJs = document.querySelector('#canvas');
+    var ctx = canvas.getContext('2d');
+    var x, y, bln = false;
+
+    canvas.style.border = '1px solid #f00';
+
+    ctx.fillStyle = 'rgba(255, 0, 0, .6)';
+    ctx.fillRect(0, 0, 100, 100);
+
+    canvasJs.addEventListener('mousedown', down);
+    canvasJs.addEventListener('mousemove', draw);
+    canvasJs.addEventListener('mouseup', up);
+
+    function draw(e) {
+      if (bln) {
+        x = e.pageX - 50;
+        y = e.pageY - 50;
+
+        ctx.fillRect(x, y, 50, 50);
+      }
+    }
+
+    function down() {
+      bln = true;
+    }
+
+    function up() {
+      bln = false;
+    }
+
+  </script>
+</body>
+
+</html>

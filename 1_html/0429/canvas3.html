@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <canvas id="canvas" width="600" height="600">
+    현재 브라우저가 canvas를 지원하지 않습니다.
+  </canvas>
+
+  <script>
+    var canvasJs = document.querySelector('#canvas');
+    var ctx = canvas.getContext('2d');
+
+    canvasJs.style.border = '1px solid #f00';
+
+
+    /*
+      1. AiCanvas64.aip → c드라이브\일러\플러그인 복붙
+      2. 일러에서 도형 그리기
+      3. export - html 확장자 선택 - 페이지 소스 보기 - 코드 복사 - 활용
+    */
+
+    // // 삼각형
+    // ctx.beginPath(); // 패스 그리기 시작
+    // ctx.moveTo(0.5, 1.2);
+    // ctx.lineTo(88.6, 89.3);
+    // ctx.lineTo(0.5, 177.5);
+    // ctx.lineTo(0.5, 1.2);
+    // ctx.closePath(); // 패스 그리기 종료
+    // ctx.fillStyle = "rgb(254, 254, 254)";
+    // ctx.fill();
+    // ctx.stroke();
+
+    // // 원
+    ctx.beginPath();
+    ctx.moveTo(151.5, 76.0);
+    ctx.bezierCurveTo(151.5, 117.7, 117.7, 151.5, 76.0, 151.5);
+    ctx.bezierCurveTo(34.3, 151.5, 0.5, 117.7, 0.5, 76.0);
+    ctx.bezierCurveTo(0.5, 34.3, 34.3, 0.5, 76.0, 0.5);
+    ctx.bezierCurveTo(117.7, 0.5, 151.5, 34.3, 151.5, 76.0);
+    ctx.closePath();
+    ctx.fillStyle = "rgb(254, 254, 254)";
+    ctx.fill();
+    ctx.stroke();
+
+    // // 원2
+    ctx.beginPath();
+    // ctx.arc(100, 300, 50, 0, Math.PI / 180 * 90, false);
+    ctx.arc(100, 300, 50, 0, Math.PI / 180 * 360, false);
+    // (x, y, 반지름, 시작각도, 종료각도, 방향)
+    // Math.PI*2 = 360deg
+    // Math.PI / 180 * 45 = 45deg
+    // Math.PI / 180 * 360 = 360deg
+    // false: 시계 방향(기본값)/ true: 반시계 방향
+    ctx.stroke();
+    ctx.fill();
+    ctx.closePath();
+
+
+    var end = 0;
+
+    function draw() {
+      end += 5;
+
+      ctx.clearRect(0, 300, canvasJs.width, canvasJs.height);
+      ctx.beginPath();
+      ctx.lineWidth = 10;
+      // ctx.fillStyle = 'pink';
+      ctx.arc(100, 300, 50, 0, Math.PI / 180 * end, false);
+      ctx.stroke();
+      // ctx.fill();
+
+      if (end >= 360) {
+        return;
+      }
+
+      requestAnimationFrame(draw);
+    }
+    draw();
+  </script>
+</body>
+
+</html>
