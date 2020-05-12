@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var numbers = [6, 10, 2];
+
+    var answer;
+
+    var arr = [];
+    var arr2 = [];
+    var arr3 = [];
+
+    arr = numbers.join(); // "6, 10, 2"
+    arr2 = arr.split(','); // ["6", "10", "2"]
+
+    var fst, snd;
+
+    
+    for(var i = 0; i < numbers.length; i++) {
+      if(i + 1 < numbers.length) {
+        fst = arr2[i]; // 6
+        snd = arr2[i + 1]; // 10
+        fst > snd ? arr3.push(fst) : arr3.push(snd); // [6]
+      } else {
+        arr3.push(arr[i + 1]);
+      }
+      
+    }
+
+    console.log(arr3);
+
+    
+  </script>
+</body>
+</html>

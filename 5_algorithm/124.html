@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var n = 21;
+    var answer;
+
+    var arr = [4, 1, 2];
+    var arr2 = [];
+
+    divide(n);
+
+    function divide(n) {
+
+      while(n > 3) {
+        arr2.unshift(arr[Math.floor(n % 3)]); // arr2.push(arr[2]); arr2 = [2]
+        if(n % 3 == 0) {
+          n = Math.floor(n / 3) - 1;
+        } else {
+          n = Math.floor(n / 3);
+        } 
+      }
+
+      arr2.unshift(arr[n % 3]);
+    }
+
+    answer = arr2.join('');
+
+  </script>
+</body>
+</html>
