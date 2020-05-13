@@ -14,21 +14,20 @@
     var answer;
 
     var n = 0;
-    var b = a.toString(2).match(/1/g).length;
-
-    var c;
+    var a2 = a.toString(2).match(/1/g).length; // a(2)의 1갯수
+    var b2; // a와 비교할 수
     var bln = true;
 
-    while(true) {
+    while (true) {
       n++;
-      c = (a + n).toString(2).match(/1/g).length;
-      
-      if(b == c) {
+      b2 = (a + n).toString(2).match(/1/g).length; // b(2)의 1갯수
+
+      if (a2 == b2) {
         bln = false;
+        break;
       }
     }
-
-
+    answer = a + n;
   </script>
 </body>
 

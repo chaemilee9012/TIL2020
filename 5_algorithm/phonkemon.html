@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var nums = [3, 1, 2, 3];
+    var answer = 0; // 2
+    var nLength = nums.length / 2;
+
+    var arr = [...new Set(nums)];
+
+    if(arr.length <= nLength) {
+      answer = arr.length;
+    } else {
+      answer = nLength;
+    }
+  </script>
+</body>
+</html>
