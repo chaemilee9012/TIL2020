@@ -9,24 +9,47 @@
 
 <body>
   <script>
-    // var land = [[1, 2, 3, 5], [5, 6, 7, 8], [4, 3, 2, 1]]; // 3 7 4
-    var land = [[50, 60, 70, 80], [1, 2, 3, 100], [1, 2, 80, 101]];
+    // var land = [[1, 2, 3, 5], [5, 6, 7, 8], [4, 3, 2, 1]]; // 5 7 4
+    // 
+
+    var land = [[50, 60, 70, 80], [1, 2, 3, 100], [1, 2, 80, 101]]; // 70 100 80
     var answer = 0;
 
+    var copy = land.join(',');
 
-    for(var i = 0; i < land.length; i++) { // 3
-      max = land[0][0];
-      idx = land[0].indexOf(max); // 0
 
-      land[1][idx] = 0;
-      max = max + Math.max(...land[1]); // 100
-      idx = land[1].indexOf(max); // 3
+    var arr = [];
+    var max;
+    var idx;
+    var count = 0;
+    var num;
 
-      land[2][idx] = 0;
-      max = max + Math.max(...land[2]);
 
-      arr.push(max);
-    }
+
+    // for(var i = 0; i < copy.length; i++) { // 3
+    //   for(var j = 0; j < copy[i].length; j++) {
+    //     count++;
+
+    //     num = land[i][j]; // 50
+    //     idx = land[i].indexOf(num); // 0
+    //     copy[i + count][idx] = 0; // [0, 2, 3, 100]
+
+    //     num = num + Math.max(...copy[i + count]); // 50 + 100
+
+    //   }
+
+    //   max = copy[0][0];
+    //   idx = copy[0].indexOf(max); // 0
+
+    //   copy[1][idx] = 0;
+    //   max = max + Math.max(...copy[1]); // 100
+    //   idx = copy[1].indexOf(max); // 3
+
+    //   copy[2][idx] = 0;
+    //   max = max + Math.max(...copy[2]);
+
+    //   arr.push(max);
+    // }
 
     // console.log(arr);
 
@@ -93,7 +116,7 @@
     // console.log(answer);
 
 
-    
+
 
 
 
