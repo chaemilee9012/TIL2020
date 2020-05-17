@@ -1,7 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-function User({ user, onRemove, onToggle }) {
+const User = React.memo(function User({ user, onRemove, onToggle }) {
   const { username, email, id, active } = user;
+  // useEffect(() => {
+  //   console.log('컴포넌트가 나타남');
+  //   return () => {
+  //     console.log('컴포넌트 사라짐');
+  //   }
+  // }, []);
+
+  // useEffect(() => {
+  //   console.log('user 값 설정');
+  //   console.log(user);
+  //   return () => {
+  //     console.log('user 값 바뀌기 전');
+  //     console.log(user);
+  //   }
+  // }, [user]);
+  
   return (
     <div>
       <b style={{
@@ -17,7 +33,7 @@ function User({ user, onRemove, onToggle }) {
       <button onClick={() => onRemove(id)}>삭제</button>
     </div>
   );
-}
+});
 
 function UserList({ users, onRemove, onToggle }) {
   return (
@@ -38,4 +54,6 @@ function UserList({ users, onRemove, onToggle }) {
   )
 }
 
-export default UserList;
+export default React.memo(
+  UserList, (prveProps, nextProps) => nextProps.users === prveProps.users
+);

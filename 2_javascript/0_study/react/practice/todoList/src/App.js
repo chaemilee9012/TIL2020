@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import './App.css';
 import EnterTodo from './EnterTodo';
+import CreateTodo from './CreateTodo';
 
 function App() {
   const todoList = [
@@ -20,11 +21,12 @@ function App() {
 
   const nextIdx = useRef(4);
   const newTodo = () => {
-    nextIdx += 1;
+    nextIdx.current += 1;
   };
 
   return (
     <>
+      <CreateTodo />
       <EnterTodo tdList={todoList}/>
     </>
   );
