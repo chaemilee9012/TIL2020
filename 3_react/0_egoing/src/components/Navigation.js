@@ -1,7 +1,16 @@
 import React, { Component } from 'react';
 
 class Navigation extends Component {
-  render() {    
+  shouldComponentUpdate(newProps) {
+    console.log('shouldComponentUpdate');
+    if(this.props.data === newProps.data) { // props 그대로일 때
+      return false; // render 호출 안 함
+    }
+    return true; // props 바뀌면 render 호출
+  }
+  render() {
+    console.log('render');
+    
     var lists = [];
     var data = this.props.data;
     var i = 0;
