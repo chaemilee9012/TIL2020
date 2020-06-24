@@ -24,18 +24,15 @@ const BaseBall = () => {
   const _onSubmit = (e) => {
     e.preventDefault();
     const valueArr = _value.split("").map((v) => parseInt(v));
-
     if(_value === answer.join('')) {
       console.log('정답');
       setAnswer(getNum);
       setValue('');
       _input.current.focus();
-
     } else {
       setCount(count - 1);
       let ball = 0;
       let strike = 0;
-
       if(count === 0) {
         setAnswer(getNum);
         setTries([]);
