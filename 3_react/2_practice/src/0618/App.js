@@ -4,7 +4,7 @@ import React from 'react';
 // import WordGame from './WordGame';
 // import WordGame2 from './WordGame2';
 // import BaseBall from './BaseBall';
-import BaseBall2 from './BaseBall2';
+// import BaseBall2 from './BaseBall2';
 import './App.css';
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
       {/* <WordGame /> */}
       {/* <WordGame2 /> */}
       {/* <BaseBall /> */}
-      <BaseBall2 />
+      {/* <BaseBall2 /> */}
     </>
   );
 }
