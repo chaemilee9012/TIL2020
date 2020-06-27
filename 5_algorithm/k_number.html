@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+      var array = [1, 5, 2, 6, 3, 7, 4];
+      var commands = [[2, 5, 3], [4, 4, 1], [1, 7, 3]];
+      var answer = [];
+
+      var start, count, select;
+      var arr = [];
+
+      for(var i = 0; i < commands.length; i++) {
+        // 변수 지정
+        start = commands[i][0] - 1;
+        count = commands[i][1];
+        select = commands[i][2] - 1;
+
+        // 주어진 원소에 따라 새 배열 만들기
+        arr = array.slice(start, count);
+        arr.sort((a, b) => {
+          return a -b;
+        });
+
+        //정답 배열
+        answer.push(arr[select]);
+      }
+  </script>
+  
+</body>
+</html>
