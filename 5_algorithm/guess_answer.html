@@ -1,28 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <script>
-      var players = [[2, 1, 2, 3, 2, 4, 2, 5], [3, 3, 1, 1, 2, 2, 4, 4, 5, 5]];
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
       // var players = [[1, 2, 3, 4, 5], [2, 1, 2, 3, 2, 4, 2, 5], [3, 3, 1, 1, 2, 2, 4, 4, 5, 5]];
-      var answers = [1, 2, 3, 4, 5];
+      var players = [[1, 2, 3, 4, 5], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5]];
+      var answers = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5];
       var answer = [];
-      var num = 0;
 
-      for(var i = 0; i < players.length; i++) {
-        for(var j = 0; j < players[i].length; j++) {
-          if(players[i][j] === answers[answers.length - j])
-        }
-        answer.push(num);
-        num = 0;
+      var p1 = [];
+      var p2 = [];
+      var p3 = [];
+
+      var i = 0;
+
+      while(var i = 0; i < players.length) {
+
       }
 
-      console.log(answer);
-  </script>
-  
-</body>
+      // for(var i = 0; i < players.length; i++) {
+      //   for(var j = 0; j < answers.length; j++) {
+      //     p1.push(players[i][j])
+      //   }
+      // }
+
+      // for(var i = 0; i < players.length; i++) {
+      //   for(var j = 0; j < answers.length; j++) {
+      //     if(players[i][j] === answers[j]) {
+      //       score++;
+      //     }
+      //   }
+      //   answer.push(score);
+      //   score = 0;
+      // }
+      // answer.sort((a, b) => {
+      //   b - a;
+      // });
+
+      // if(answer[0] === answer[1]) {
+      //   answer[]
+      // }
+
+      console.log(Math.max(...answer));
+    </script>
+  </body>
 </html>

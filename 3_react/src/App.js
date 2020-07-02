@@ -1,14 +1,13 @@
 import React from 'react';
 import Hello from './2_velopert/Hello';
+import Wrapper from './2_velopert/Wrapper';
 
 function App() {
   return (
-    <>
-      <Hello />
-      <Hello />
-      <Hello />
-      <div className="gray_box"></div>
-    </>
+    <Wrapper>
+      <Hello name="react" color="red" />
+      <Hello color="orange" />
+    </Wrapper>
   );
 }
 
