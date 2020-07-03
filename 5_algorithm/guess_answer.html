@@ -7,45 +7,51 @@
   </head>
   <body>
     <script>
-      // var players = [[1, 2, 3, 4, 5], [2, 1, 2, 3, 2, 4, 2, 5], [3, 3, 1, 1, 2, 2, 4, 4, 5, 5]];
-      var players = [[1, 2, 3, 4, 5], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5]];
-      var answers = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5];
-      var answer = [];
+    var answers = [1, 2, 3, 4, 5];
+    var answer = [];
+    var players = [[1, 2, 3, 4, 5], [2, 1, 2, 3, 2, 4, 2, 5], [3, 3, 1, 1, 2, 2, 4, 4, 5, 5]];
+    var playersLth = 0;
+    var answersLth = answers.length;
+    var score = 0;
+    var diff = 0;
+    var plAnswer = [];
+    var max = 0;
+    var rawAnswer = [];
 
-      var p1 = [];
-      var p2 = [];
-      var p3 = [];
-
-      var i = 0;
-
-      while(var i = 0; i < players.length) {
-
+    for(var i = 0; i < players.length; i++) {
+      playersLth = players[i].length;
+      if(playersLth >= answersLth) { // 답변, 정답 길이 같거나 답변이 길 때
+        for(var j = 0; j < answersLth; j++) { // 답변, 정답 비교
+          if(players[i][j] === answers[j]) {
+            score += 1;
+          }
+        }
+        rawAnswer.push(score);
+        score = 0;
+      } else if(playersLth < answersLth) { // 정답 길이가 더 길 때
+        diff = answersLth - playersLth;
+        for(var k = 0; k < diff; k++) {
+          plAnswer = [...players[i], players[i][k]]; // 정답 길이에 맞춰 답변 추가
+      } 
+        for(var j = 0; j < answersLth; j++) { // 답변, 정답 비교
+          if(plAnswer[j] === answers[j]) {
+            score += 1;
+          }
+        }
+        rawAnswer.push(score);
+        score = 0;
       }
+    }
+    console.log(rawAnswer);
+    max = Math.max.apply(null, rawAnswer); // 2
 
-      // for(var i = 0; i < players.length; i++) {
-      //   for(var j = 0; j < answers.length; j++) {
-      //     p1.push(players[i][j])
-      //   }
-      // }
+    for(var i = 0; i < rawAnswer.length; i++) {
+      if(rawAnswer[i] === max) {
+        answer.push(i + 1);
+      }
+    }
 
-      // for(var i = 0; i < players.length; i++) {
-      //   for(var j = 0; j < answers.length; j++) {
-      //     if(players[i][j] === answers[j]) {
-      //       score++;
-      //     }
-      //   }
-      //   answer.push(score);
-      //   score = 0;
-      // }
-      // answer.sort((a, b) => {
-      //   b - a;
-      // });
-
-      // if(answer[0] === answer[1]) {
-      //   answer[]
-      // }
-
-      console.log(Math.max(...answer));
+    console.log(answer);
     </script>
   </body>
 </html>
