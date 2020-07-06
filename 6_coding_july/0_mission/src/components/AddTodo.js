@@ -1,8 +1,6 @@
 import React from 'react';
 
-function AddTodo({number, tasks, onClickAdd}) {
-  // const { value } = tasks;
-
+function AddTodo({textValue, onClickAdd, onChange}) {
   return (
     <form
       onSubmit={onClickAdd}
@@ -10,7 +8,9 @@ function AddTodo({number, tasks, onClickAdd}) {
       <input
         type="text"
         placeholder="해야 하는 일"
-        // value={value}
+        value={textValue.value}
+        name="inputText"
+        onChange={onChange}
       />
       <button type="submit">추가</button>
     </form>
