@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var answers = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5];
+      var answer = [];
+var players = [
+  [1,2,3,4,5],
+  [2,1,2,3,2,4,2,5],
+  [3,3,1,1,2,2,4,4,5,5]
+];
+var score = [0, 0, 0];
+var max = 0;
+
+for(var i = 0; i < answers.length; i++){ // 답변, 정답 비교
+  if(answers[i] === players[0][i % 5]) {
+    score[0]++;
+  }
+  if(answers[i] === players[1][i % 8]) {
+    score[1]++;
+  }
+  if(answers[i] === players[2][i % 10]) {
+    score[2]++;
+  }
+}
+
+for(var j = 0; j < score.length; j++){ // 최대값 추출
+  if(score[j] > max) {
+    max = score[j];
+  }
+}
+
+for(var k = 0; k < score.length; k++){ // 최대값의 인덱스 번호 저장
+  if(max === score[k]) {
+    answer.push(k + 1);
+  }
+}
+      console.log(answer);
+    </script>
+  </body>
+</html>
