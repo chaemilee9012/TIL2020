@@ -20,9 +20,7 @@ function TodoApp() {
     }
   ]);
 
-  const [inputText, setInputText] = useState({
-    value: '',
-  });
+  const [inputText, setInputText] = useState('');
 
   const _onChange = e => {
     setInputText({
@@ -44,24 +42,25 @@ function TodoApp() {
 
     nextNum.current += 1;
 
-    setInputText({
-      ...inputText,
-      value: '',
-    });
+    setInputText('');
   };
 
   const _onRemove = num => {
     setTodos(todos.filter(todos => todos.num !== num));
   };
 
-  const _onUpdate = () => {
+  const _onUpdate = e => {
     setMode('update');
+    input1.current.focus();
+
+    console.log(e.target.id);
   };
 
   return(
     <div>
       <h2>일정 관리</h2>
       <AddTodo
+        mode={mode}
         textValue={inputText}
         onClickAdd={addTask}
         onChange={_onChange}

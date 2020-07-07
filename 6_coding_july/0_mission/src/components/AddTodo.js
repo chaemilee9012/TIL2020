@@ -1,20 +1,23 @@
 import React from 'react';
+import EnterTodo from './EnterTodo';
+import UpdateTodo from './UpdateTodo';
 
-function AddTodo({textValue, onClickAdd, onChange}) {
-  return (
-    <form
-      onSubmit={onClickAdd}
-    >
-      <input
-        type="text"
-        placeholder="해야 하는 일"
-        value={textValue.value}
-        name="inputText"
-        onChange={onChange}
-      />
-      <button type="submit">추가</button>
-    </form>
-  )
+function AddTodo({ mode, textValue, onClickAdd, onChange }) {
+  switch(mode) {
+    case 'read':
+      return (
+        <EnterTodo
+          textValue={textValue.value}
+          onClickAdd={onClickAdd}
+          onChange={onChange}
+        />
+      );
+
+    case 'update':
+      return <UpdateTodo />;
+    
+    default: return;
+  }
 }
 
 export default AddTodo;

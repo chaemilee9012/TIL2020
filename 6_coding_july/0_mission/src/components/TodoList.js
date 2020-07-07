@@ -7,21 +7,15 @@ function PrintLi({mode, list, onRemove, onUpdate}) {
       <input
         type="checkbox"
       />
-      {mode === 'read' ?
-        <span>{value}</span> :
-        <input
-          type="text"
-        />
-      }
+      <span>{value}</span>
       <button
+        id={value}
         type="button"
         onClick={onUpdate}
       >수정</button>
       <button
         type="button"
-        onClick={() => {
-          onRemove(num)
-        }}
+        onClick={() => onRemove(num)}
       >삭제</button>
     </li>
   );
