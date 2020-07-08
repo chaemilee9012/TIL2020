@@ -1,6 +1,6 @@
 import React from 'react';
 
-function PrintLi({mode, list, onRemove, onUpdate}) {
+function PrintLi({list, onRemove, onUpdate, onCheck}) {
   const {num, value} = list;
   return(
     <li>
@@ -11,7 +11,7 @@ function PrintLi({mode, list, onRemove, onUpdate}) {
       <button
         id={value}
         type="button"
-        onClick={onUpdate}
+        onClick={() => onUpdate(num)}
       >수정</button>
       <button
         type="button"
@@ -21,7 +21,7 @@ function PrintLi({mode, list, onRemove, onUpdate}) {
   );
 }
 
-function TodoList({mode, tasks, onRemove, onUpdate}) {
+function TodoList({tasks, onRemove, onUpdate, onCheck}) {
   return (
     <ul>
       {
@@ -30,10 +30,10 @@ function TodoList({mode, tasks, onRemove, onUpdate}) {
             return (
               <PrintLi
                 key={v.num}
-                mode={mode}
                 list={v}
                 onRemove={onRemove}
                 onUpdate={onUpdate}
+                onCheck={onCheck}
               />
             );
           }

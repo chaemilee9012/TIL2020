@@ -4,6 +4,7 @@ import TodoList from './components/TodoList';
 
 function TodoApp() {
   const nextNum = useRef(4);
+  const targetNum = useRef(0);
   const [mode, setMode] = useState('read');
   const [todos, setTodos] = useState([
     {
@@ -23,10 +24,7 @@ function TodoApp() {
   const [inputText, setInputText] = useState('');
 
   const _onChange = e => {
-    setInputText({
-      ...inputText,
-      value: e.target.value,
-    });
+    setInputText(e.target.value);
   }
 
   const addTask = e => {
@@ -49,12 +47,19 @@ function TodoApp() {
     setTodos(todos.filter(todos => todos.num !== num));
   };
 
-  const _onUpdate = e => {
+  const _onUpdate = num => {
     setMode('update');
-    input1.current.focus();
-
-    console.log(e.target.id);
+    setInputText(todos[num - 1].value);
+    targetNum.current = num;
   };
+
+  const _onConfirm = (e) => {
+    e.preventDefault();
+    setMode('read');
+    
+    todos[targetNum.current - 1].value = e.target.inputText.value;
+    setInputText('');
+  }
 
   return(
     <div>
@@ -64,6 +69,7 @@ function TodoApp() {
         textValue={inputText}
         onClickAdd={addTask}
         onChange={_onChange}
+        onConfirm={_onConfirm}
       />
       <TodoList
         mode={mode}

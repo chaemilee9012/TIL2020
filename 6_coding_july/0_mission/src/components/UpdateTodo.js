@@ -1,14 +1,16 @@
-import React, { useRef } from 'react';
+import React from 'react';
 
-function UpdateTodo() {
+function UpdateTodo({textValue, onChange, onSubmit}) {
   return (
     <form
       action="/"
+      onSubmit={onSubmit}
     >
       <input
         type="text"
-        value="수정"
+        value={textValue}
         name="inputText"
+        onChange={onChange}
       />
       <button type="submit">확인</button>
     </form>
