@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <a href="https://programmers.co.kr/learn/courses/30/lessons/12926">문제</a>
+  <script>
+    var s = 'a B z';
+    var n = 4;
+    var answer = '';
+    var code = s.split('');
+
+    console.log('A::' + 'A'.charCodeAt());
+    console.log('Z::' + 'Z'.charCodeAt());
+    console.log('a::' + 'a'.charCodeAt());
+    console.log('z::' + 'z'.charCodeAt());
+
+
+    for(var i = 0; i < code.length; i++) {
+      if(code[i] === ' ') {
+        code[i] = ' '.charCodeAt();
+      } else {
+        code[i] = code[i].charCodeAt() + n;
+        if(code[i] > 'Z'.charCodeAt() && code[i] < 'a'.charCodeAt()) {
+          code[i] = code[i] - 26;
+        } else if(code[i] > 'z'.charCodeAt()) {
+          code[i] = code[i] - 26;
+        }
+      }
+      code[i] = String.fromCharCode(code[i]);
+    }
+    answer = code.join('');
+
+    console.log(answer);
+    console.log(answer.charCodeAt(0));
+  </script>
+</body>
+</html>
