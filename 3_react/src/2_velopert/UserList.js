@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-function User({_user, onRemove, onToggle}) {
+const User = React.memo(function User({_user, onRemove, onToggle}) {
   const {username, email, id, active} = _user;
   // useEffect(() => {
   //   console.log('화면에 나타남'); // mount 될 때 실행
@@ -43,7 +43,7 @@ function User({_user, onRemove, onToggle}) {
       >삭제</button>
     </div>
   );
-}
+});
 
 function UserList({users, onRemove, onToggle}) {
   return (
@@ -66,4 +66,4 @@ function UserList({users, onRemove, onToggle}) {
   );
 }
 
-export default UserList;
+export default React.memo(UserList);

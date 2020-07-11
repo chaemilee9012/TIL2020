@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useMemo, useCallback } from 'react';
 import UserList from './2_velopert/UserList';
 import CreateUser from './2_velopert/CreateUser';
 // import Hello from './2_velopert/Hello';
@@ -6,19 +6,27 @@ import CreateUser from './2_velopert/CreateUser';
 // import Counter from './2_velopert/Counter';
 // import InputSample from './2_velopert/InputSample';
 
+function countActiveUsers(users) {
+  console.log('활성 사용자 수 세는 중..');
+  return (
+    users.filter(user => user.active).length
+  );
+}
+
 function App() {
+
   const [inputs, setInputs] = useState({
     username: '',
     email: '',
   });
   const {username, email} = inputs;
-  const onChange = e => {
+  const onChange = useCallback(e => {
     const {name, value} = e.target;
     setInputs({
       ...inputs,
       [name]: value,
     });
-  };
+  }, [inputs]);
   const [users, setUsers] = useState([
     {
       id: 1,
@@ -48,14 +56,15 @@ function App() {
     * ref 값 바뀌어도 컴포넌트 리렌더링 X *
   */
 
-  const onCreate = () => {
+  const onCreate = useCallback(() => {
     const _user = {
       id: nextId.current,
       username,
       email
     };
 
-    setUsers([...users, _user]);
+    // setUsers([...users, _user]);
+    setUsers(users => users.concat(_user));
 
     setInputs({
       username: '',
@@ -63,19 +72,21 @@ function App() {
     });
 
     nextId.current += 1;
-  }
+  }, [username, email]);
 
-  const onRemove = id => {
-    setUsers(users.filter(_user => _user.id !== id));
-  };
+  const onRemove = useCallback(id => {
+    setUsers(users => users.filter(_user => _user.id !== id));
+  }, []);
 
-  const onToggle = id  => {
-    setUsers(users.map(
+  const onToggle = useCallback(id  => {
+    setUsers(users => users.map(
       users => users.id === id
       ? {...users, active: !users.active}
       : users
     ));
-  }
+  }, []);
+
+  const count = useMemo(() => countActiveUsers(users), [users]);
 
   return (
     // <Wrapper>
@@ -98,6 +109,7 @@ function App() {
         onRemove={onRemove}
         onToggle={onToggle}
       />
+      <div>활성자 수: {count}</div>
     </>
   );
 }
