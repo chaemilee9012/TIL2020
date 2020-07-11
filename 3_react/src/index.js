@@ -10,8 +10,8 @@ import Test from './0_practice/0710/Test';
 ReactDOM.render(
   // <React.StrictMode>
   <>
-    {/* <App /> */}
-    <Test />
+    <App />
+    {/* <Test /> */}
   </>,
   // </React.StrictMode>,
   document.getElementById('root')
