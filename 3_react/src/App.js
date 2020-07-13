@@ -1,6 +1,9 @@
 import React from 'react';
+// import EventPracticeClass from './2_velopert/EventPracticeClass';
+import EventPracticeFunc from './2_velopert/EventPracticeFunc';
 // import MyComponent from './2_velopert/MyComponent';
-import Counter from './2_velopert/Counter';
+// import Counter from './2_velopert/Counter';
+// import Say from './2_velopert/Say';
 
 function App() {
   return(
@@ -10,7 +13,10 @@ function App() {
         name="React"
         favoriteNumber={1}
       >리액트</MyComponent> */}
-      <Counter />
+      {/* <Counter /> */}
+      {/* <Say /> */}
+      {/* <EventPracticeClass /> */}
+      <EventPracticeFunc />
     </>
   );
 }

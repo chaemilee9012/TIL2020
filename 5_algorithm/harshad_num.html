@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <a href="https://programmers.co.kr/learn/courses/30/lessons/12947">하샤드수</a>
+  <script>
+    const x = 10;
+    let answer = true;
+    let str = '';
+    let sum = 0;
+
+    str = x.toString();
+
+    for(let i = 0; i < str.length; i++) {
+      sum += parseInt(str[i]);
+    }
+
+    x % sum === 0 ?
+    answer = true :
+    answer = false;
+
+    console.log(answer);
+  </script>
+</body>
+</html>
