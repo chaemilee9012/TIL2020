@@ -135,12 +135,12 @@ const StyledButton = styled.button`
 `;
 
 function Button({ children, color, size, outline, fullWidth, ...rest }) {
-  console.log('children::', {children});
-  console.log('color::',{color});
-  console.log('size::',{size});
-  console.log('outline::',{outline});
-  console.log('fullWidth::',{fullWidth});
-  console.log('rest::', {rest});
+  // console.log('children::', {children});
+  // console.log('color::',{color});
+  // console.log('size::',{size});
+  // console.log('outline::',{outline});
+  // console.log('fullWidth::',{fullWidth});
+  // console.log('rest::', {rest});
 
   return (
     <StyledButton
