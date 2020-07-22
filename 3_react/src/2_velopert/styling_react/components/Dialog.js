@@ -75,7 +75,7 @@ const DialogBlock = styled.div`
 
   ${props => 
     props.disappear && css`
-        animation: ${slideDown} .25s ease-out forwards;
+      animation: ${slideDown} .25s ease-out forwards;
     `
   }
 `;
