@@ -8,6 +8,7 @@ import TodoTemplate from './2_velopert/todo_app_facam/TodoTemplate';
 import TodoHead from './2_velopert/todo_app_facam/TodoHead';
 import TodoList from './2_velopert/todo_app_facam/TodoList';
 import TodoCreate from './2_velopert/todo_app_facam/TodoCreate';
+import { TodoProvider } from './2_velopert/todo_app_facam/TodoContext';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -17,14 +18,14 @@ const GlobalStyle = createGlobalStyle`
 
 function App() {
   return (
-    <>
+    <TodoProvider>
       <GlobalStyle />
       <TodoTemplate>
         <TodoHead />
         <TodoList />
         <TodoCreate />
       </TodoTemplate>
-    </>
+    </TodoProvider>
   );
 }
 
