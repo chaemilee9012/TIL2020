@@ -1,23 +1,22 @@
 .TodoInsert {
-  background: #495057;
   display: flex;
-
+  background: #495057;
+  
   input {
     // 기본 스타일 초기화
     background: none;
     border: none;
+    // 버튼 제외 영역 모두 차지
     color: #fff;
+    flex: 1;
     font-size: 1.125rem;
     line-height: 1.5;
     outline: none;
     padding: .5rem;
-  
+
     &::placeholder {
       color: #dee2e6;
     }
-  
-    // 버튼을 제외한 영역을 모두 차지하기
-    flex: 1;
   }
 
   button {
@@ -26,8 +25,8 @@
     background: none;
     background: #868e96;
     border: none;
-    color: #fff;
     cursor: pointer;
+    color: #fff;
     display: flex;
     font-size: 1.5rem;
     outline: none;
@@ -38,4 +37,6 @@
       background: #adb5bd;
     }
   }
+
+
 }
