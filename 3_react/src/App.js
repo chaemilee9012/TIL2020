@@ -32,25 +32,42 @@ import TodoList from './2_velopert/todo_app/TodoList';
 
 // // fastcampus
 
-const App = () => {
-  const [todos, setTodos] = useState([
-    {
-      id: 1,
-      text: '리액트 기초',
-      checked: true,
-    },
-    {
-      id: 2,
-      text: '컴포넌트 스타일링',
-      checked: true,
-    },
-    {
-      id: 3,
-      text: '기능 구현',
+function createBulkTodos() {
+  const array = [];
+  for(let i = 1; i <= 2500; i++) {
+    array.push({
+      id: i,
+      text: `할일 ${i}`,
       checked: false,
-    },
-  ]);
-  const nextId = useRef(4); // 고유값으로 사용될 id
+    });
+  }
+  return array;
+}
+
+const App = () => {
+  const [todos, setTodos] = useState(
+    createBulkTodos
+  // [{
+  //     id: 1,
+  //     text: '리액트 기초',
+  //     checked: true,
+  //   },
+  //   {
+  //     id: 2,
+  //     text: '컴포넌트 스타일링',
+  //     checked: true,
+  //   },
+  //   {
+  //     id: 3,
+  //     text: '기능 구현',
+  //     checked: false,
+  //   },]
+  );
+
+  // 고유값으로 사용될 id
+  // ref 사용하여 변수 담기
+  // const nextId = useRef(4);
+  const nextId = useRef(2501);
   const onInsert = useCallback(
     text => {
       const todo = {
@@ -58,17 +75,30 @@ const App = () => {
         text,
         checked: false,
       };
-      setTodos(todos.concat(todo));
+      setTodos(todos => todos.concat(todo));
       nextId.current += 1;
     },
-    [todos],
+    [],
   );
+
   const onRemove = useCallback(
     id => {
-      setTodos(todos.filter(todo => todo.id !== id));
+      setTodos(todos => todos.filter(todo => todo.id !== id));
     },
-    [todos],
+    [],
   );
+
+  const onToggle = useCallback(
+    id => {
+      setTodos( todos =>
+        todos.map(todo => 
+          todo.id === id ? { ...todo, checked: !todo.checked } : todo,
+        ),
+      );
+    },
+    [],
+  );
+
   return (
     <TodoTemplate>
       <TodoInsert
@@ -77,6 +107,7 @@ const App = () => {
       <TodoList
         todos={todos}
         onRemove={onRemove}
+        onToggle={onToggle}
       />
     </TodoTemplate>
   );
