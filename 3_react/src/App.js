@@ -1,83 +1,29 @@
-import React, { useRef, useCallback, useState } from 'react';
+import React from 'react';
+import { Route, Link } from 'react-router-dom';
+import Home from './2_velopert/router_tutorial/Home';
+import About from './2_velopert/router_tutorial/About';
+import Profile from './2_velopert/router_tutorial/Profile';
 
 const App = () => {
-  const nextId = useRef(1);
-  const [form, setForm] = useState({ name: '', username: ''});
-  const [data, setData] = useState({
-    array: [],
-    uselessValue: null,
-  });
-
-  const onChange = useCallback( // input 수정 함수
-    e => {
-      const { name, value } = e.target;
-      setForm({
-        ...form,
-        [name]: [value],
-      });
-    }, [form]
-  );
-
-  const onSubmit = useCallback( // form 등록 함수
-    e => {
-      e.preventDefault();
-      const info = {
-        id: nextId.current,
-        name: form.name,
-        username: form.username,
-      };
-
-      setData({ // array에 새 항목 등록
-        ...data,
-        array: data.array.concat(info)
-      });
-
-      setForm({ // form 초기화
-        name: '',
-        username: '',
-      });
-      nextId.current += 1;
-    }, [data, form.name, form.username]
-  );
-
-  const onRemove = useCallback(
-    id => {
-      setData({
-        ...data,
-        array: data.array.filter(info => info.id !== id)
-      });
-    }, [data]
-  );
-
   return (
     <div>
-      <form onSubmit={onSubmit}>
-        <input
-          name="username"
-          placeholder="아이디"
-          value={form.username}
-          onChange={onChange}
-        />
-        <input
-          name="name"
-          placeholder="이름"
-          value={form.name}
-          onChange={onChange}
-        />
-        <button type="submit">등록</button>
-      </form>
-      <div>
-        <ul>
-          {data.array.map(info => (
-            <li
-              key={info.id}
-              onClick={() => onRemove(info.id)}
-            >
-              {info.username} ({info.name})
-            </li>
-          ))}
-        </ul>
-      </div>
+      <ul>
+        <li>
+          <Link to="/">홈</Link>
+        </li>
+        <li>
+          <Link to="/about">소개</Link>
+        </li>
+        <li>
+          <Link to="/profile/velopert">velopert 프로필</Link>
+        </li>
+        <li>
+          <Link to="/profile/gildong">홍길동 프로필</Link>
+        </li>
+      </ul>
+      <Route path="/" component={Home} exact={true} />
+      <Route path={['/about', '/info']} component={About} />
+      <Route path="/profile/:username" component={Profile} />
     </div>
   );
 };
