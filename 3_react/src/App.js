@@ -1,133 +1,84 @@
-import React, { useRef, useCallback, useReducer } from 'react';
-import TodoTemplate from './2_velopert/todo_app/TodoTemplate';
-import TodoInsert from './2_velopert/todo_app/TodoInsert';
-import TodoList from './2_velopert/todo_app/TodoList';
-
-// // fastcampus
-// import { createGlobalStyle } from 'styled-components';
-// import TodoTemplate from './2_velopert/todo_app_facam/TodoTemplate';
-// import TodoHead from './2_velopert/todo_app_facam/TodoHead';
-// import TodoList from './2_velopert/todo_app_facam/TodoList';
-// import TodoCreate from './2_velopert/todo_app_facam/TodoCreate';
-// import { TodoProvider } from './2_velopert/todo_app_facam/TodoContext';
-
-// const GlobalStyle = createGlobalStyle`
-//   body {
-//     background: #e9ecef;
-//   }
-// `;
-
-// function App() {
-//   return (
-//     <TodoProvider>
-//       <GlobalStyle />
-//       <TodoTemplate>
-//         <TodoHead />
-//         <TodoList />
-//         <TodoCreate />
-//       </TodoTemplate>
-//     </TodoProvider>
-//   );
-// }
-
-// // fastcampus
-
-function createBulkTodos() {
-  const array = [];
-  for(let i = 1; i <= 2500; i++) {
-    array.push({
-      id: i,
-      text: `할일 ${i}`,
-      checked: false,
-    });
-  }
-  return array;
-}
-
-function todoReducer(todos, action) {
-  switch (action.type) {
-    case 'INSERT': // 새로 추가
-      // { type: 'INSERT', todo: { id: 1, text: 'todo', checked: false } }
-      return todos.concat(action.todo);
-    case 'REMOVE': // 제거
-      // { type: 'REMOVE', id: 1 }
-      return todos.filter(todo => todo.id !== action.id);
-    case 'TOGGLE': // 토글
-      // { type: 'TOGGLE', id: 1 }
-      return todos.map(todo =>
-        todo.id === action.id ? { ...todo, checked: !todo.checked } : todo,);
-    default: 
-      return todos;
-  }
-}
+import React, { useRef, useCallback, useState } from 'react';
 
 const App = () => {
-  const [todos, dispatch] = useReducer(todoReducer, undefined, createBulkTodos);
-  // const [todos, setTodos] = useState(
-  //   createBulkTodos
-  // // [{
-  // //     id: 1,
-  // //     text: '리액트 기초',
-  // //     checked: true,
-  // //   },
-  // //   {
-  // //     id: 2,
-  // //     text: '컴포넌트 스타일링',
-  // //     checked: true,
-  // //   },
-  // //   {
-  // //     id: 3,
-  // //     text: '기능 구현',
-  // //     checked: false,
-  // //   },]
-  // );
+  const nextId = useRef(1);
+  const [form, setForm] = useState({ name: '', username: ''});
+  const [data, setData] = useState({
+    array: [],
+    uselessValue: null,
+  });
 
-  // 고유값으로 사용될 id
-  // ref 사용하여 변수 담기
-  // const nextId = useRef(4);
-  const nextId = useRef(2501);
-  const onInsert = useCallback(
-    text => {
-      const todo = {
+  const onChange = useCallback( // input 수정 함수
+    e => {
+      const { name, value } = e.target;
+      setForm({
+        ...form,
+        [name]: [value],
+      });
+    }, [form]
+  );
+
+  const onSubmit = useCallback( // form 등록 함수
+    e => {
+      e.preventDefault();
+      const info = {
         id: nextId.current,
-        text,
-        checked: false,
+        name: form.name,
+        username: form.username,
       };
-      // setTodos(todos => todos.concat(todo)); // useState
-      dispatch({ type: 'INSERT', todo }); // useReducer
+
+      setData({ // array에 새 항목 등록
+        ...data,
+        array: data.array.concat(info)
+      });
+
+      setForm({ // form 초기화
+        name: '',
+        username: '',
+      });
       nextId.current += 1;
-    }, [],
+    }, [data, form.name, form.username]
   );
 
   const onRemove = useCallback(
     id => {
-      // setTodos(todos => todos.filter(todo => todo.id !== id)); // useState
-      dispatch({ type: 'REMOVE', id }); // useReducer
-    }, [],
-  );
-
-  const onToggle = useCallback(
-    id => {
-      // setTodos( todos =>
-      //   todos.map(todo => 
-      //     todo.id === id ? { ...todo, checked: !todo.checked } : todo,
-      //   ),
-      // ); // useState
-      dispatch({ type: 'TOGGLE', id }); // useReducer
-    },[],
+      setData({
+        ...data,
+        array: data.array.filter(info => info.id !== id)
+      });
+    }, [data]
   );
 
   return (
-    <TodoTemplate>
-      <TodoInsert
-        onInsert={onInsert}
-      />
-      <TodoList
-        todos={todos}
-        onRemove={onRemove}
-        onToggle={onToggle}
-      />
-    </TodoTemplate>
+    <div>
+      <form onSubmit={onSubmit}>
+        <input
+          name="username"
+          placeholder="아이디"
+          value={form.username}
+          onChange={onChange}
+        />
+        <input
+          name="name"
+          placeholder="이름"
+          value={form.name}
+          onChange={onChange}
+        />
+        <button type="submit">등록</button>
+      </form>
+      <div>
+        <ul>
+          {data.array.map(info => (
+            <li
+              key={info.id}
+              onClick={() => onRemove(info.id)}
+            >
+              {info.username} ({info.name})
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
   );
 };
 
