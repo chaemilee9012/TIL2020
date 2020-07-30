@@ -12,7 +12,7 @@ const TodoListItem = ({ todo, onRemove, onToggle }) => {
   return (
     <div className="TodoListItem">
       <div
-        className={cn('checkbox', { checked })}
+        className={cn('checkbox', { checked })} // 클래스네임 라이브러리 활용
         onClick={() => onToggle(id)}
       >
       {/* done 값에 따라 달라짐 */}

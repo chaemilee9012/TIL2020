@@ -96,16 +96,14 @@ const App = () => {
       // setTodos(todos => todos.concat(todo)); // useState
       dispatch({ type: 'INSERT', todo }); // useReducer
       nextId.current += 1;
-    },
-    [],
+    }, [],
   );
 
   const onRemove = useCallback(
     id => {
       // setTodos(todos => todos.filter(todo => todo.id !== id)); // useState
       dispatch({ type: 'REMOVE', id }); // useReducer
-    },
-    [],
+    }, [],
   );
 
   const onToggle = useCallback(
@@ -116,8 +114,7 @@ const App = () => {
       //   ),
       // ); // useState
       dispatch({ type: 'TOGGLE', id }); // useReducer
-    },
-    [],
+    },[],
   );
 
   return (
