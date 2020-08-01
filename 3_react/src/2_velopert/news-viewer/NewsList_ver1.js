@@ -22,7 +22,7 @@ const sampleArticle = {
   urlToImage: 'https://via.placeholder.com/160'
 };
 
-const NewsList = () => {
+const NewsList_ver1 = () => {
   return (
     <NewsListBlock>
       <NewsItem article={sampleArticle} />
@@ -35,4 +35,4 @@ const NewsList = () => {
   );
 };
 
-export default NewsList;
+export default NewsList_ver1;
