@@ -61,7 +61,7 @@ function todoReducer(todos, action) {
   }
 }
 
-const App = () => {
+const AppTodo = () => {
   const [todos, dispatch] = useReducer(todoReducer, undefined, createBulkTodos);
   // const [todos, setTodos] = useState(
   //   createBulkTodos
@@ -131,4 +131,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default AppTodo;

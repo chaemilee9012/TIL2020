@@ -56,11 +56,11 @@ const Category = styled.div`
     color: #495057;
   }
 
-  ${props =>
+  ${props => 
     props.active && css`
-      font-weigth: 600;
       border-bottom: 2px solid #22b8cf;
       color: #22b8cf;
+      font-weigth: 600;
 
       &:hover {
         color: #3bc9db;
@@ -73,7 +73,7 @@ const Category = styled.div`
   }
 `;
 
-const Categories_ver1 = ({ onSelect, category }) => {
+const Categories = ({ onSelect, category }) => {
   return (
     <CategoriesBlock>
       {categories.map(c => (
@@ -89,4 +89,4 @@ const Categories_ver1 = ({ onSelect, category }) => {
   );
 };
 
-export default Categories_ver1;
+export default Categories;

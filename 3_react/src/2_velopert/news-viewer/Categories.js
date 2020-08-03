@@ -58,9 +58,9 @@ const Category = styled(NavLink)`
   }
 
   &.active {
-    font-weigth: 600;
     border-bottom: 2px solid #22b8cf;
     color: #22b8cf;
+    font-weight: 600;
 
     &:hover {
       color: #3bc9db;
@@ -72,10 +72,10 @@ const Category = styled(NavLink)`
   }
 `;
 
-const Categories = () => {
+const Categories = ({ onSelect, category }) => {
   return (
     <CategoriesBlock>
-      {categories.map((c) => (
+      {categories.map(c => (
         <Category
           key={c.name}
           activeClassName="active"

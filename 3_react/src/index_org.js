@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import App from './AppNewsVer3';
 import './App.css';
 // import Test from './0_practice/0710/Test';
 
